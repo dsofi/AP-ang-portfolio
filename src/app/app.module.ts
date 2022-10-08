@@ -9,6 +9,14 @@ import { CoverComponent } from './components/cover/cover.component';
 import { StudiesComponent } from './components/studies/studies.component';
 
 import { HttpClientModule } from '@angular/common/http';
+import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
+
+import { FaIconLibrary } from '@fortawesome/angular-fontawesome';
+import { faTimes as fasTimes } from '@fortawesome/free-solid-svg-icons';
+import { faEdit as farEdit } from '@fortawesome/free-regular-svg-icons';
+import { faCheck as fasCheck } from '@fortawesome/free-solid-svg-icons';
+
+import { faCircleXmark as farCircleXmark } from '@fortawesome/free-regular-svg-icons';
 
 @NgModule({
   declarations: [
@@ -21,9 +29,19 @@ import { HttpClientModule } from '@angular/common/http';
   ],
   imports: [
     BrowserModule,
-    HttpClientModule
+    HttpClientModule,
+    FontAwesomeModule
   ],
   providers: [],
   bootstrap: [AppComponent]
 })
-export class AppModule { }
+
+
+
+export class AppModule {
+
+  constructor(library: FaIconLibrary) {
+    library.addIcons(farCircleXmark, fasTimes, farEdit, fasCheck );
+  }
+  }
+ 

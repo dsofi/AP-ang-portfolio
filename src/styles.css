@@ -8,6 +8,8 @@
   src: url(assets/poppins.ttf);
 }
 
+
+
 * {
   margin: 0;
   padding: 0;
@@ -51,6 +53,35 @@ h6{
 
 p{
   font-size: 12px;
+}
+
+i{
+  color: var(--main-color);
+}
+
+li{
+  position: relative;
+}
+
+.edit, .cruz-del{
+  position: absolute;
+  top: 5px;
+  left: 380px;
+}
+
+.cruz-del{
+  top: 0px;
+}
+
+.check{
+  position: absolute;
+  bottom: 0px;
+  left: 380px;
+}
+
+.save{
+  margin-top: 10px;
+  text-align: right;
 }
 
 .flex-container {

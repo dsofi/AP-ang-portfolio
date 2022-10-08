@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { PortfolioService } from 'src/app/services/portfolio.service';
 
+
 @Component({
   selector: 'app-studies',
   templateUrl: './studies.component.html',
@@ -8,6 +9,7 @@ import { PortfolioService } from 'src/app/services/portfolio.service';
 })
 export class StudiesComponent implements OnInit {
   estudiosList:any;
+
 
   constructor(
     private datosPortfolio:PortfolioService
