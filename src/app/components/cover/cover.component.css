@@ -1,0 +1,39 @@
+
+.container{
+    position: relative;
+}
+
+img{
+    width: 100%;
+}
+
+h1, span{
+    font-family: monospace;
+    background: rgba(0, 0, 0, 0);
+}
+
+h1{
+    font-weight: 100;
+    position: absolute;
+    top: 15%;
+    right: 7.5%;
+    margin-left: 36%;
+    text-align: center;
+    letter-spacing: .1rem;
+}
+
+h1 span{
+    color: var(--main-color);
+    letter-spacing: .25rem;
+}
+
+
+@media (max-width: 500px) {
+    h1{
+        top: 12%;
+        font-size: 1.2rem;
+    }
+  }
+  
+
+  
