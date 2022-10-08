@@ -1,27 +1,10 @@
 <h3>Estudios</h3>
 <ul>
-  <li>
-    <h4>Título estudio</h4>
-    <h6>2006 - 2008</h6>
-    <p>
-      Lorem ipsum dolor sit amet, consectetur adipisicing elit. Officiis ducimus
-      totam at?
-    </p>
-  </li>
-  <li>
-    <h4>Título estudio</h4>
-    <h6>2006 - 2008</h6>
-    <p>
-      Lorem ipsum dolor sit amet, consectetur adipisicing elit. Officiis ducimus
-      totam at?
-    </p>
-  </li>
-  <li>
-    <h4>Título estudio</h4>
-    <h6>2006 - 2008</h6>
-    <p>
-      Lorem ipsum dolor sit amet, consectetur adipisicing elit. Officiis ducimus
-      totam at?
-    </p>
+  <li *ngFor="let estudio of estudiosList">
+    <h6>{{estudio.tiempo}}</h6>
+    <h4>{{estudio.nombre}}</h4>
+    <p>{{estudio.descripcion}}</p>
+    <p>{{estudio.nota1}}</p>
+    <p>{{estudio.nota2}}</p>
   </li>
 </ul>

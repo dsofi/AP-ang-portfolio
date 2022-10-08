@@ -1,18 +1,11 @@
 <h3>Experiencia</h3>
 <ul>
-    <li>
-        <h4>Título experiencia</h4>
-        <h6>2006 - 2008</h6>
-        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Officiis ducimus totam at?</p>
+    <li *ngFor = "let experiencia of experienciasList">
+        <h4>{{experiencia.nombre}}</h4>
+        <h6>{{experiencia.tiempo}}</h6>
+        <p>{{experiencia.descripcion}}</p>
+        <p>{{experiencia.nota1}}</p>
+        <p>{{experiencia.nota2}}</p>
     </li>
-    <li>
-        <h4>Título experiencia</h4>
-        <h6>2006 - 2008</h6>
-        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Officiis ducimus totam at?</p>
-    </li>
-    <li>
-        <h4>Título experiencia</h4>
-        <h6>2006 - 2008</h6>
-        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Officiis ducimus totam at?</p>
-    </li>
+   
 </ul>

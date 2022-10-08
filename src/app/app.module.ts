@@ -8,6 +8,8 @@ import { ExperienceComponent } from './components/experience/experience.componen
 import { CoverComponent } from './components/cover/cover.component';
 import { StudiesComponent } from './components/studies/studies.component';
 
+import { HttpClientModule } from '@angular/common/http';
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -18,7 +20,8 @@ import { StudiesComponent } from './components/studies/studies.component';
     StudiesComponent
   ],
   imports: [
-    BrowserModule
+    BrowserModule,
+    HttpClientModule
   ],
   providers: [],
   bootstrap: [AppComponent]

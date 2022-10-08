@@ -25,12 +25,10 @@
 
 :root {
   --main-color: #fcff4b;
-  --secondary: #999;
+  --secondary: #f97068;
 }
 
-h4 {
-  margin-top: 15px;
-}
+
 
 h3 {
   margin-left: -20px;
@@ -45,6 +43,16 @@ h3::before {
   transform: translate(-15px) rotate(-30deg);
 }
 
+h6{
+  font-weight: lighter;
+  color: var(--secondary);
+  margin-top: 15px;
+}
+
+p{
+  font-size: 12px;
+}
+
 .flex-container {
   display: flex;
   flex-wrap: wrap;
@@ -56,7 +64,7 @@ h3::before {
   width: 400px;
   margin: 0 0 50px 10px;
   /* background-color: #444; */
-  padding: 0 25px;
+  padding: 0 5px 0 25px;
   border-left: 2px solid var(--main-color);
 }
 
