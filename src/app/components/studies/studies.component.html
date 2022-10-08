@@ -1,16 +1,20 @@
 <h3>Estudios</h3>
 <ul>
   <li *ngFor="let estudio of estudiosList">
-    <h6>{{estudio.tiempo}}</h6>
-    <h4>{{estudio.nombre}}</h4>
-    <p>{{estudio.descripcion}}</p>
-    <p>{{estudio.nota1}}</p>
-    <p>{{estudio.nota2}}</p>
-    <fa-icon class="cruz-del" [icon]="['fas', 'times']"></fa-icon>
-    <fa-icon class="edit" [icon]="['far', 'edit']"></fa-icon>
-    <p class="save">Guardar cambios
-      <fa-icon class="check" [icon]="['fas', 'check']"></fa-icon>
+    <!-- <p class="icono edit">Editar
+      <fa-icon [icon]="['far', 'edit']"> </fa-icon>
+    </p> -->
+    <p class="icono cruz-del">Eliminar
+      <fa-icon [icon]="['fas', 'times']"> </fa-icon>
+    </p>
+    <h6>{{ estudio.tiempo }}</h6>
+    <h4>{{ estudio.nombre }}</h4>
+    <p>{{ estudio.descripcion }}</p>
+    <p>{{ estudio.nota1 }}</p>
+    <p>{{ estudio.nota2 }}</p>
+
+    <p class="icono save">Guardar
+      <fa-icon [icon]="['fas', 'check']"></fa-icon>
     </p>
   </li>
-  
 </ul>

@@ -1,17 +1,21 @@
 <h3>Experiencia</h3>
 <ul>
-    <li *ngFor = "let experiencia of experienciasList">
-        <h4>{{experiencia.nombre}}</h4>
-        <h6>{{experiencia.tiempo}}</h6>
-        <p>{{experiencia.descripcion}}</p>
-        <p>{{experiencia.nota1}}</p>
-        <p>{{experiencia.nota2}}</p>
-        
-    <fa-icon class="cruz-del" [icon]="['fas', 'times']"></fa-icon>
-    <fa-icon class="edit" [icon]="['far', 'edit']"></fa-icon>
-    <p class="save">Guardar cambios
-        <fa-icon class="check" [icon]="['fas', 'check']"></fa-icon>
+  <li *ngFor="let experiencia of experienciasList">
+    <p class="icono edit">Editar
+      <fa-icon [icon]="['far', 'edit']"> </fa-icon>
     </p>
-    </li>
-   
+    <!-- <p class="icono cruz-del">
+      Eliminar
+      <fa-icon [icon]="['fas', 'times']"> </fa-icon>
+    </p> -->
+    <h4>{{ experiencia.nombre }}</h4>
+    <h6>{{ experiencia.tiempo }}</h6>
+    <p>{{ experiencia.descripcion }}</p>
+    <p>{{ experiencia.nota1 }}</p>
+    <p>{{ experiencia.nota2 }}</p>
+
+    <!-- <p class="icono save">Guardar
+      <fa-icon [icon]="['fas', 'check']"></fa-icon>
+    </p> -->
+  </li>
 </ul>

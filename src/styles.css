@@ -13,11 +13,10 @@
 * {
   margin: 0;
   padding: 0;
-  background-color: #000;
   box-sizing: border-box;
   text-decoration: none;
   font-family: Mulish, sans-serif;
-  color: white;
+  
   list-style: none;
 }
 
@@ -30,7 +29,10 @@
   --secondary: #f97068;
 }
 
-
+body{
+  color: white;
+  background-color: #000;
+}
 
 h3 {
   margin-left: -20px;
@@ -51,38 +53,36 @@ h6{
   margin-top: 15px;
 }
 
+
 p{
   font-size: 12px;
 }
 
-i{
+.icono{
+  width: 100px;
+  font-size: 12px;
+  cursor: pointer;
+}
+
+.icono:hover{
   color: var(--main-color);
 }
-
-li{
-  position: relative;
+.cruz-del:hover{
+  color: var(--secondary);
 }
+
 
 .edit, .cruz-del{
-  position: absolute;
-  top: 5px;
-  left: 380px;
-}
-
-.cruz-del{
-  top: 0px;
-}
-
-.check{
-  position: absolute;
-  bottom: 0px;
-  left: 380px;
+  text-align: right;
+  float: right;
 }
 
 .save{
-  margin-top: 10px;
-  text-align: right;
+  text-align: center;
+  transform: translate(0, 10px);
+  margin: auto;
 }
+
 
 .flex-container {
   display: flex;
