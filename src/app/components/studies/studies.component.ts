@@ -9,7 +9,7 @@ import { PortfolioService } from 'src/app/services/portfolio.service';
 })
 export class StudiesComponent implements OnInit {
   estudiosList:any;
-
+  showEdit = false;
 
   constructor(
     private datosPortfolio:PortfolioService
@@ -21,4 +21,10 @@ export class StudiesComponent implements OnInit {
     })
   }
 
+  toggleShowEdit():void{
+    this.showEdit = !this.showEdit;
+  }
+
 }
+
+

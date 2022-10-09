@@ -1,10 +1,10 @@
 <h3>Estudios</h3>
 <ul>
   <li *ngFor="let estudio of estudiosList">
-    <!-- <p class="icono edit">Editar
+    <p (click)="toggleShowEdit()" *ngIf="!showEdit" class="icono edit">Editar
       <fa-icon [icon]="['far', 'edit']"> </fa-icon>
-    </p> -->
-    <p class="icono cruz-del">Eliminar
+    </p>
+    <p *ngIf="showEdit" class="icono cruz-del">Eliminar
       <fa-icon [icon]="['fas', 'times']"> </fa-icon>
     </p>
     <h6>{{ estudio.tiempo }}</h6>
@@ -13,7 +13,7 @@
     <p>{{ estudio.nota1 }}</p>
     <p>{{ estudio.nota2 }}</p>
 
-    <p class="icono save">Guardar
+    <p (click)="toggleShowEdit()" *ngIf="showEdit" class="icono save">Guardar
       <fa-icon [icon]="['fas', 'check']"></fa-icon>
     </p>
   </li>
