@@ -1,0 +1,69 @@
+{
+    "estudio": [
+      {
+        "nombre": "Estudiante de Arquitectura (FAUD)",
+        "tiempo": "mar 2015 - actualidad",
+        "descripcion": "Facultad de Arquitectura Urbanismo y Diseño (UNC) - En curso",
+        "nota1": "Promedio actual con aplazos: 8.92",
+        "nota2": "Promedio actual sin aplazos: 9.11",
+        "editar": false
+      },
+      {
+        "nombre": "Argentina Programa",
+        "tiempo": "mar 2022 - actualidad",
+        "descripcion": "Módulo 1 #SeProgramar - Aprobado",
+        "nota1": "Módulo 2 #YoProgramo - En curso",
+        "nota2": "",
+        "editar": false
+      },
+      {
+        "nombre": "Diplomatura en Diseño UX / UI ",
+        "tiempo": "jun 2022 - actualidad",
+        "descripcion": "(Instrumenta - UTN) - En curso",
+        "nota1": "",
+        "nota2": "",
+        "editar": false
+      },
+      {
+        "nombre": "Diplomatura en Tecnologías Digitales para la Arquitectura",
+        "tiempo": "oct 2019 - oct 2020",
+        "descripcion": "(FAUD - UNC) Certificados oficiales de Autodesk de:",
+        "nota1": "Revit Architecture | Revit Structure | 3Ds max | Naviswork Manage",
+        "nota2": "",
+        "editar": false
+      },
+      {
+        "nombre": "Maestro Mayor de Obras",
+        "tiempo": "mar 2009 - dic 2014",
+        "descripcion": "Escuela de Educación Técnica N°4-117 \"Ejército de los Andes\"",
+        "nota1": "",
+        "nota2": "",
+        "editar": false
+      }
+    ],
+  
+    "experiencia": [
+      {
+        "nombre": "Independiente",
+        "tiempo": "ene 2019 - actualidad",
+        "descripcion": "Elaboración de planos de relevamiento, municpales, legajos técnicos.",
+        "nota1": "Servicios de diseño gráfico, diagramaciones, logotipos.",
+        "nota2": ""
+      },
+      {
+        "nombre": "Everdeck",
+        "tiempo": "oct 2018 - ene 2021",
+        "descripcion": "Diseños de modulación, cómputos y presupuestos.",
+        "nota1": "",
+        "nota2": ""
+      },
+      {
+        "nombre": "",
+        "tiempo": "ene 2021 - jun 2022",
+        "descripcion": "Administración, Logística, Ventas y Diseño.",
+        "nota1": "",
+        "nota2": ""
+      }
+  ]
+  }
+  

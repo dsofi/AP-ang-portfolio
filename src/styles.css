@@ -9,20 +9,15 @@
 }
 
 
-
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
   text-decoration: none;
-  font-family: Mulish, sans-serif;
-  
+  font-family: Mulish, sans-serif;  
   list-style: none;
 }
 
-/* p, ul ,h2, li, h4, h6{
-    background: rgba(0, 0, 0, 0);
-} */
 
 :root {
   --main-color: #fcff4b;
