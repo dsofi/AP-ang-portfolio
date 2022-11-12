@@ -14,15 +14,13 @@ export class StudiesComponent implements OnInit {
   
   estudios:Estudio[]=[];
   estudio:any="";
-  estudiosCopia:Estudio[]=this.estudios;
   
 
   constructor(private myService:PortfolioService) { }
 
   ngOnInit(): void {
     this.myService.obtenerDatos().subscribe(estudios=>{
-      this.estudios = estudios, this.estudiosCopia = estudios
-    })
+      this.estudios = estudios})
   }
 
   toggleShowEdit(estudio:Estudio):void{
@@ -32,7 +30,7 @@ export class StudiesComponent implements OnInit {
   editarEstudio(estudio:Estudio):void{
     this.toggleShowEdit(estudio);
     this.myService.editarEstudio(estudio).subscribe((estudio)=>(
-      this.estudio = Object.assign([],this.estudiosCopia)));
+      this.estudio = estudio));
 
       
   }
@@ -43,18 +41,12 @@ export class StudiesComponent implements OnInit {
   }
 
   cancelarEdicion(estudio:Estudio):void{
-    this.estudiosCopia = Object.assign([],this.estudios);
     this.toggleShowEdit(estudio);
+    // SEGUIR PENSANDO
 
-    console.log("estudios : " + this.estudios[0])
-      console.log("copia : " + this.estudiosCopia[0])
-    
     
   }
 
-  consol():void{
-    console.log(this.estudios)
-  }
 
  
 

@@ -1,6 +1,6 @@
 <h3>Estudios</h3>
 <ul>
-  <li *ngFor="let estudio of estudiosCopia">
+  <li *ngFor="let estudio of estudios">
     <p (click)="toggleShowEdit(estudio)" *ngIf="!estudio.editar" class="icono edit">Editar
       <fa-icon [icon]="['far', 'edit']"> </fa-icon>
     </p>
@@ -37,16 +37,7 @@
       [ngClass]="{'editable':estudio.editar}"
       [readonly]="!estudio.editar"
     ></p>
-
-
-
-
-    <!-- <h6>{{ estudio.tiempo }}</h6>
-    <h4>{{ estudio.nombre }}</h4>
-    <p>{{ estudio.descripcion }}</p>
-    <p>{{ estudio.nota1 }}</p>
-    <p>{{ estudio.nota2 }}</p> -->
-
+<!-- ---------BOTONES-------- -->
     <p *ngIf="estudio.editar" 
       (click)="editarEstudio(estudio)" 
       class="icono save">Guardar
@@ -59,6 +50,3 @@
     </p>
   </li>
 </ul>
-
-
-<p (click)="consol()" style="font-size: 20px;">click</p>
