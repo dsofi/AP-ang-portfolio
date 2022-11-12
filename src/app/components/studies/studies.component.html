@@ -4,7 +4,7 @@
     <p (click)="toggleShowEdit(estudio)" *ngIf="!estudio.edit" class="icono edit">Editar
       <fa-icon [icon]="['far', 'edit']"> </fa-icon>
     </p>
-    <p *ngIf="estudio.edit" class="icono cruz-del">Eliminar
+    <p *ngIf="estudio.edit" class="icono cruz-del" (click)="borrarEstudio(estudio)">Eliminar
       <fa-icon [icon]="['fas', 'times']"> </fa-icon>
     </p>
     <h6>{{ estudio.tiempo }}</h6>

@@ -16,4 +16,8 @@ export class PortfolioService {
     return this.http.get<any>('./assets/data/data.json');
     // return this.http.get<any>(this.apiUrl);
   }
+
+  borrarEstudio(estudio:any):Observable<any>{
+    return this.http.delete<any>('./assets/data/data.json');
+  }
 }

@@ -27,6 +27,13 @@ export class StudiesComponent implements OnInit {
     estudio.edit = !estudio.edit;
   }
 
+  borrarEstudio(estudio:any){
+    this.datosPortfolio.borrarEstudio(estudio).subscribe(()=> 
+      this.estudiosList = this.estudiosList.filter ((e:any) => e.id !== estudio.id));
+    console.log(estudio.id);
+    console.log(estudio)
+  }
+
 }
 
 
