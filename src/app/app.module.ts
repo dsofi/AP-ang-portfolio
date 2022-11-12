@@ -17,6 +17,7 @@ import { faEdit as farEdit } from '@fortawesome/free-regular-svg-icons';
 import { faCheck as fasCheck } from '@fortawesome/free-solid-svg-icons';
 
 import { faCircleXmark as farCircleXmark } from '@fortawesome/free-regular-svg-icons';
+import { FormsModule } from '@angular/forms';
 
 @NgModule({
   declarations: [
@@ -30,7 +31,8 @@ import { faCircleXmark as farCircleXmark } from '@fortawesome/free-regular-svg-i
   imports: [
     BrowserModule,
     HttpClientModule,
-    FontAwesomeModule
+    FontAwesomeModule,
+    FormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]

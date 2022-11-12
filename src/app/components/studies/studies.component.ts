@@ -1,6 +1,7 @@
 import { outputAst } from '@angular/compiler';
 import { Component, EventEmitter, OnInit, Output } from '@angular/core';
 import { PortfolioService } from 'src/app/services/portfolio.service';
+import { Estudio } from '../common/int-Estudio';
 
 
 @Component({
@@ -10,30 +11,57 @@ import { PortfolioService } from 'src/app/services/portfolio.service';
 })
 export class StudiesComponent implements OnInit {
   @Output() toggleShowEditEstudio: EventEmitter<any> = new EventEmitter()
-  estudiosList:any;
+  
+  estudios:Estudio[]=[];
+  estudio:any="";
+  estudiosCopia:Estudio[]=this.estudios;
   
 
-  constructor(
-    private datosPortfolio:PortfolioService
-  ) { }
+  constructor(private myService:PortfolioService) { }
 
   ngOnInit(): void {
-    this.datosPortfolio.obtenerDatos().subscribe(data=>{
-      this.estudiosList=data.estudio;
+    this.myService.obtenerDatos().subscribe(estudios=>{
+      this.estudios = estudios, this.estudiosCopia = estudios
     })
   }
 
-  toggleShowEdit(estudio:any):void{
-    estudio.edit = !estudio.edit;
+  toggleShowEdit(estudio:Estudio):void{
+    estudio.editar = !estudio.editar;
   }
 
-  borrarEstudio(estudio:any){
-    this.datosPortfolio.borrarEstudio(estudio).subscribe(()=> 
-      this.estudiosList = this.estudiosList.filter ((e:any) => e.id !== estudio.id));
-    console.log(estudio.id);
-    console.log(estudio)
+  editarEstudio(estudio:Estudio):void{
+    this.toggleShowEdit(estudio);
+    this.myService.editarEstudio(estudio).subscribe((estudio)=>(
+      this.estudio = Object.assign([],this.estudiosCopia)));
+
+      
   }
+
+  borrarEstudio(estudio:Estudio){
+    this.myService.borrarEstudio(estudio).subscribe(()=> 
+      this.estudios = this.estudios.filter ((e:any) => e.id !== estudio.id));
+  }
+
+  cancelarEdicion(estudio:Estudio):void{
+    this.estudiosCopia = Object.assign([],this.estudios);
+    this.toggleShowEdit(estudio);
+
+    console.log("estudios : " + this.estudios[0])
+      console.log("copia : " + this.estudiosCopia[0])
+    
+    
+  }
+
+  consol():void{
+    console.log(this.estudios)
+  }
+
+ 
 
 }
+
+
+
+
 
 
