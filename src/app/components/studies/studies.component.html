@@ -1,16 +1,52 @@
 <h3>Estudios</h3>
 <ul>
-  <li *ngFor="let estudio of estudiosList">
-    <h6>tiempo}}</h6>
-    <h4>nombre}}</h4>
-    <p>descripcion}}</p>
-    <p>nota1}}</p>
-    <p>nota2}}</p>
-    <fa-icon class="cruz-del" [icon]="['fas', 'times']"></fa-icon>
-    <fa-icon class="edit" [icon]="['far', 'edit']"></fa-icon>
-    <p class="save">Guardar cambios
-      <fa-icon class="check" [icon]="['fas', 'check']"></fa-icon>
+  <li *ngFor="let estudio of estudios">
+    <p (click)="toggleShowEdit(estudio)" *ngIf="!estudio.editar" class="icono edit">Editar
+      <fa-icon [icon]="['far', 'edit']"> </fa-icon>
+    </p>
+    <p *ngIf="estudio.editar" class="icono cruz-del" (click)="borrarEstudio(estudio)">Eliminar
+      <fa-icon [icon]="['fas', 'times']"> </fa-icon>
+    </p>
+    <h6><input 
+      type="text" 
+      [(ngModel)]="estudio.tiempo"
+      [ngClass]="{'editable':estudio.editar}"
+      [readonly]="!estudio.editar"
+    ></h6>
+    <h4><input 
+      type="text" 
+      [(ngModel)]="estudio.nombre"
+      [ngClass]="{'editable':estudio.editar}"
+      [readonly]="!estudio.editar"
+    ></h4>
+    <p><input 
+      type="text" 
+      [(ngModel)]="estudio.descripcion"
+      [ngClass]="{'editable':estudio.editar}"
+      [readonly]="!estudio.editar"
+    ></p>
+    <p><input *ngIf="estudio.nota1 != ''"
+      type="text" 
+      [(ngModel)]="estudio.nota1"
+      [ngClass]="{'editable':estudio.editar}"
+      [readonly]="!estudio.editar"
+    ></p>
+    <p><input *ngIf="estudio.nota2 != ''"
+      type="text" 
+      [(ngModel)]="estudio.nota2"
+      [ngClass]="{'editable':estudio.editar}"
+      [readonly]="!estudio.editar"
+    ></p>
+<!-- ---------BOTONES-------- -->
+    <p *ngIf="estudio.editar" 
+      (click)="editarEstudio(estudio)" 
+      class="icono save">Guardar
+      <fa-icon [icon]="['fas', 'check']"></fa-icon>
+    </p>
+    <p *ngIf="estudio.editar" 
+      (click)="cancelarEdicion(estudio)" 
+      class="icono save">Cancelar
+      <fa-icon [icon]="['fas', 'times']"> </fa-icon>
     </p>
   </li>
-  
 </ul>

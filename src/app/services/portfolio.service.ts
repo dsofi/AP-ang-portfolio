@@ -1,41 +1,33 @@
 import { Injectable } from '@angular/core';
-import { HttpClient } from '@angular/common/http'
+import { HttpClient, HttpHeaders } from '@angular/common/http'
 import { Observable } from 'rxjs';
-import { Items } from '../Items';
-import { ESTITEMS } from '../estudio-items';
-import { faTasks } from '@fortawesome/free-solid-svg-icons';
+import { Estudio } from '../components/common/int-Estudio';
+
+const httpOptions = {
+  headers: new HttpHeaders({
+    'Content-Type': 'application/json'
+  })
+}
 
 @Injectable({
   providedIn: 'root'
 })
 export class PortfolioService {
-  private apiUrl = 'http://localhost:5000/tasks'
+  private apiUrl = 'http://localhost:5000/estudios'
 
-  constructor(
-    private http:HttpClient
-  ) { }
+  constructor(private http:HttpClient) { }
 
-  // obtenerDatos():Observable<any>{
-  //   return this.http.get('./assets/data/data.json');
-  // }
-
-  // getItems(): Observable<Items[]>{
-  //   return this.http.get<Items[]>(this.apiUrl)
-  // }  
-
-  addItem(item : Items): Observable<Items>{
-    return this.http.post<Items>(this.apiUrl, item)
-  }
-  
-  getAllItem(item : Items): Observable<Items>{
-    return this.http.get<Items>(this.apiUrl)
+  obtenerDatos():Observable<Estudio[]>{
+    return this.http.get<Estudio[]>(this.apiUrl);
   }
 
-  deleteItem(item : Items): Observable<Items>{
-    return this.http.delete<Items>(this.apiUrl+'/'+ item.id)
+  borrarEstudio(estudio:Estudio):Observable<Estudio>{
+    const url = `${this.apiUrl}/${estudio.id}`
+    return this.http.delete<Estudio>(url);
   }
 
-  editItem(item : Items): Observable<Items>{
-    return this.http.put<Items>(this.apiUrl+'/'+ item.id,item)
+  editarEstudio(estudio:Estudio):Observable<Estudio>{
+    const url = `${this.apiUrl}/${estudio.id}`
+    return this.http.put<Estudio>(url, estudio, httpOptions)
   }
 }

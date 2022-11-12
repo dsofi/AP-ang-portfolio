@@ -14,10 +14,9 @@ export class AboutComponent implements OnInit {
   ) { }
 
   ngOnInit(): void {
-    // this.datosPortfolio.obtenerDatos().subscribe(data =>{
-    //   console.log(data);
-    //   this.miPortfolio=data;
-    // });
+    this.datosPortfolio.obtenerDatos().subscribe(data =>{
+      this.miPortfolio=data;
+    });
   }
 
 }

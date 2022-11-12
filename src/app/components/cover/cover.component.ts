@@ -14,10 +14,9 @@ export class CoverComponent implements OnInit {
   ) { }
 
   ngOnInit(): void {
-    // this.datosPortfolio.getItems().subscribe((items) =>{
-    //   console.log(data);
-    //   this.miPortfolio=data;
-    // });
+    this.datosPortfolio.obtenerDatos().subscribe(data =>{
+      this.miPortfolio=data;
+    });
   }
 
 }

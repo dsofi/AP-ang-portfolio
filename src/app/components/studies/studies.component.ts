@@ -1,9 +1,7 @@
-import { Component, OnInit } from '@angular/core';
-import { FaStackItemSizeDirective } from '@fortawesome/angular-fontawesome';
-import { ESTITEMS } from 'src/app/estudio-items';
-import { Items } from 'src/app/Items';
+import { outputAst } from '@angular/compiler';
+import { Component, EventEmitter, OnInit, Output } from '@angular/core';
 import { PortfolioService } from 'src/app/services/portfolio.service';
-// import { ESTITEMS } from 'src/app/estudio-items';
+import { Estudio } from '../common/int-Estudio';
 
 
 @Component({
@@ -12,43 +10,50 @@ import { PortfolioService } from 'src/app/services/portfolio.service';
   styleUrls: ['./studies.component.css']
 })
 export class StudiesComponent implements OnInit {
-  // @Input() item: Items = ESTITEMS[0]
-  // estudiosList:any;
-  items: Items[]=[];
-  // itemObj : Items = new Items();
-  // itemArr : Items[] = [];
+  @Output() toggleShowEditEstudio: EventEmitter<any> = new EventEmitter()
+  
+  estudios:Estudio[]=[];
+  estudio:any="";
+  
 
-  // addItemValue : string = '';
-
-
-  constructor(
-    private datosPortfolio:PortfolioService
-  ) { }
+  constructor(private myService:PortfolioService) { }
 
   ngOnInit(): void {
-    // this.datosPortfolio.getItems().subscribe((items)=>{
-    //   this.items=items;
-    // this.datosPortfolio.obtenerDatos().subscribe(data=>{
-    //   this.estudiosList=data.estudio;
-    // })
-    this.datosPortfolio.getAllItem().subscribe((items)=>(
-      this.items = items
-    ));
+    this.myService.obtenerDatos().subscribe(estudios=>{
+      this.estudios = estudios})
   }
 
-  // getAllItem(item : Items){
-  //   this.datosPortfolio.getAllItem(item).subscribe(item=>{
-  //     console.log(item);
-  //   }
-  //   )
-  // }
-
-  addItem(item : Items) {
-    this.datosPortfolio.addItem(item).subscribe(res=>{
-      this.ngOnInit();
-    }, Error =>{
-      alert(Error);
-    }
-      )
+  toggleShowEdit(estudio:Estudio):void{
+    estudio.editar = !estudio.editar;
   }
+
+  editarEstudio(estudio:Estudio):void{
+    this.toggleShowEdit(estudio);
+    this.myService.editarEstudio(estudio).subscribe((estudio)=>(
+      this.estudio = estudio));
+
+      
+  }
+
+  borrarEstudio(estudio:Estudio){
+    this.myService.borrarEstudio(estudio).subscribe(()=> 
+      this.estudios = this.estudios.filter ((e:any) => e.id !== estudio.id));
+  }
+
+  cancelarEdicion(estudio:Estudio):void{
+    this.toggleShowEdit(estudio);
+    // SEGUIR PENSANDO
+
+    
+  }
+
+
+ 
+
 }
+
+
+
+
+
+
