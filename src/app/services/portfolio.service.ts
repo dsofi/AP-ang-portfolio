@@ -1,53 +1,48 @@
 import { Injectable } from '@angular/core';
-import { HttpClient, HttpHeaders } from '@angular/common/http'
-import { Observable, Subject } from 'rxjs';
+import { HttpClient, HttpHeaders } from '@angular/common/http';
+import { BehaviorSubject, Observable, Subject } from 'rxjs';
 import { Estudio } from '../components/common/int-Estudio';
 
 const httpOptions = {
   headers: new HttpHeaders({
-    'Content-Type': 'application/json'
-  })
-}
+    'Content-Type': 'application/json',
+  }),
+};
 
 @Injectable({
-  providedIn: 'root'
-  
+  providedIn: 'root',
 })
 export class PortfolioService {
-  private apiUrl = 'http://localhost:5000/estudios';
-  private refreshSubject = new Subject<void>();
+  private datosApiUrl = 'http://localhost:5000/datos-persona';
+  private estudiosApiUrl = 'http://localhost:5000/estudios';
 
-  public get needToRefresh(){
-    return this.refreshSubject.asObservable();
-  }
-  
-  public handleRefreshClick() {
-    this.refreshSubject.next();
+  constructor(private http: HttpClient) {}
+
+  getDatosPerona():Observable<any>{
+    return this.http.get<any>(this.datosApiUrl);
   }
 
-
-  constructor(private http:HttpClient) { }
-
- 
-
-  obtenerDatos():Observable<Estudio[]>{
-    return this.http.get<Estudio[]>(this.apiUrl);
+  obtenerDatos(): Observable<Estudio[]> {
+    return this.http.get<Estudio[]>(this.estudiosApiUrl);
   }
 
-  borrarEstudio(estudio:Estudio):Observable<Estudio>{
-    const url = `${this.apiUrl}/${estudio.id}`
+  agregarEstudio(estudio: Estudio) {
+    return this.http.post<Estudio>(this.estudiosApiUrl, estudio, httpOptions);
+  }
+
+  borrarEstudio(estudio: Estudio): Observable<Estudio> {
+    const url = `${this.estudiosApiUrl}/${estudio.id}`;
     return this.http.delete<Estudio>(url);
   }
 
-
-  editarEstudio(estudio:Estudio):Observable<Estudio>{
-    const url = `${this.apiUrl}/${estudio.id}`
-    return this.http.put<Estudio>(url, estudio, httpOptions)
+  editarEstudio(estudio: Estudio): Observable<Estudio> {
+    const url = `${this.estudiosApiUrl}/${estudio.id}`;
+    return this.http.put<Estudio>(url, estudio, httpOptions);
   }
-
-  agregarEstudio(estudio:Estudio){
-    return this.http.post<Estudio>(this.apiUrl, estudio, httpOptions)
-  }
+  
 }
 
-
+export class DataSharingService {
+  public pruebaDeEdicion: BehaviorSubject<boolean> =
+    new BehaviorSubject<boolean>(false);
+}

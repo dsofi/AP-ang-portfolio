@@ -19,6 +19,7 @@ import { faCheck as fasCheck } from '@fortawesome/free-solid-svg-icons';
 import { faCircleXmark as farCircleXmark } from '@fortawesome/free-regular-svg-icons';
 import { FormsModule } from '@angular/forms';
 import { AutosizeModule } from 'ngx-autosize';
+import { DataSharingService } from './services/portfolio.service';
 
 @NgModule({
   declarations: [
@@ -36,8 +37,9 @@ import { AutosizeModule } from 'ngx-autosize';
     FormsModule,
     AutosizeModule
   ],
-  providers: [],
+  providers: [DataSharingService],
   bootstrap: [AppComponent]
+
 })
 
 

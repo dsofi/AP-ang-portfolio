@@ -7,16 +7,18 @@ import { PortfolioService } from 'src/app/services/portfolio.service';
   styleUrls: ['./cover.component.css']
 })
 export class CoverComponent implements OnInit {
-  miPortfolio:any;
+  datosPersona:any;
 
   constructor(
     private datosPortfolio:PortfolioService
   ) { }
 
   ngOnInit(): void {
-    this.datosPortfolio.obtenerDatos().subscribe(data =>{
-      this.miPortfolio=data;
+    this.datosPortfolio.getDatosPerona().subscribe(datos =>{
+      this.datosPersona=datos;
     });
   }
+
+  
 
 }
