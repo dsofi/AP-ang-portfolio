@@ -18,6 +18,7 @@ import { faCheck as fasCheck } from '@fortawesome/free-solid-svg-icons';
 
 import { faCircleXmark as farCircleXmark } from '@fortawesome/free-regular-svg-icons';
 import { FormsModule } from '@angular/forms';
+import { AutosizeModule } from 'ngx-autosize';
 
 @NgModule({
   declarations: [
@@ -32,7 +33,8 @@ import { FormsModule } from '@angular/forms';
     BrowserModule,
     HttpClientModule,
     FontAwesomeModule,
-    FormsModule
+    FormsModule,
+    AutosizeModule
   ],
   providers: [],
   bootstrap: [AppComponent]

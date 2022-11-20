@@ -4,5 +4,87 @@ input{
 }
 
 .editable{
-    background-color: gray;
+    background-color: rgb(20, 20, 20);
+    
 }
+
+.editable>.botones{
+    margin: 10px;
+    border-top: 1px solid rgb(60, 60, 60);
+    padding-top: 10px;
+}
+
+
+.add{
+    line-height: 24px;
+}
+
+.subtitulo{
+    display: flex;
+    justify-content: space-between;
+    padding: 5px 10px;
+}
+
+.form-add{
+    display: block;
+    
+
+}
+
+button{
+    all: unset;
+}
+
+.form-add>form{
+    margin-top: 10px;
+}
+
+
+
+  form.editable{
+    padding: 5px 10px;
+    margin-bottom: 10px;
+  }
+
+  h6{
+    font-weight: lighter;
+    color: var(--second-color);
+    margin-top: 15px;
+  }
+  
+  
+  p{
+    font-size: 12px;
+  }
+  
+  .icono{
+    width: 100px;
+    font-size: 12px;
+    cursor: pointer;
+  }
+  
+  .main-color:hover{
+    color: var(--main-color);
+  }
+  .second-color:hover{
+    color: var(--second-color);
+  }
+  
+  
+  
+  
+  .edit, .cruz-del, .add{
+    text-align: right;
+    float: right;
+  }
+  
+  
+  
+  .botones{
+    display: flex;
+    justify-content: space-around;
+  }
+  
+  .save{
+    text-align: center;
+  }

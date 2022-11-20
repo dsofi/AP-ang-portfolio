@@ -1,13 +1,13 @@
 {
   "estudios": [
     {
-      "nombre": "Estudiante de Arquitectura (FAUD)",
-      "tiempo": "mar 2015 - actualidad",
-      "descripcion": "Facultad de Arquitectura Urbanismo y Diseño (UNC) - En curso",
-      "nota1": "Promedio actual con aplazos: 8.92",
-      "nota2": "Promedio actual sin aplazos: 9.11",
+      "nombre": "Argentina Programa",
+      "tiempo": "mar 2022 - actualidad",
+      "descripcion": "Módulo 1 #SeProgramar - Aprobado",
+      "nota1": "Módulo 2 #YoProgramo - En curso",
+      "nota2": "",
       "editar": false,
-      "id": 1
+      "id": 2
     },
     {
       "nombre": "Argentina Programa",
@@ -44,6 +44,32 @@
       "nota2": "",
       "editar": false,
       "id": 5
+    },
+    {
+      "nombre": "Algún estudio",
+      "tiempo": "dic 2030 - mar 2050",
+      "descripcion": "Alguna descripcion....",
+      "nota1": "Nota opcional",
+      "nota2": "",
+      "id": 9
+    },
+    {
+      "nombre": "Un estudio realizado 242141414 111111111",
+      "tiempo": "jun 2030 - ago 2050",
+      "descripcion": "Alguna descripción que encaje más o menos bien, estaría bueno que sea lala",
+      "nota1": "Nota opcional",
+      "nota2": "",
+      "id": 11,
+      "editar": false
+    },
+    {
+      "nombre": "skflaskfjsaalskfñasfdddddd asfasfas sfasfasfa",
+      "tiempo": "asdkasjfk",
+      "descripcion": "aklsjfkasf lñaskfñlaskf  11111111111",
+      "nota1": "kljslkfjasf lasñkfñlaskf",
+      "nota2": "",
+      "id": 12,
+      "editar": false
     }
   ],
   "experiencia": [
