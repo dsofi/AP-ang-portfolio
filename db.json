@@ -2,12 +2,16 @@
   "datos-persona": [
     {
       "id": 1,
-      "nombre": "Sofi"
+      "nombre": "Sofi",
+      "titulo": "estoy practicando para ser Desarrolladora FullStack Jr.",
+      "sobreMi": "Lorem, ipsum dolor sit amet consectetur adipisicing elit. Ab perspiciatis ex vitae minima esse ullam odit nulla quaerat placeat illo natus quis officia facere maiores hic cum, consequuntur atque modi! Sed nihil atque aliquam ex corporis repellendus incidunt reiciendis, quibusdam quas, saepe alias voluptas voluptates delectus asperiores ullam harum impedit eum suscipit!",
+      "urlImage": "assets/gatito.jpg"
     },
     {
       "id": 2,
       "nombre": "Juan"
     }
+
   ],
   "estudios": [
     {

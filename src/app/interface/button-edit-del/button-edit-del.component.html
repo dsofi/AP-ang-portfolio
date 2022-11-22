@@ -1,0 +1,6 @@
+ <!-- BOTON EDITAR / ELIMINAR -->
+    <app-edit-button></app-edit-button>
+  <p *ngIf="editable && conDelete" class="icono second-color cruz-del" (click)="borrar()">
+    Eliminar
+    <fa-icon [icon]="['fas', 'times']"></fa-icon>
+  </p>

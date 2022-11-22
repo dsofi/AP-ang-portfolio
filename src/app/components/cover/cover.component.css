@@ -1,4 +1,8 @@
 
+*{
+    font-family: monospace;
+}
+
 .container{
     position: relative;
 }
@@ -7,13 +11,7 @@ img{
     width: 100%;
 }
 
-
-
-h1, span{
-    font-family: monospace;
-}
-
-h1{
+h1, h2{
     font-weight: 100;
     position: absolute;
     top: 15%;
@@ -26,6 +24,11 @@ h1{
 h1 span{
     color: var(--main-color);
     letter-spacing: .25rem;
+}
+
+h2{
+    top: 20%;
+    
 }
 
 

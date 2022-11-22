@@ -21,6 +21,8 @@ import { FormsModule } from '@angular/forms';
 import { AutosizeModule } from 'ngx-autosize';
 import { DataSharingService } from './services/portfolio.service';
 import { NavbarComponent } from './components/navbar/navbar.component';
+import { ButtonEditDelComponent } from './interface/button-edit-del/button-edit-del.component';
+import { EditButtonComponent } from './interface/edit-button/edit-button.component';
 
 @NgModule({
   declarations: [
@@ -30,7 +32,9 @@ import { NavbarComponent } from './components/navbar/navbar.component';
     ExperienceComponent,
     CoverComponent,
     StudiesComponent,
-    NavbarComponent
+    NavbarComponent,
+    ButtonEditDelComponent,
+    EditButtonComponent
   ],
   imports: [
     BrowserModule,
