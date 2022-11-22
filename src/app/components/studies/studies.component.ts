@@ -69,8 +69,8 @@ export class StudiesComponent implements OnInit {
   }
 
   cancelarEdicion(estudio: Estudio): void {
-    this.toggleShowEdit(estudio);
     this.ngOnInit();
+    this.toggleShowEdit(estudio);
     // 1. buscar segun id en el arreglo
     // 2. reemplazar en variables
     // CONSULTAR SI ES POSIBLE CON EL OnInit

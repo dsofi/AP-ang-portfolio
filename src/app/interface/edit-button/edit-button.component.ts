@@ -1,4 +1,8 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, EventEmitter, OnInit, Output } from '@angular/core';
+import { Subscription } from 'rxjs';
+import { subscriptionLogsToBeFn } from 'rxjs/internal/testing/TestScheduler';
+import { InterfaceService } from 'src/app/services/interface.service';
+import { PortfolioService } from 'src/app/services/portfolio.service';
 
 @Component({
   selector: 'app-edit-button',
@@ -7,16 +11,26 @@ import { Component, OnInit } from '@angular/core';
 })
 export class EditButtonComponent implements OnInit {
 
-  editable:boolean=false;
-  userLogueado:boolean=true;
+  @Output() logueo:EventEmitter<boolean> = new EventEmitter();
 
-  constructor() { }
+
+  editable:boolean=false;
+  userLogueado:boolean=false;
+
+  subscription?: Subscription;
+
+  constructor(private servInterface:InterfaceService, private servPortfolio:PortfolioService) { 
+    this.subscription = this.servInterface.onMostrarModoEdicion().subscribe((value) => 
+      this.editable = value);
+      this.subscription = this.servPortfolio.onLogueo().subscribe((value) => 
+      this.userLogueado = value)
+  }
 
   ngOnInit(): void {
   }
 
-  toggleShowEdit(){
-    this.editable = !this.editable;
+  mostrarEdicion(){
+    this.servInterface.mostrarModoEdicion();
   }
 
 }

@@ -43,7 +43,7 @@
   
       <!------------ DATOS PORTFOLIO ------------>
       
-      <h6><input type="text" value="{{ estudio.tiempo }}" [readonly]="!estudio.editar"/></h6>
+      <h6><input type="text" [(ngModel)]="estudio.tiempo" [readonly]="!estudio.editar"/></h6>
       <h4><input type="text" [(ngModel)]="estudio.nombre" [readonly]="!estudio.editar"/></h4>
       <p><input type="text" [(ngModel)]="estudio.descripcion" [readonly]="!estudio.editar"/></p>
       <p><input *ngIf="estudio.nota1 != ''"

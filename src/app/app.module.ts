@@ -23,6 +23,7 @@ import { DataSharingService } from './services/portfolio.service';
 import { NavbarComponent } from './components/navbar/navbar.component';
 import { ButtonEditDelComponent } from './interface/button-edit-del/button-edit-del.component';
 import { EditButtonComponent } from './interface/edit-button/edit-button.component';
+import { ButtonCancelarGuardarComponent } from './interface/button-cancelar-guardar/button-cancelar-guardar.component';
 
 @NgModule({
   declarations: [
@@ -34,7 +35,8 @@ import { EditButtonComponent } from './interface/edit-button/edit-button.compone
     StudiesComponent,
     NavbarComponent,
     ButtonEditDelComponent,
-    EditButtonComponent
+    EditButtonComponent,
+    ButtonCancelarGuardarComponent
   ],
   imports: [
     BrowserModule,
