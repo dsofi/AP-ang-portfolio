@@ -18,7 +18,7 @@ export class StudiesComponent implements OnInit {
   estudio: any = '';
 
   puedeEditar: boolean = false;
-  userLogueado: boolean = true;
+  userLogueado: boolean = false;
 
   nombre: string = '';
   tiempo: string = '';
@@ -26,7 +26,12 @@ export class StudiesComponent implements OnInit {
   nota1: string = '';
   nota2: string = '';
 
-  constructor(private myService: PortfolioService) {}
+  subscription?: Subscription;
+
+  constructor(private myService: PortfolioService) {
+    this.subscription = this.myService.onLogueo().subscribe((value) => 
+      this.userLogueado = value)
+  }
 
   ngOnInit(): void {
     this.myService.obtenerDatos().subscribe((estudios) => {
@@ -35,7 +40,7 @@ export class StudiesComponent implements OnInit {
   }
 
   loguearse(){
-    this.myService.loguearse();
+    // this.myService.loguearse();
     console.log("estudios:" + this.userLogueado);
   }
 
@@ -65,12 +70,10 @@ export class StudiesComponent implements OnInit {
 
   cancelarEdicion(estudio: Estudio): void {
     this.toggleShowEdit(estudio);
-    this.myService.cancelarEstudio(estudio).subscribe((estudio) => 
-      (this.estudio = estudio));
-    
-    //1. buscar segun id en el arreglo
-    //2. reemplazar en variables
-    // SEGUIR PENSANDO
+    this.ngOnInit();
+    // 1. buscar segun id en el arreglo
+    // 2. reemplazar en variables
+    // CONSULTAR SI ES POSIBLE CON EL OnInit
   }
 
   ngOnChange(changes: any) {

@@ -56,22 +56,12 @@
       "id": 5
     },
     {
-      "nombre": "Algún estudio",
-      "tiempo": "dic 2030 - mar 2050",
-      "descripcion": "Alguna descripcion....",
-      "nota1": "Nota opcional",
+      "nombre": "El nombre de la Institución",
+      "tiempo": "mar 2050 - jul 2080",
+      "descripcion": "Describir lo que estudie, completarlo, esto solo es una prueba",
+      "nota1": "Acá puede ir una nota opcional, algo que se desee agregar",
       "nota2": "",
-      "id": 9,
-      "editar": false
-    },
-    {
-      "nombre": "Un estudio realizado 11111",
-      "tiempo": "jun 2030 - ago 2050",
-      "descripcion": "Alguna descripción que encaje más o menos bien, estaría bueno que sea lala",
-      "nota1": "Nota opcional",
-      "nota2": "",
-      "id": 11,
-      "editar": false
+      "id": 6
     }
   ],
   "experiencia": [

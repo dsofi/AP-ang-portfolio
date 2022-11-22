@@ -15,7 +15,7 @@ const httpOptions = {
 })
 export class PortfolioService {
 
-
+  private experienciaApiUrl = 'http://localhost:5000/experiencia';
   private datosApiUrl = 'http://localhost:5000/datos-persona';
   private estudiosApiUrl = 'http://localhost:5000/estudios';
 
@@ -25,7 +25,10 @@ export class PortfolioService {
 
   constructor(private http: HttpClient) {}
 
- 
+  getExperiencia():Observable<any>{
+    return this.http.get<[]>(this.experienciaApiUrl);
+  }
+
 
   getDatosPersona():Observable<any>{
     return this.http.get<[]>(this.datosApiUrl);
@@ -49,11 +52,6 @@ export class PortfolioService {
     return this.http.put<Estudio>(url, estudio, httpOptions);
   }
 
-  cancelarEstudio(estudio: Estudio) {
-    const url = `${this.estudiosApiUrl}/${estudio.id}`;
-    return this.http.get<Estudio>(this.estudiosApiUrl);
-  }
-  
   loguearse():void{
     this.userLogueado = !this.userLogueado;
     this.subject.next(this.userLogueado);

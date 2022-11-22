@@ -18,7 +18,8 @@ export class NavbarComponent implements OnInit {
   userLogueado:boolean=false;
 
   constructor(private myService: PortfolioService) { 
-    this.subscription = this.myService.onLogueo().subscribe((value) => this.userLogueado = value)
+    this.subscription = this.myService.onLogueo().subscribe((value) => 
+      this.userLogueado = value)
   }
 
   ngOnInit(): void {
