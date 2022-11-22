@@ -3,6 +3,10 @@
     {
       "id": 1,
       "nombre": "Sofi"
+    },
+    {
+      "id": 2,
+      "nombre": "Juan"
     }
   ],
   "estudios": [
@@ -61,7 +65,7 @@
       "editar": false
     },
     {
-      "nombre": "Un estudio realizado",
+      "nombre": "Un estudio realizado 11111",
       "tiempo": "jun 2030 - ago 2050",
       "descripcion": "Alguna descripción que encaje más o menos bien, estaría bueno que sea lala",
       "nota1": "Nota opcional",

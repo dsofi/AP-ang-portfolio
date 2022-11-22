@@ -1,7 +1,8 @@
-import { Injectable } from '@angular/core';
+import { EventEmitter, Injectable, Output } from '@angular/core';
 import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { BehaviorSubject, Observable, Subject } from 'rxjs';
 import { Estudio } from '../components/common/int-Estudio';
+import { OutletContext } from '@angular/router';
 
 const httpOptions = {
   headers: new HttpHeaders({
@@ -13,13 +14,21 @@ const httpOptions = {
   providedIn: 'root',
 })
 export class PortfolioService {
+
+
   private datosApiUrl = 'http://localhost:5000/datos-persona';
   private estudiosApiUrl = 'http://localhost:5000/estudios';
 
+  private userLogueado:boolean = false;
+  private subject = new Subject<any>();
+
+
   constructor(private http: HttpClient) {}
 
-  getDatosPerona():Observable<any>{
-    return this.http.get<any>(this.datosApiUrl);
+ 
+
+  getDatosPersona():Observable<any>{
+    return this.http.get<[]>(this.datosApiUrl);
   }
 
   obtenerDatos(): Observable<Estudio[]> {
@@ -39,7 +48,25 @@ export class PortfolioService {
     const url = `${this.estudiosApiUrl}/${estudio.id}`;
     return this.http.put<Estudio>(url, estudio, httpOptions);
   }
+
+  cancelarEstudio(estudio: Estudio) {
+    const url = `${this.estudiosApiUrl}/${estudio.id}`;
+    return this.http.get<Estudio>(this.estudiosApiUrl);
+  }
   
+  loguearse():void{
+    this.userLogueado = !this.userLogueado;
+    this.subject.next(this.userLogueado);
+    console.log("servicio:" + this.userLogueado)
+
+  }
+
+  onLogueo():Observable<any>{
+    return this.subject.asObservable();
+  }
+
+
+
 }
 
 export class DataSharingService {

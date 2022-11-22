@@ -1,5 +1,5 @@
 import { outputAst, ResourceLoader } from '@angular/compiler';
-import { Component, EventEmitter, OnInit, Output } from '@angular/core';
+import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
 import { Subscription } from 'rxjs';
 import { PortfolioService} from 'src/app/services/portfolio.service';
 import { Estudio } from '../common/int-Estudio';
@@ -11,10 +11,14 @@ import { Estudio } from '../common/int-Estudio';
 })
 export class StudiesComponent implements OnInit {
   @Output() toggleShowEditEstudio: EventEmitter<any> = new EventEmitter();
+  
+
 
   estudios: Estudio[] = [];
   estudio: any = '';
+
   puedeEditar: boolean = false;
+  userLogueado: boolean = true;
 
   nombre: string = '';
   tiempo: string = '';
@@ -28,6 +32,11 @@ export class StudiesComponent implements OnInit {
     this.myService.obtenerDatos().subscribe((estudios) => {
       this.estudios = estudios;
     });
+  }
+
+  loguearse(){
+    this.myService.loguearse();
+    console.log("estudios:" + this.userLogueado);
   }
 
   habilitaEdicion(): void {
@@ -56,6 +65,11 @@ export class StudiesComponent implements OnInit {
 
   cancelarEdicion(estudio: Estudio): void {
     this.toggleShowEdit(estudio);
+    this.myService.cancelarEstudio(estudio).subscribe((estudio) => 
+      (this.estudio = estudio));
+    
+    //1. buscar segun id en el arreglo
+    //2. reemplazar en variables
     // SEGUIR PENSANDO
   }
 

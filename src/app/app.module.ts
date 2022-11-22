@@ -20,6 +20,7 @@ import { faCircleXmark as farCircleXmark } from '@fortawesome/free-regular-svg-i
 import { FormsModule } from '@angular/forms';
 import { AutosizeModule } from 'ngx-autosize';
 import { DataSharingService } from './services/portfolio.service';
+import { NavbarComponent } from './components/navbar/navbar.component';
 
 @NgModule({
   declarations: [
@@ -28,7 +29,8 @@ import { DataSharingService } from './services/portfolio.service';
     ProjectComponent,
     ExperienceComponent,
     CoverComponent,
-    StudiesComponent
+    StudiesComponent,
+    NavbarComponent
   ],
   imports: [
     BrowserModule,
