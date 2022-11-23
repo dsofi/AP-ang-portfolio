@@ -53,6 +53,16 @@ export class StudiesComponent implements OnInit {
       this.estudios.push(estudio));
   }
 
+  noAgregar(){
+    this.habilitaEdicion();
+    this.nombre = '';
+      this.tiempo = '';
+      this.descripcion = '';
+      this.nota1 = '';
+      this.nota2 = '';
+
+  }
+
   toggleShowEdit(estudio: Estudio): void {
     estudio.editar = !estudio.editar;
   }

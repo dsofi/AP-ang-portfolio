@@ -7,9 +7,13 @@ input, button {
   background-color: rgb(20, 20, 20);
 }
 
+input:-internal-autofill-selected{
+  background-color: rgb(20, 20, 20) !important;
+}
+
 .editable > .botones {
   margin: 10px;
-  border-top: 1px solid rgb(60, 60, 60);
+  /* border-top: 1px solid rgb(60, 60, 60); */
   padding-top: 10px;
   display: flex;
   justify-content: space-around;

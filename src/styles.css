@@ -1,4 +1,15 @@
-/* You can add global styles to this file, and also import other style files */
+input:-webkit-autofill,
+input:-webkit-autofill:hover, 
+input:-webkit-autofill:focus, 
+input:-webkit-autofill:active  {
+    -webkit-box-shadow: 0 0 0 30px rgba(20,20,20,1) inset !important;
+}
+
+input:-webkit-autofill {
+  -webkit-text-fill-color: white !important;
+}
+
+
 @font-face {
   font-family: Mulish;
   src: url(assets/mulish-font.ttf);
@@ -8,31 +19,32 @@
   src: url(assets/poppins.ttf);
 }
 
-
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
   text-decoration: none;
-  font-family: Mulish, sans-serif;  
+  font-family: Mulish, sans-serif;
   list-style: none;
 }
 
+/* QUE NO HAGA SCROLL CON MODAL ABIERTO */
+/* body {margin: 0; height: 100%; overflow: hidden} */
 
 :root {
   --main-color: #fcff4b;
   --second-color: #f97068;
   --gray-color: #606060;
+  --light-gray: #cccccc;
+  --dark-red: #aa0000;
 }
 
-body{
+body {
   color: white;
   background-color: #000;
 }
 
-
-
-li{
+li {
   padding: 5px 10px;
   margin-bottom: 10px;
 }
@@ -45,11 +57,6 @@ li{
   background-color: var(--main-color);
   transform: translate(-25px) rotate(-30deg);
 } */
-
-
-
-
-
 
 .flex-container {
   display: flex;

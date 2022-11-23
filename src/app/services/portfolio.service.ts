@@ -20,7 +20,9 @@ export class PortfolioService {
   private estudiosApiUrl = 'http://localhost:5000/estudios';
 
   private userLogueado:boolean = false;
-  private subject = new Subject<any>();
+  private modalVisible:boolean = false;
+  private subjectUser = new Subject<any>();
+  private subjectModal = new Subject<any>();
 
 
   constructor(private http: HttpClient) {}
@@ -54,13 +56,20 @@ export class PortfolioService {
 
   loguearse():void{
     this.userLogueado = !this.userLogueado;
-    this.subject.next(this.userLogueado);
-    console.log("servicio:" + this.userLogueado)
+    this.subjectUser.next(this.userLogueado);
+    this.modalVisible = !this.modalVisible;
+    this.subjectModal.next(this.modalVisible);
+    console.log("modal desde servicio:" + this.modalVisible);
+    
+
 
   }
 
   onLogueo():Observable<any>{
-    return this.subject.asObservable();
+    return this.subjectUser.asObservable();
+  }
+  onModal():Observable<any>{
+    return this.subjectModal.asObservable();
   }
 
 

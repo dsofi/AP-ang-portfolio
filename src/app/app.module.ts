@@ -17,13 +17,16 @@ import { faEdit as farEdit } from '@fortawesome/free-regular-svg-icons';
 import { faCheck as fasCheck } from '@fortawesome/free-solid-svg-icons';
 
 import { faCircleXmark as farCircleXmark } from '@fortawesome/free-regular-svg-icons';
-import { FormsModule } from '@angular/forms';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { AutosizeModule } from 'ngx-autosize';
 import { DataSharingService } from './services/portfolio.service';
 import { NavbarComponent } from './components/navbar/navbar.component';
 import { ButtonEditDelComponent } from './interface/button-edit-del/button-edit-del.component';
 import { EditButtonComponent } from './interface/edit-button/edit-button.component';
 import { ButtonCancelarGuardarComponent } from './interface/button-cancelar-guardar/button-cancelar-guardar.component';
+import { AppRoutingModule } from './app-routing.module';
+import { HomeComponent } from './sections/home/home.component';
+import { LoginComponent } from './modales/login/login.component';
 
 @NgModule({
   declarations: [
@@ -36,14 +39,18 @@ import { ButtonCancelarGuardarComponent } from './interface/button-cancelar-guar
     NavbarComponent,
     ButtonEditDelComponent,
     EditButtonComponent,
-    ButtonCancelarGuardarComponent
+    ButtonCancelarGuardarComponent,
+    HomeComponent,
+    LoginComponent
   ],
   imports: [
     BrowserModule,
     HttpClientModule,
     FontAwesomeModule,
     FormsModule,
-    AutosizeModule
+    ReactiveFormsModule,
+    AutosizeModule,
+    AppRoutingModule
   ],
   providers: [DataSharingService],
   bootstrap: [AppComponent]

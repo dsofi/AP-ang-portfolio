@@ -1,0 +1,95 @@
+button,input{
+    all: unset;
+}
+.pantalla{
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: rgba(0, 0, 0, 0.8);
+    z-index: 9000;
+    color: #000;
+
+
+}
+.login{
+    width: 280px;
+    height: 450px;
+    background-color: white;
+    z-index: 9000;
+}
+
+.header{
+    font-size: 24px;
+    display: flex;
+    justify-content: space-between;
+    padding: 5px 10px;
+
+}
+
+.close{
+    flex-direction: row;
+    align-self: flex-start;
+    cursor: pointer;
+}
+
+.close:hover{
+    color: var(--dark-red);
+}
+
+h4{
+    margin: 60px 0 60px 10px;
+}
+
+label{
+    margin-left: 20px;
+    font-size: 14px;
+}
+
+button[type="submit"]{
+    display: block;
+    margin: auto;
+    background-color: black;
+    color: white;
+    padding: 10px 30px;
+    margin-top: 140px;
+    cursor: pointer;
+}
+
+button:hover{
+    transform: scale(1.1);
+    transition: 0.5s;
+}
+
+input{
+    display: block;
+    margin: 0 auto;
+    width: 220px;
+    font-size: 15px;
+    padding: 10px 10px 0 ;
+    border-bottom: 1px solid var(--light-gray);
+}
+
+
+.error{
+    color: var(--dark-red);
+    margin-left: 25px;
+    font-size: 12px;
+}
+
+.form-inicio{
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    height: 100%;
+}
+.vacios{
+    height: 15px;
+}
+.form-inicio:last-child{
+    justify-self: flex-end;
+}

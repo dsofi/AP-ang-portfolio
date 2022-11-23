@@ -11,15 +11,21 @@ import { PortfolioService} from 'src/app/services/portfolio.service';
 export class NavbarComponent implements OnInit {
 
   @Output() logueo:EventEmitter<boolean> = new EventEmitter();
+  @Output() modal:EventEmitter<boolean> = new EventEmitter();
 
-  subscription?: Subscription;
+  subscriptionUser?: Subscription;
+  subscriptionModal?: Subscription;
 
 
   userLogueado:boolean=false;
+  modalVisible=true;
+
 
   constructor(private myService: PortfolioService) { 
-    this.subscription = this.myService.onLogueo().subscribe((value) => 
-      this.userLogueado = value)
+    this.subscriptionUser = this.myService.onLogueo().subscribe((value) => 
+      this.userLogueado = value);
+    this.subscriptionModal = this.myService.onModal().subscribe((value) => 
+      this.modalVisible = value);
   }
 
   ngOnInit(): void {
@@ -27,7 +33,7 @@ export class NavbarComponent implements OnInit {
 
   logueoUser(){
     this.myService.loguearse();
-    console.log("component:" + this.userLogueado)
+    console.log("modal desde el component:" + this.modalVisible)
     //pasar datos usuario, contraseña , o un objeto, para verificar que exista
   }
 

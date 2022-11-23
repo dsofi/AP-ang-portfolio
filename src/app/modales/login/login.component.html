@@ -1,0 +1,31 @@
+<ng-container *ngIf="modalVisible">
+  <div class="pantalla">
+    <div class="login">
+      <div class="header">
+        <h4>Iniciar sesión</h4>
+        <button (click)="ocultarModal()" class="close">
+          <fa-icon [icon]="['fas', 'times']"></fa-icon>
+        </button>
+      </div>
+      <div class="contenedor">
+        <form [formGroup]="form" (ngSubmit)="onEnviar($event)" class="form-inicio">
+          <input type="text" formControlName="usuario" placeholder="Usuario"/>
+          <div class="vacios">
+              <div *ngIf="usuario?.errors  && usuario?.touched" >
+                  <p *ngIf="usuario?.hasError('required')" class="error">El usuario es requerido.</p>
+                  <p *ngIf="usuario?.hasError('minlength')" class="error">Debe tener al menos 5 caracteres.</p>
+              </div>
+          </div>
+          <input type="password" formControlName="password" placeholder="Contraseña"/>
+          <div class="vacios">
+              <div *ngIf="password?.errors  && password?.touched" >
+                <p *ngIf="password?.hasError('required')" class="error">La contraseña es requerida.</p>
+                <p *ngIf="password?.hasError('minlength')" class="error">Debe tener al menos 8 caracteres.</p>
+              </div>
+          </div>
+          <button type="submit">Iniciar Sesión</button>
+        </form>
+      </div>
+    </div>
+  </div>
+</ng-container>

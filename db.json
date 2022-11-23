@@ -4,7 +4,7 @@
       "id": 1,
       "nombre": "Sofi",
       "titulo": "estoy practicando para ser Desarrolladora FullStack Jr.",
-      "sobreMi": "Lorem, ipsum dolor sit amet consectetur adipisicing elit. Ab perspiciatis ex vitae minima esse ullam odit nulla quaerat placeat illo natus quis officia facere maiores hic cum, consequuntur atque modi! Sed nihil atque aliquam ex corporis repellendus incidunt reiciendis, quibusdam quas, saepe alias voluptas voluptates delectus asperiores ullam harum impedit eum suscipit! Lorem 123 probando cambios",
+      "sobreMi": "Lorem, ipsum dolor sit amet consectetur adipisicing elit. Ab perspiciatis ex vitae minima esse ullam odit nulla quaerat placeat illo natus quis officia facere maiores hic cum, consequuntur atque modi! Sed nihil atque aliquam ex corporis repellendus incidunt reiciendis, quibusdam quas, saepe alias voluptas voluptates delectus asperiores ullam harum impedit eum suscipit! Lorem 123 probando cambios ",
       "urlImage": "assets/gatito.jpg"
     },
     {
@@ -65,6 +65,15 @@
       "nota1": "Acá puede ir una nota opcional, algo que se desee agregar",
       "nota2": "",
       "id": 6,
+      "editar": false
+    },
+    {
+      "nombre": "Algun nombre de algun estudio",
+      "tiempo": "jun 2030 - ago 2050",
+      "descripcion": "Describir lo que estudie, completarlo, esto solo es una prueba",
+      "nota1": "Acá puede ir una nota opcio",
+      "nota2": "",
+      "id": 7,
       "editar": false
     }
   ],
