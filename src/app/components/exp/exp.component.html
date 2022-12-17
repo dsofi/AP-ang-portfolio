@@ -1,1 +1,21 @@
-<p>exp works!</p>
+<div>
+    <h6>
+      <input type="text" [(ngModel)]="objeto.tiempo" [readonly]="!objeto.editar" name="tiempo"/>
+    </h6>
+    <h4>
+      <input type="text" [(ngModel)]="objeto.nombre" [readonly]="!objeto.editar" name="nombre"/>
+    </h4>
+    <p>
+      <input type="text" [(ngModel)]="objeto.descripcion" [readonly]="!objeto.editar" name="descripcion"/>
+    </p>
+    <p>
+      <input *ngIf="objeto.nota1 != ''" type="text" [(ngModel)]="objeto.nota1"
+        [readonly]="!objeto.editar" name="nota1"/>
+    </p>
+    <p>
+      <input *ngIf="objeto.nota2 != ''" type="text" [(ngModel)]="objeto.nota2"
+        [readonly]="!objeto.editar" name="nota2"/>
+    </p>
+</div>
+
+<button (click)="chusmear()">estado user</button>

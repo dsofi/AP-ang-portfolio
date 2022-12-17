@@ -28,8 +28,8 @@ export class ButtonCancelarGuardarComponent implements OnInit {
   }
   
   cancelar(objeto:any, tipo:string){
-    this.reset.emit();
-    console.log("BOTON QUE EMITE " + this.userLogueado)
+    console.log("BOTON QUE EMITE " + this.userLogueado);
+    this.reset.emit(objeto);
 
   }
 

@@ -17,6 +17,9 @@ export class ExperienceComponent implements OnInit {
 
   editable:boolean=false;
   miExperiencia:any[]=[];
+  misEstudios:any[]=[];
+
+  update = false;
   
   // userLogueado: boolean = false;
   // userId:any=0;
@@ -40,6 +43,8 @@ export class ExperienceComponent implements OnInit {
   ngOnInit(): void {
     this.servPortfolio.getGeneral("experiencia").subscribe(data=>{
       this.miExperiencia=data;});
+    this.servPortfolio.getGeneral("estudios").subscribe(data=>{
+      this.misEstudios=data;});
     
   }
 
@@ -54,12 +59,16 @@ export class ExperienceComponent implements OnInit {
   //   console.log("experiencia del ts " + exp.id);
   // }
 
-  reset(objeto:any):void{
-    this.servInterface.toggleShowEdit(objeto);    
-    console.log("actualizando: " + this.userLogueado);
-    this.cdr.detectChanges();
-    //FALTA REFRESCAR
-  }
+  // reset(objeto:any):void{
+  //   this.servInterface.toggleShowEdit(objeto);    
+  //   console.log("actualizando: " + this.userLogueado);
+  //   this.cdr.detectChanges();
+  //   //FALTA REFRESCAR
+  // }
+
+  // reset(objeto:any):void{
+  //   this.actualizar.emit(objeto);
+  // }
 
 
   chusmear(){

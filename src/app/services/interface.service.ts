@@ -28,14 +28,6 @@ export class InterfaceService {
     objeto.editar = !objeto.editar;
     this.subject.next(objeto.editable);
   }
-
-  // mostrarModoEdicion(objeto:any): void {
-  //   objeto.editable = !objeto.editable;
-  //   // this.subject.next(objeto.editable);
-  //   // this.objeto = objeto;
-  //   console.log("cambia true o false objeto desde serv interface: " + this.subject)
-  // }
-
  
   onMostrarModoEdicion(): Observable<any> {
     return this.subject.asObservable();
@@ -49,9 +41,10 @@ export class InterfaceService {
 
   cancelar(objeto:any, tipo:string){
     this.toggleShowEdit(objeto);
-    return this.http.get(`${this.url}/${tipo}/${objeto.id}`);
-    
+    return this.http.get(`${this.url}/${tipo}/${objeto.id}`);    
   }
+
+ 
   
 }
 
