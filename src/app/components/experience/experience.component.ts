@@ -1,4 +1,8 @@
-import { Component, OnInit } from '@angular/core';
+
+import { ChangeDetectorRef, Component, EventEmitter, OnInit, Output } from '@angular/core';
+import { FormBuilder } from '@angular/forms';
+import { Subscription } from 'rxjs';
+import { InterfaceService } from 'src/app/services/interface.service';
 import { PortfolioService } from 'src/app/services/portfolio.service';
 
 @Component({
@@ -7,16 +11,65 @@ import { PortfolioService } from 'src/app/services/portfolio.service';
   styleUrls: ['./experience.component.css']
 })
 export class ExperienceComponent implements OnInit {
-  experienciasList:any;
-  prueba:[]=[];
 
-  constructor(private datosPortfolio:PortfolioService) { }
 
-  ngOnInit(): void {
-    this.datosPortfolio.getExperiencia().subscribe(data=>{
-      this.experienciasList=data;
-      console.log(this.experienciasList[1])
-    })
+  @Output() actualizar = new EventEmitter();
+
+  editable:boolean=false;
+  miExperiencia:any[]=[];
+  // userLogueado: boolean = false;
+  // userId:any=0;
+  // experiencia:any='';
+  subscription?:Subscription; 
+  modoEdicion:boolean=false;
+  valorAnterior: string="";
+
+
+  userLogueado: boolean = false;
+
+  constructor(private servPortfolio: PortfolioService, private servInterface: InterfaceService, private cdr: ChangeDetectorRef, private formBuilder:FormBuilder) {
+    this.subscription = this.servPortfolio.onLogueo().subscribe((value) => 
+      this.userLogueado = value);
+      this.subscription = this.servInterface.onMostrarModoEdicion().subscribe((value) => 
+    this.modoEdicion = value);
+      
   }
 
+
+  ngOnInit(): void {
+    this.servPortfolio.getGeneral("experiencia").subscribe(data=>{
+      this.miExperiencia=data;
+      
+    });
+    
+  }
+
+  // toggleShowEdit(experiencia: any): void {
+  //   experiencia.editar = !experiencia.editar;
+  // }
+
+  // FUNCIONABA
+  // guardarEdicion(exp:any){
+  //   this.servInterface.guardarGeneral(exp, "experiencia").subscribe((exp)=>
+  //   this.experiencia = exp);
+  //   console.log("experiencia del ts " + exp.id);
+  // }
+
+  reset(objeto:any):void{
+    this.servInterface.toggleShowEdit(objeto);    
+    console.log("actualizando: " + this.userLogueado);
+  }
+
+
+  chusmear(){
+    console.log("ESTADO DEL USER : " + this.userLogueado)
+  }
+ 
+
 }
+
+
+
+
+
+

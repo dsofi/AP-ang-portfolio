@@ -1,4 +1,4 @@
-import { Component, EventEmitter, OnInit, Output } from '@angular/core';
+import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
 import { Subscription } from 'rxjs';
 import { subscriptionLogsToBeFn } from 'rxjs/internal/testing/TestScheduler';
 import { InterfaceService } from 'src/app/services/interface.service';
@@ -11,17 +11,19 @@ import { PortfolioService } from 'src/app/services/portfolio.service';
 })
 export class EditButtonComponent implements OnInit {
 
+  @Input() objeto:String="";
+
   @Output() logueo:EventEmitter<boolean> = new EventEmitter();
 
 
-  editable:boolean=false;
+  modoEdicion:boolean=false;
   userLogueado:boolean=false;
-
+  editable:boolean=false;
   subscription?: Subscription;
 
   constructor(private servInterface:InterfaceService, private servPortfolio:PortfolioService) { 
     this.subscription = this.servInterface.onMostrarModoEdicion().subscribe((value) => 
-      this.editable = value);
+      this.modoEdicion = value);
       this.subscription = this.servPortfolio.onLogueo().subscribe((value) => 
       this.userLogueado = value)
   }
@@ -29,8 +31,9 @@ export class EditButtonComponent implements OnInit {
   ngOnInit(): void {
   }
 
-  mostrarEdicion(){
-    this.servInterface.mostrarModoEdicion();
-  }
+  // mostrarModoEdicion(){
+  //   this.servInterface.mostrarModoEdicion(this.objeto);
+  //   console.log("del boton: " + this.objeto)
+  // }
 
 }

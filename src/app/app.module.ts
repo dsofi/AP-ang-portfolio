@@ -27,6 +27,7 @@ import { ButtonCancelarGuardarComponent } from './interface/button-cancelar-guar
 import { AppRoutingModule } from './app-routing.module';
 import { HomeComponent } from './sections/home/home.component';
 import { LoginComponent } from './modales/login/login.component';
+import { ExpComponent } from './components/exp/exp.component';
 
 @NgModule({
   declarations: [
@@ -41,7 +42,8 @@ import { LoginComponent } from './modales/login/login.component';
     EditButtonComponent,
     ButtonCancelarGuardarComponent,
     HomeComponent,
-    LoginComponent
+    LoginComponent,
+    ExpComponent
   ],
   imports: [
     BrowserModule,

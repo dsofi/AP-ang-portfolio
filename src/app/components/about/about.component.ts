@@ -36,17 +36,19 @@ export class AboutComponent implements OnInit {
   }
   
 
-  guardarEdicion(user:any){
-    this.servInterface.guardarCambios(user).subscribe((user) => 
-      (this.user = user));
-      console.log("desde el componente : " + this.user.sobreMi)
-  }
 
-  cancelarEdicion():void{
-    this.ngOnInit();
-    this.servInterface.mostrarModoEdicion();
+  // FUNCIONABA
+  // guardarEdicion(user:any){
+  //   this.servInterface.guardarCambios(user).subscribe((user) => 
+  //     (this.user = user));
+  //     console.log("desde el componente : " + this.user.sobreMi)
+  // }
+
+  // cancelarEdicion():void{
+  //   this.ngOnInit();
+  //   // this.servInterface.mostrarModoEdicion();
     
-  }
+  // }
 
 
 

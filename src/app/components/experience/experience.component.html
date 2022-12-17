@@ -1,21 +1,34 @@
 <h3>Experiencia</h3>
-<ul>
-  <li *ngFor="let experiencia of experienciasList">
-    <p class="icono edit">Editar
-      <fa-icon [icon]="['far', 'edit']"> </fa-icon>
-    </p>
-    <!-- <p class="icono cruz-del">
-      Eliminar
-      <fa-icon [icon]="['fas', 'times']"> </fa-icon>
-    </p> -->
-    <h4>{{ experiencia.nombre }}</h4>
-    <h6>{{ experiencia.tiempo }}</h6>
-    <p>{{ experiencia.descripcion }}</p>
-    <p>{{ experiencia.nota1 }}</p>
-    <p>{{ experiencia.nota2 }}</p>
 
-    <!-- <p class="icono save">Guardar
-      <fa-icon [icon]="['fas', 'check']"></fa-icon>
-    </p> -->
+<ul>
+  <li *ngFor="let experiencia of miExperiencia" [ngClass]="{ 'editable': experiencia.editar }" value={{experiencia.id}}>
+    
+    <!-- BOTON EDITAR / ELIMINAR -->
+    <!-- <app-edit-button (click)="toggleShowEdit(experiencia)"></app-edit-button> -->
+    <app-button-edit-del [objeto]="experiencia"></app-button-edit-del>
+
+
+
+       
+    <h6><input type="text" [(ngModel)]="experiencia.tiempo" [readonly]="!experiencia.editar" name="tiempo" /></h6>
+    <h4><input type="text" [(ngModel)]="experiencia.nombre" [readonly]="!experiencia.editar" name="nombre"/></h4>
+    <p><input type="text" [(ngModel)]="experiencia.descripcion" [readonly]="!experiencia.editar" name="descripcion"/></p>
+    <p><input *ngIf="experiencia.nota1 != ''"
+      type="text" [(ngModel)]="experiencia.nota1" [readonly]="!experiencia.editar" name="nota1"/>
+    </p>
+    <p><input *ngIf="experiencia.nota2 != ''"
+        type="text" [(ngModel)]="experiencia.nota2" [readonly]="!experiencia.editar" name="nota2"/>
+    </p>
+      
+
+
+    <app-button-cancelar-guardar [objeto]="experiencia" [tipo]="'experiencia'" (reset)="reset(experiencia)"></app-button-cancelar-guardar>
+
+            <!-- (btnGuardar)="guardarEdicion(experiencia)"
+    (btnCancelar)="cancelarEdicion()" -->
+
+    <button (click)="chusmear()">chusmear</button>
+
+    
   </li>
 </ul>

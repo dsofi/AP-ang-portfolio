@@ -15,9 +15,13 @@ const httpOptions = {
 })
 export class PortfolioService {
 
+  variable:string = "";
+
   private experienciaApiUrl = 'http://localhost:5000/experiencia';
   private datosApiUrl = 'http://localhost:5000/datos-persona';
   private estudiosApiUrl = 'http://localhost:5000/estudios';
+  // private url = `http://localhost:5000/${this.variable}`;
+  private url = `http://localhost:5000`;
 
   private userLogueado:boolean = false;
   private modalVisible:boolean = false;
@@ -36,9 +40,17 @@ export class PortfolioService {
     return this.http.get<[]>(this.datosApiUrl);
   }
 
+  getGeneral(busq:string):Observable<any>{
+    return this.http.get<[]>(`${this.url}/${busq}`);
+  }
+
+  
+
   obtenerDatos(): Observable<Estudio[]> {
     return this.http.get<Estudio[]>(this.estudiosApiUrl);
   }
+
+
 
   agregarEstudio(estudio: Estudio) {
     return this.http.post<Estudio>(this.estudiosApiUrl, estudio, httpOptions);
@@ -57,17 +69,15 @@ export class PortfolioService {
   loguearse():void{
     this.userLogueado = !this.userLogueado;
     this.subjectUser.next(this.userLogueado);
-    this.modalVisible = !this.modalVisible;
-    this.subjectModal.next(this.modalVisible);
-    console.log("modal desde servicio:" + this.modalVisible);
-    
-
-
+    // this.modalVisible = !this.modalVisible;
+    // this.subjectModal.next(this.modalVisible);
+    // console.log("modal desde servicio:" + this.modalVisible);
   }
 
   onLogueo():Observable<any>{
     return this.subjectUser.asObservable();
   }
+  
   onModal():Observable<any>{
     return this.subjectModal.asObservable();
   }

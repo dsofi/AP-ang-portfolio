@@ -1,6 +1,8 @@
-import { Component, EventEmitter, OnInit, Output } from '@angular/core';
+import { Component, EventEmitter, Input, OnInit, Output, ViewChild } from '@angular/core';
 import { Subscription } from 'rxjs';
+import { ExperienceComponent } from 'src/app/components/experience/experience.component';
 import { InterfaceService } from 'src/app/services/interface.service';
+import { PortfolioService } from 'src/app/services/portfolio.service';
 
 @Component({
   selector: 'app-button-cancelar-guardar',
@@ -9,35 +11,31 @@ import { InterfaceService } from 'src/app/services/interface.service';
 })
 export class ButtonCancelarGuardarComponent implements OnInit {
 
-  
-  @Output() btnGuardar = new EventEmitter()
-  @Output() btnCancelar = new EventEmitter()
+  @Input() objeto:any;
+  @Input() tipo:string="";
+  @Output() reset = new EventEmitter();
 
-  editable:boolean=false;
-  tipoObjeto:string="datos-persona";
-  objeto:string="dato"
-  texto:string="hola"
-
-  
   subscription?:Subscription;
+  userLogueado:boolean=false;
 
-  constructor(private servInterface:InterfaceService) { 
-    this.subscription = this.servInterface.onMostrarModoEdicion().subscribe((value) => 
-      this.editable = value)}
+  constructor(private servInterface:InterfaceService, private servPortfolio:PortfolioService) { 
+    
+    this.subscription = this.servPortfolio.onLogueo().subscribe((value) => 
+    this.userLogueado = value);
+    }
 
   ngOnInit(): void {
   }
-
-  // cancelarEdicion(){
-  //   this.servInterface.cancelarEdicion();
-  // }
-
-  onGuardar(){
-     this.btnGuardar.emit();
-  }
-  onCancelar(){
-     this.btnCancelar.emit();
+  
+  cancelar(){
+    this.reset.emit();
   }
 
+  guardar(objeto:any, tipo:string){
+    this.servInterface.guardarGeneral(objeto, tipo).subscribe((cambios) => 
+    (objeto = cambios));
+  }
 
 }
+
+

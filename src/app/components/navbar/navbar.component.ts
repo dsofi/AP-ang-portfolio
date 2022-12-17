@@ -33,7 +33,6 @@ export class NavbarComponent implements OnInit {
 
   logueoUser(){
     this.myService.loguearse();
-    console.log("modal desde el component:" + this.modalVisible)
     //pasar datos usuario, contraseña , o un objeto, para verificar que exista
   }
 

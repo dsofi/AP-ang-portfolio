@@ -4,7 +4,7 @@
       "id": 1,
       "nombre": "Sofi",
       "titulo": "estoy practicando para ser Desarrolladora FullStack Jr.",
-      "sobreMi": "Lorem, ipsum dolor sit amet consectetur adipisicing elit. Ab perspiciatis ex vitae minima esse ullam odit nulla quaerat placeat illo natus quis officia facere maiores hic cum, consequuntur atque modi! Sed nihil atque aliquam ex corporis repellendus incidunt reiciendis, quibusdam quas, saepe alias voluptas voluptates delectus asperiores ullam harum impedit eum suscipit! Lorem 123 probando cambios ",
+      "sobreMi": "Lorem, ipsum dolor sit amet consectetur adipisicing elit. Ab perspiciatis ex vitae minima esse ullam odit nulla quaerat placeat illo natus quis officia facere maiores hic cum, consequuntur atque modi! Sed nihil atque aliquam ex corporis repellendus incidunt reiciendis, quibusdam quas, saepe alias voluptas voluptates delectus asperiores ullam harum impedit eum suscipit! Lorem 123 probando cambios dsfdsggsdfsdf ",
       "urlImage": "assets/gatito.jpg"
     },
     {
@@ -75,6 +75,15 @@
       "nota2": "",
       "id": 7,
       "editar": false
+    },
+    {
+      "nombre": "wetwetwet 11111 2222",
+      "tiempo": "dsgsdtwetwet",
+      "descripcion": "wetwetwet sfdsgdsg 88888888",
+      "nota1": "",
+      "nota2": "",
+      "id": 8,
+      "editar": false
     }
   ],
   "experiencia": [
@@ -82,25 +91,28 @@
       "nombre": "Independiente",
       "tiempo": "ene 2019 - actualidad",
       "descripcion": "Elaboración de planos de relevamiento, municpales, legajos técnicos.",
-      "nota1": "Servicios de diseño gráfico, diagramaciones, logotipos.",
+      "nota1": "Servicios de diseño gráfico, diagramaciones, logotipos.8888888",
       "nota2": "",
-      "id": 1
+      "id": 1,
+      "editar": false
     },
     {
-      "nombre": "Everdeck",
+      "nombre": "Everdeck ",
       "tiempo": "oct 2018 - ene 2021",
-      "descripcion": "Diseños de modulación, cómputos y presupuestos.",
+      "descripcion": "Diseños de modulación, cómputos y presupuestos. JJJJJJJJJJJJJJJJ 777777",
       "nota1": "",
       "nota2": "",
-      "id": 2
+      "id": 2,
+      "editar": false
     },
     {
       "nombre": "",
       "tiempo": "ene 2021 - jun 2022",
-      "descripcion": "Administración, Logística, Ventas y Diseño.",
+      "descripcion": "Administración, Logística, Ventas y Diseño. ",
       "nota1": "",
       "nota2": "",
-      "id": 3
+      "id": 3,
+      "editar": false
     }
   ]
 }

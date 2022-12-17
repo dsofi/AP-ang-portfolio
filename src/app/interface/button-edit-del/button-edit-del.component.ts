@@ -1,4 +1,8 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
+import { OutletContext } from '@angular/router';
+import { Subscription } from 'rxjs';
+import { InterfaceService } from 'src/app/services/interface.service';
+import { PortfolioService } from 'src/app/services/portfolio.service';
 
 @Component({
   selector: 'app-button-edit-del',
@@ -7,21 +11,34 @@ import { Component, OnInit } from '@angular/core';
 })
 export class ButtonEditDelComponent implements OnInit {
 
-  editable:boolean=false;
-  conDelete:boolean=true;
-
-  constructor() { }
-
-  ngOnInit(): void {
-  }
+  @Input() objeto:any;
 
   
-  toggleShowEdit(){
-    this.editable = !this.editable;
+  userLogueado:boolean=false;
+  subscription?: Subscription;
+
+
+  constructor(private servInterface:InterfaceService, private servPortfolio:PortfolioService) { 
+   
+      this.subscription = this.servPortfolio.onLogueo().subscribe((value) => 
+      this.userLogueado = value)
   }
 
-  borrar(){
-    console.log("borrando")
+  ngOnInit(): void { 
+   }
+
+  
+  toggleShowEdit(objeto:any){
+    this.servInterface.toggleShowEdit(objeto);
+  }
+
+  borrar(objeto:any){
+    this.servInterface.toggleShowEdit(objeto);
+    console.log("borrando" + objeto.nombre);
+  }
+
+  verEstado(){
+    console.log("ESTADO DESDE EL OTRO BOTON : " + this.userLogueado)
   }
 
 }

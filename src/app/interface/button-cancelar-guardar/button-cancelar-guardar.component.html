@@ -1,9 +1,9 @@
-<div *ngIf="editable" class="botones">
-    <p (click)="onCancelar()" class="icono second-color center">
+<div *ngIf="objeto.editar" class="botones">
+    <p (click)="cancelar()" class="icono second-color center">
       Cancelar
       <fa-icon [icon]="['fas', 'times']"></fa-icon>
     </p>
-    <p (click)="onGuardar()" class="icono main-color center">
+    <p (click)="guardar(objeto, tipo)" class="icono main-color center">
       Guardar <fa-icon [icon]="['fas', 'check']"></fa-icon>
     </p>
   </div>

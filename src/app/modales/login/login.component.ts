@@ -6,6 +6,8 @@ import { Validators } from '@angular/forms';
 
 
 import { FormBuilder, FormControl, FormGroup } from '@angular/forms';
+import { AutenticacionService } from 'src/app/services/autenticacion.service';
+import { Route, Router } from '@angular/router';
 
 @Component({
   selector: 'app-login',
@@ -21,13 +23,14 @@ export class LoginComponent implements OnInit {
   modalVisible=true;
 
 
-  constructor(private myService: PortfolioService, private formBuilder:FormBuilder) {
+  constructor(private myService: PortfolioService, private formBuilder:FormBuilder, private autenticacionServ:AutenticacionService, private ruta:Router) {
     this.subscriptionModal = this.myService.onModal().subscribe((value) => 
     this.modalVisible = value);
 
     this.form=this.formBuilder.group({
       password:["",[Validators.required, Validators.minLength(8)]],
-      usuario:["",[Validators.required, Validators.minLength(5)]]
+      usuario:["",[Validators.required, Validators.minLength(5)]] 
+      //AGREGAR LOS OTROS DATOS
     })
 
     
@@ -50,6 +53,12 @@ export class LoginComponent implements OnInit {
     return this.password?.touched && !this.password?.valid;
   }
 
+
+
+
+
+
+
   
   ocultarModal(){
     this.myService.loguearse();
@@ -58,6 +67,10 @@ export class LoginComponent implements OnInit {
 
     onEnviar(event:Event){
       event.preventDefault;
+      this.autenticacionServ.iniciarSesion(this.form.value).subscribe(data=>{
+        console.log("DATA: " + JSON.stringify(data));
+        this.ruta.navigate(['/home']);
+      })
       if(this.form.valid){
         //llamar al servicio para enviar los datos al servidor
         //tambien podemos ejecutar alguna logica extra
