@@ -1,5 +1,5 @@
 <div *ngIf="objeto.editar" class="botones">
-    <p (click)="cancelar()" class="icono second-color center">
+    <p (click)="cancelar(objeto, tipo)" class="icono second-color center">
       Cancelar
       <fa-icon [icon]="['fas', 'times']"></fa-icon>
     </p>

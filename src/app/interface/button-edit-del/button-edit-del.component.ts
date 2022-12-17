@@ -41,4 +41,5 @@ export class ButtonEditDelComponent implements OnInit {
     console.log("ESTADO DESDE EL OTRO BOTON : " + this.userLogueado)
   }
 
+
 }

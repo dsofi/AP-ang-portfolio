@@ -41,34 +41,16 @@ export class InterfaceService {
     return this.subject.asObservable();
   }
 
-  
-//  ESTE NO FUNCIONABA
-  // guardarCambios(tipoObjeto:string, objeto:string): Observable<any> {
-  //   this.mostrarModoEdicion();
-  //   const url = `${this.url}/${objeto}.id`;
-  //   return this.http.put<any>(url, objeto, httpOptions);
-  // }
-
-  // ESTE FUNCIONABA
-  // guardarCambios(user:any): Observable<any> {
-  //   this.mostrarModoEdicion(this.objeto);
-  //   const url = "http://localhost:5000/datos-persona/1";
-  //   console.log("cambios guardados del servicio" + user);
-  //   return this.http.put<any>(url, user, httpOptions);
-  // }
-
-// ESTE FUNCIONABA
-  // guardarGeneral(objeto:any, tipo:any):Observable<any>{
-  //   this.mostrarModoEdicion(this.objeto);
-  //   const url = `http://localhost:5000/${tipo}/${objeto.id}`;
-  //   console.log ("id desde servicio" + objeto.id);
-  //   return this.http.put<any>(url, objeto, httpOptions);
-  // }
-
   guardarGeneral(objeto:any, tipo:string):Observable<any>{
     this.toggleShowEdit(objeto);
     const url = `${this.url}/${tipo}/${objeto.id}`;
     return this.http.put<any>(url, objeto, httpOptions);
+  }
+
+  cancelar(objeto:any, tipo:string){
+    this.toggleShowEdit(objeto);
+    return this.http.get(`${this.url}/${tipo}/${objeto.id}`);
+    
   }
   
 }

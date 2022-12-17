@@ -1,7 +1,7 @@
 
 import { ChangeDetectorRef, Component, EventEmitter, OnInit, Output } from '@angular/core';
 import { FormBuilder } from '@angular/forms';
-import { Subscription } from 'rxjs';
+import { Observable, Subscription } from 'rxjs';
 import { InterfaceService } from 'src/app/services/interface.service';
 import { PortfolioService } from 'src/app/services/portfolio.service';
 
@@ -17,6 +17,7 @@ export class ExperienceComponent implements OnInit {
 
   editable:boolean=false;
   miExperiencia:any[]=[];
+  
   // userLogueado: boolean = false;
   // userId:any=0;
   // experiencia:any='';
@@ -38,9 +39,7 @@ export class ExperienceComponent implements OnInit {
 
   ngOnInit(): void {
     this.servPortfolio.getGeneral("experiencia").subscribe(data=>{
-      this.miExperiencia=data;
-      
-    });
+      this.miExperiencia=data;});
     
   }
 
@@ -58,6 +57,8 @@ export class ExperienceComponent implements OnInit {
   reset(objeto:any):void{
     this.servInterface.toggleShowEdit(objeto);    
     console.log("actualizando: " + this.userLogueado);
+    this.cdr.detectChanges();
+    //FALTA REFRESCAR
   }
 
 
