@@ -28,6 +28,10 @@ import { AppRoutingModule } from './app-routing.module';
 import { HomeComponent } from './sections/home/home.component';
 import { LoginComponent } from './modales/login/login.component';
 import { ExpComponent } from './components/exp/exp.component';
+import { SkillsComponent } from './components/skills/skills.component';
+import { FormAgregarComponent } from './interface/form-agregar/form-agregar.component';
+import { ButtonAgregarComponent } from './interface/button-agregar/button-agregar.component';
+import { SubtituloComponent } from './components/subtitulo/subtitulo.component';
 
 @NgModule({
   declarations: [
@@ -43,7 +47,11 @@ import { ExpComponent } from './components/exp/exp.component';
     ButtonCancelarGuardarComponent,
     HomeComponent,
     LoginComponent,
-    ExpComponent
+    ExpComponent,
+    SkillsComponent,
+    FormAgregarComponent,
+    ButtonAgregarComponent,
+    SubtituloComponent
   ],
   imports: [
     BrowserModule,

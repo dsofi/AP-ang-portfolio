@@ -22,6 +22,7 @@ export class PortfolioService {
   private estudiosApiUrl = 'http://localhost:5000/estudios';
   // private url = `http://localhost:5000/${this.variable}`;
   private url = `http://localhost:5000`;
+  private urlNuevaBD = `http://localhost:8080`;
 
   private userLogueado:boolean = false;
   private modalVisible:boolean = false;
@@ -41,9 +42,12 @@ export class PortfolioService {
   }
 
   getGeneral(busq:string):Observable<any>{
-    return this.http.get<[]>(`${this.url}/${busq}`);
+    return this.http.get<[]>(`${this.urlNuevaBD}/${busq}`);
   }
-
+  
+  getNuevo(busq:string):Observable<any>{
+    return this.http.get<[]>(`${this.urlNuevaBD}/${busq}`);
+  }
   
 
   obtenerDatos(): Observable<Estudio[]> {

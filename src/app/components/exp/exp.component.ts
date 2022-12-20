@@ -28,22 +28,23 @@ export class ExpComponent implements OnInit {
       this.userLogueado = value);
   }
 
-
- 
-
   ngOnInit(): void {
-    this.servPortfolio.getGeneral("experiencia").subscribe(data=>{
+    this.servPortfolio.getGeneral("experiencias").subscribe(data=>{
       this.miExperiencia=data});
       // this.router.routeReuseStrategy.shouldReuseRoute = () => false;
 
   }
 
-
-
-  reset(event: any): void {
-    this.servInterface.toggleShowEdit(event);
-    
+  reset(){
+    // this.ngOnInit();
+    // this.router.navigate([this.router.url]);
+    console.log("resetttttt")
   }
+
+  // reset(event: any): void {
+  //   this.servInterface.toggleShowEdit(event);
+    
+  // }
 
   // reset(event: any): void {
   //   this.router.navigate([this.router.url]).then(() => {
@@ -53,12 +54,11 @@ export class ExpComponent implements OnInit {
   //   });
   // }
   
- 
-
-
   chusmear(){
     console.log("ESTADO DEL USER en exp : " + this.userLogueado)
   }
+
+
 
 
 }

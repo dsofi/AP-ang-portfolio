@@ -70,20 +70,28 @@
     {
       "nombre": "Algun nombre de algun estudio",
       "tiempo": "jun 2030 - ago 2050",
-      "descripcion": "Describir lo que estudie, completarlo, esto solo es una prueba dsddddddddd",
-      "nota1": "Acá puede ir una nota opcio",
+      "descripcion": "Describir lo que estudie, completarlo, esto solo es una prueba ",
+      "nota1": "Acá puede ir una nota opcional",
       "nota2": "",
       "id": 7,
       "editar": false
     },
     {
-      "nombre": "wetwetwet 11111 2222",
-      "tiempo": "dsgsdtwetwet",
-      "descripcion": "wetwetwet sfdsgdsg 88888888",
-      "nota1": "",
+      "nombre": "Nombre de ejemplo",
+      "tiempo": "mar 3000 - dic 3200",
+      "descripcion": "Descripcion de ejemplo",
+      "nota1": "Notas opcionales, como ejemplo 33333333333",
       "nota2": "",
       "id": 8,
       "editar": false
+    },
+    {
+      "nombre": "aaaaaaaaaaaaaaaaaaaaaa",
+      "tiempo": "aaaaaaaaaaaaa",
+      "descripcion": "aaaaaaaaaaaaaaaaaaaaaaaaaaa",
+      "nota1": "",
+      "nota2": "",
+      "id": 9
     }
   ],
   "experiencia": [
@@ -108,7 +116,7 @@
     {
       "nombre": "",
       "tiempo": "ene 2021 - jun 2022",
-      "descripcion": "Administración, Logística, Ventas y Diseño. ",
+      "descripcion": "Administración, Logística, Ventas y Diseño.  7777",
       "nota1": "",
       "nota2": "",
       "id": 3,

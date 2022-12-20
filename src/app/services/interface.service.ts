@@ -1,5 +1,5 @@
 import { Injectable } from '@angular/core';
-import { Observable, Subject } from 'rxjs';
+import { BehaviorSubject, Observable, Subject } from 'rxjs';
 import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { animate } from '@angular/animations';
 
@@ -21,6 +21,11 @@ export class InterfaceService {
   tipoObjeto:string="datos-persona";
 
   private url = `http://localhost:5000`;
+  private urlNueva = `http://localhost:8080`;
+
+  private stateSubject: BehaviorSubject<boolean> = new BehaviorSubject(false);
+  stateCanAdd$: Observable<boolean> = this.stateSubject.asObservable();
+  stateCanAdd: boolean = false;
 
   constructor(private http: HttpClient) {}
 
@@ -35,13 +40,24 @@ export class InterfaceService {
 
   guardarGeneral(objeto:any, tipo:string):Observable<any>{
     this.toggleShowEdit(objeto);
-    const url = `${this.url}/${tipo}/${objeto.id}`;
+    const url = `${this.urlNueva}/${tipo}/${objeto.id}`;
     return this.http.put<any>(url, objeto, httpOptions);
   }
 
   cancelar(objeto:any, tipo:string){
     this.toggleShowEdit(objeto);
-    return this.http.get(`${this.url}/${tipo}/${objeto.id}`);    
+    // return this.http.get(`${this.url}/${tipo}/${objeto.id}`);    
+    return this.http.get(`${this.url}/${tipo}`);    
+  }
+
+  agregarGeneral(objeto:any, tipo:string){
+    const url = `${this.urlNueva}/${tipo}`;
+    return this.http.post<any>(url, objeto, httpOptions);
+  }
+
+  updateStateAdd() {
+    this.stateCanAdd = !this.stateCanAdd;
+    this.stateSubject.next(this.stateCanAdd);
   }
 
  

@@ -1,0 +1,5 @@
+<section class="subtitulo" [ngClass]="{ 'form-add': puedeAgregar }">
+    <h3>{{subtitulo}}</h3>
+    <p *ngIf="userLogueado && !puedeAgregar" class="icono main-color add" 
+      (click)="changeStateAdd()"> + Agregar</p>
+  </section>

@@ -3,13 +3,13 @@
       <input type="text" [(ngModel)]="objeto.tiempo" [readonly]="!objeto.editar" name="tiempo"/>
     </h6>
     <h4>
-      <input type="text" [(ngModel)]="objeto.nombre" [readonly]="!objeto.editar" name="nombre"/>
+      <input type="text" [(ngModel)]="objeto.titulo" [readonly]="!objeto.editar" name="titulo"/>
     </h4>
     <p>
       <input type="text" [(ngModel)]="objeto.descripcion" [readonly]="!objeto.editar" name="descripcion"/>
     </p>
     <p>
-      <input *ngIf="objeto.nota1 != ''" type="text" [(ngModel)]="objeto.nota1"
+      <input *ngIf="objeto.otrasNotas != ''" type="text" [(ngModel)]="objeto.otrasNotas"
         [readonly]="!objeto.editar" name="nota1"/>
     </p>
     <p>

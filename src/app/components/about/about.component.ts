@@ -17,7 +17,7 @@ export class AboutComponent implements OnInit {
   editable:boolean=false;
   user:any="kkkk";
   // userLogueado:boolean=false;
-  subscription?:Subscription; 
+  subscription?:Subscription;
 
   constructor(
     private servPortfolio:PortfolioService, private servInterface:InterfaceService
@@ -31,8 +31,6 @@ export class AboutComponent implements OnInit {
   ngOnInit(): void {
     this.servPortfolio.getDatosPersona().subscribe(data =>{
       this.miPortfolio=data;});
-      
-
   }
   
 

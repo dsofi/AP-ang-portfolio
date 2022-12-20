@@ -1,4 +1,6 @@
-<h3>Experiencia</h3>
+<app-subtitulo #subtitulo [subtitulo]="'Experiencia'"></app-subtitulo>
+<app-form-agregar #formAgregar [tipo]="'experiencias'" (onAgregar)="subtitulo.changeStateAdd();"></app-form-agregar>
+
 
 <ul>
   <li *ngFor="let experiencia of miExperiencia" 
@@ -6,11 +8,12 @@
     value="{{ experiencia.id }}"
   >
     <app-button-edit-del [objeto]="experiencia"></app-button-edit-del>
-    <app-exp #compExp [objeto]="experiencia" ></app-exp>
+    <app-exp #compExp [objeto]="experiencia"></app-exp>
     <app-button-cancelar-guardar
       [objeto]="experiencia"
-      [tipo]="'experiencia'"
-      (reset)="compExp.reset($event)"
+      [tipo]="'experiencias'"
+      (reset)="reset()"
+      
     ></app-button-cancelar-guardar>
 
   </li>
@@ -19,7 +22,8 @@
 
 <button (click)="chusmear()">chusmear</button>
 
-<!-- <h3>EstudiosSSS</h3>
+
+<!-- <h3>Estudios</h3>
 
 <ul>
   <li
@@ -32,7 +36,7 @@
     <app-button-cancelar-guardar
       [objeto]="estudio"
       [tipo]="'estudios'"
-      (reset)="compExp.reset($event)"
+      (reset)="compExp.reset()"
     ></app-button-cancelar-guardar>
 
   </li>

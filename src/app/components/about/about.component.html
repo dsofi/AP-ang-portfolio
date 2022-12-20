@@ -1,18 +1,16 @@
-<section  class="about">
-    <img class="gatito" [src]="miPortfolio[userId].urlImage" alt="">
-    <article class="sobre-mi">
-        <div class="rotulo">
-            <h3>Sobre mí</h3>
-            <app-edit-button></app-edit-button>
-        </div>
-        <div [ngClass]="{ 'editable': editable }">
-            <textarea autosize name="" id=""[readonly]="!editable" [(ngModel)]="miPortfolio[userId].sobreMi"></textarea>
-            <!-- <app-button-cancelar-guardar
-            
-            ></app-button-cancelar-guardar> -->
-
-            <!-- (btnGuardar)="guardarEdicion(miPortfolio[userId])"
-            (btnCancelar)="cancelarEdicion()" -->
-        </div>
-    </article>
+<section class="about">
+  <img class="gatito" [src]="miPortfolio[userId].urlImage" alt="" />
+  <article class="sobre-mi">
+    <div class="rotulo">
+      <h3>Sobre mí</h3>
+      <app-edit-button></app-edit-button>
+    </div>
+    <div [ngClass]="{ editable: editable }">
+      <textarea autosize name="" id="" [readonly]="!editable" [(ngModel)]="miPortfolio[userId].sobreMi"></textarea>
+      <!-- <app-button-cancelar-guardar (btnGuardar)="guardarEdicion(miPortfolio[userId])"
+            (btnCancelar)="cancelarEdicion()" ></app-button-cancelar-guardar> -->
+    </div>
+  </article>
 </section>
+
+
