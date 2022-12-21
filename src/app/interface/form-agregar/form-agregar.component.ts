@@ -14,6 +14,7 @@ export class FormAgregarComponent implements OnInit {
   objeto: any = "";
   @Input() tipo:string='';
   @Output() agregando:any = new EventEmitter();
+  @Output() cambiandoEstado:any = new EventEmitter();
 
   puedeAgregar: boolean = false;
   userLogueado: boolean = false;
@@ -37,6 +38,15 @@ export class FormAgregarComponent implements OnInit {
       this.objetos=data;});
   }
 
+  noAgregar(){
+    this.cambiarEstadoYEmitir();
+    this.titulo = '';
+    this.tiempo = '';
+    this.descripcion = '';
+    this.otrasNotas = '';
+    this.nota2 = '';
+  }
+
   onSubmit() {
     if (this.titulo.length === 0) {
       alert('Agrega un titulo');
@@ -45,7 +55,7 @@ export class FormAgregarComponent implements OnInit {
     } else if (this.descripcion.length === 0) {
       alert('Agrega una descripcion');
     } else {
-      this.changeStateAdd();
+      this.cambiarEstadoYEmitir();
       // AGREGAR 
       const { titulo, tiempo, descripcion, otrasNotas, nota2 } = this;
       const objeto:any = { titulo, tiempo, descripcion, otrasNotas, nota2 };
@@ -60,19 +70,17 @@ export class FormAgregarComponent implements OnInit {
       this.objetos.push(objeto));
 
       this.agregando.emit();
-      // console.log("desde FORM: " + objeto);
-      // console.log("desde FORM: " + this.tipo);
-      // console.log("desde FORM: " + this.objetos);
-
-      
-
     }
   }
 
-  
-
-  changeStateAdd() {
-    this.servInterface.updateStateAdd();
+  cambiarEstado(){
+    this.puedeAgregar = !this.puedeAgregar;
   }
+
+  cambiarEstadoYEmitir(){
+    this.puedeAgregar = !this.puedeAgregar;
+    this.cambiandoEstado.emit();
+  }
+
 
 }

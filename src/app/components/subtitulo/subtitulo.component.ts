@@ -11,8 +11,7 @@ import { PortfolioService } from 'src/app/services/portfolio.service';
 export class SubtituloComponent implements OnInit {
   
   @Input() subtitulo:string ='';
-  @Output() agregarForm = new EventEmitter();
-
+  @Output() agregandoDesdeBtnAgregar = new EventEmitter();
 
   puedeAgregar: boolean = false;
   userLogueado: boolean = false;
@@ -22,15 +21,23 @@ export class SubtituloComponent implements OnInit {
    
     this.subscription = this.servPortfolio.onLogueo().subscribe((value) => 
     this.userLogueado = value);
-    this.servInterface.stateCanAdd$.subscribe(state => this.puedeAgregar = state);
+    // this.servInterface.stateCanAdd$.subscribe(state => this.puedeAgregar = state);
 }
 
   ngOnInit(): void {
   }
 
-  changeStateAdd() {
-    this.servInterface.updateStateAdd();
+  cambiarEstadoDesdeBtn() {
+    // this.servInterface.updateStateAdd();
+    this.puedeAgregar = !this.puedeAgregar;
+    this.agregandoDesdeBtnAgregar.emit();
   }
+
+  cambiarDesdeForm(){
+    this.puedeAgregar = !this.puedeAgregar;
+  }
+
+
 
 
 }

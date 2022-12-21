@@ -1,5 +1,4 @@
-import { ChangeDetectorRef, Component, Input, OnInit, SimpleChanges } from '@angular/core';
-import { ActivatedRoute, Router } from '@angular/router';
+import { Component, Input, OnInit } from '@angular/core';
 import { Subscription } from 'rxjs';
 import { InterfaceService } from 'src/app/services/interface.service';
 import { PortfolioService } from 'src/app/services/portfolio.service';
@@ -22,8 +21,7 @@ export class ExpComponent implements OnInit {
 
   userLogueado: boolean = false;
 
-  constructor(private servPortfolio: PortfolioService, private servInterface: InterfaceService, private cdr: ChangeDetectorRef,
-    private router: Router, private activatedRoute: ActivatedRoute) { 
+  constructor(private servPortfolio: PortfolioService, private servInterface: InterfaceService) { 
     this.subscription = this.servPortfolio.onLogueo().subscribe((value) => 
       this.userLogueado = value);
   }
@@ -31,34 +29,10 @@ export class ExpComponent implements OnInit {
   ngOnInit(): void {
     this.servPortfolio.getGeneral("experiencias").subscribe(data=>{
       this.miExperiencia=data});
-      // this.router.routeReuseStrategy.shouldReuseRoute = () => false;
-
   }
 
   reset(){
-    // this.ngOnInit();
-    // this.router.navigate([this.router.url]);
     console.log("resetttttt")
   }
-
-  // reset(event: any): void {
-  //   this.servInterface.toggleShowEdit(event);
-    
-  // }
-
-  // reset(event: any): void {
-  //   this.router.navigate([this.router.url]).then(() => {
-  //     this.servInterface.toggleShowEdit(event);
-  //     this.servPortfolio.loguearse();
-  //     this.servPortfolio.onLogueo();
-  //   });
-  // }
-  
-  chusmear(){
-    console.log("ESTADO DEL USER en exp : " + this.userLogueado)
-  }
-
-
-
 
 }

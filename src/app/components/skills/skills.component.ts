@@ -7,23 +7,12 @@ import { PortfolioService } from 'src/app/services/portfolio.service';
   styleUrls: ['./skills.component.css']
 })
 export class SkillsComponent implements OnInit {
-   
-  pruebaPersonas:any[]=[];
-  pruebaEstudios:any[]=[];
-  pruebaExperiencias:any[]=[];
 
-  constructor(private servPortfolio:PortfolioService) { }
+
+  constructor() { }
 
   ngOnInit(): void {
-    this.servPortfolio.getNuevo("personas").subscribe(data=>{
-      this.pruebaPersonas=data
-    });
-    this.servPortfolio.getNuevo("estudios").subscribe(data=>{
-      this.pruebaEstudios=data
-    });
-    this.servPortfolio.getNuevo("experiencias").subscribe(data=>{
-      this.pruebaExperiencias=data
-    });
+   
   }
 
 }

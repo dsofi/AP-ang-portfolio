@@ -1,6 +1,5 @@
 import { Component, EventEmitter, Input, OnInit, Output, ViewChild } from '@angular/core';
-import { Subscription } from 'rxjs';
-import { ExperienceComponent } from 'src/app/components/experience/experience.component';
+import { ObjectUnsubscribedError, Subscription } from 'rxjs';
 import { InterfaceService } from 'src/app/services/interface.service';
 import { PortfolioService } from 'src/app/services/portfolio.service';
 
@@ -13,6 +12,7 @@ export class ButtonCancelarGuardarComponent implements OnInit {
 
   @Input() objeto:any;
   @Input() tipo:string="";
+  @Input() misObjetos:any[]=[];
   @Output() reset = new EventEmitter();
 
   subscription?:Subscription;
@@ -28,16 +28,24 @@ export class ButtonCancelarGuardarComponent implements OnInit {
   }
   
   cancelar(objeto:any, tipo:string){
-    console.log("BOTON QUE EMITE " + this.userLogueado);
     this.reset.emit(objeto);
     this.servInterface.cancelar(objeto,tipo).subscribe((cambios) => 
     (objeto = cambios));
   }
 
   guardar(objeto:any, tipo:string){
-    this.servInterface.guardarGeneral(objeto, tipo).subscribe((cambios) => 
+    this.servInterface.editarGeneral(objeto,tipo).subscribe((cambios)=>
     (objeto = cambios));
+    objeto.editar = false;
   }
+
+  // guardar(objeto:any, tipo:string, misObjetos:any[]){
+  //   this.servInterface.guardarGeneral(objeto, tipo).subscribe((cambios) => 
+  //   (this.objeto = cambios));
+  //   console.log("desde btn guardar" + misObjetos);
+  //   console.log("desde btn guardar" + objeto);
+  //   console.log("desde btn guardar" + tipo);
+  // }
 
 }
 

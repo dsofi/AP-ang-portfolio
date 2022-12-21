@@ -12,8 +12,9 @@ import { PortfolioService } from 'src/app/services/portfolio.service';
 export class ButtonEditDelComponent implements OnInit {
 
   @Input() objeto:any;
+  @Input() tipo:string='';
 
-  
+  objetos:any[] = [];
   userLogueado:boolean=false;
   subscription?: Subscription;
 
@@ -25,6 +26,8 @@ export class ButtonEditDelComponent implements OnInit {
   }
 
   ngOnInit(): void { 
+    this.servPortfolio.getGeneral(this.tipo).subscribe(data=>{
+      this.objetos=data;});
    }
 
   
@@ -34,12 +37,10 @@ export class ButtonEditDelComponent implements OnInit {
 
   borrar(objeto:any){
     this.servInterface.toggleShowEdit(objeto);
-    console.log("borrando" + objeto.nombre);
+    this.servInterface.borrarGeneral(objeto, this.tipo).subscribe(() =>
+    (this.objetos = this.objetos.filter((e: any) => e.id !== objeto.id)));
   }
 
-  verEstado(){
-    console.log("ESTADO DESDE EL OTRO BOTON : " + this.userLogueado)
-  }
-
+ 
 
 }

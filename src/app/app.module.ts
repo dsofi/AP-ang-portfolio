@@ -30,7 +30,6 @@ import { LoginComponent } from './modales/login/login.component';
 import { ExpComponent } from './components/exp/exp.component';
 import { SkillsComponent } from './components/skills/skills.component';
 import { FormAgregarComponent } from './interface/form-agregar/form-agregar.component';
-import { ButtonAgregarComponent } from './interface/button-agregar/button-agregar.component';
 import { SubtituloComponent } from './components/subtitulo/subtitulo.component';
 
 @NgModule({
@@ -50,7 +49,6 @@ import { SubtituloComponent } from './components/subtitulo/subtitulo.component';
     ExpComponent,
     SkillsComponent,
     FormAgregarComponent,
-    ButtonAgregarComponent,
     SubtituloComponent
   ],
   imports: [
@@ -62,7 +60,7 @@ import { SubtituloComponent } from './components/subtitulo/subtitulo.component';
     AutosizeModule,
     AppRoutingModule
   ],
-  providers: [DataSharingService],
+  providers: [DataSharingService, ButtonCancelarGuardarComponent],
   bootstrap: [AppComponent]
 
 })

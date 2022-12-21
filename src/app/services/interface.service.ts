@@ -41,13 +41,16 @@ export class InterfaceService {
   guardarGeneral(objeto:any, tipo:string):Observable<any>{
     this.toggleShowEdit(objeto);
     const url = `${this.urlNueva}/${tipo}/${objeto.id}`;
+    console.log("DESDE SERVICIO: " + objeto);
+    console.log("DESDE SERVICIO: " + tipo);
+    console.log("DESDE SERVICIO: " + url);
     return this.http.put<any>(url, objeto, httpOptions);
   }
 
   cancelar(objeto:any, tipo:string){
     this.toggleShowEdit(objeto);
-    // return this.http.get(`${this.url}/${tipo}/${objeto.id}`);    
-    return this.http.get(`${this.url}/${tipo}`);    
+    // return this.http.get(`${this.urlNueva}/${tipo}/${objeto.id}`);    
+    return this.http.get(`${this.urlNueva}/${tipo}`);    
   }
 
   agregarGeneral(objeto:any, tipo:string){
@@ -59,6 +62,18 @@ export class InterfaceService {
     this.stateCanAdd = !this.stateCanAdd;
     this.stateSubject.next(this.stateCanAdd);
   }
+
+  borrarGeneral(objeto:any, tipo:string):Observable<any>{
+    const url = `${this.urlNueva}/${tipo}/${objeto.id}`;
+    return this.http.delete<any>(url);
+  }
+
+  editarGeneral(objeto:any, tipo:string):Observable<any>{
+    const url = `${this.urlNueva}/${tipo}/${objeto.id}`;
+    return this.http.put<any>(url, objeto, httpOptions);
+  }
+
+  
 
  
   

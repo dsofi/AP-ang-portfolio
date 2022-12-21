@@ -1,5 +1,7 @@
-<app-subtitulo #subtitulo [subtitulo]="'Experiencia'"></app-subtitulo>
-<app-form-agregar #formAgregar [tipo]="'experiencias'" (onAgregar)="subtitulo.changeStateAdd();"></app-form-agregar>
+<app-subtitulo #subtitulo1 [subtitulo]="'Experiencia'" 
+    (agregandoDesdeBtnAgregar)="formAgregar1.cambiarEstado()"></app-subtitulo>
+<app-form-agregar #formAgregar1 [tipo]="'experiencias'" 
+    (cambiandoEstado)="subtitulo1.cambiarDesdeForm()"></app-form-agregar>
 
 
 <ul>
@@ -7,11 +9,40 @@
     [ngClass]="{ editable: experiencia.editar }"
     value="{{ experiencia.id }}"
   >
-    <app-button-edit-del [objeto]="experiencia"></app-button-edit-del>
+    <app-button-edit-del [objeto]="experiencia" [tipo]="'experiencias'"></app-button-edit-del>
     <app-exp #compExp [objeto]="experiencia"></app-exp>
     <app-button-cancelar-guardar
       [objeto]="experiencia"
       [tipo]="'experiencias'"
+      (reset)="reset()"
+  
+    ></app-button-cancelar-guardar>
+
+  </li>
+</ul>
+
+
+
+<br>
+<br>
+<br>
+
+
+<app-subtitulo #subtitulo2 [subtitulo]="'Estudio copiado'" (agregandoDesdeBtnAgregar)="formAgregar2.cambiarEstado()"></app-subtitulo>
+<app-form-agregar #formAgregar2 [tipo]="'estudios'" (cambiandoEstado)="subtitulo2.cambiarDesdeForm()"></app-form-agregar>
+
+
+<ul>
+  <li *ngFor="let estudio of misEstudios" 
+    [ngClass]="{ editable: estudio.editar }"
+    value="{{ estudio.id }}"
+  >
+    <app-button-edit-del [objeto]="estudio" [tipo]="'estudios'"></app-button-edit-del>
+    <app-exp #compExp [objeto]="estudio"></app-exp>
+    <app-button-cancelar-guardar
+      [objeto]="estudio"
+      [misObjetos]="misEstudios"
+      [tipo]="'estudios'"
       (reset)="reset()"
       
     ></app-button-cancelar-guardar>
@@ -20,11 +51,7 @@
 </ul>
 
 
-<button (click)="chusmear()">chusmear</button>
-
-
 <!-- <h3>Estudios</h3>
-
 <ul>
   <li
     *ngFor="let estudio of misEstudios"
