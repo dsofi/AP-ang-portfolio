@@ -1,21 +1,59 @@
-<h3>Experiencia</h3>
-<ul>
-  <li *ngFor="let experiencia of experienciasList">
-    <p class="icono edit">Editar
-      <fa-icon [icon]="['far', 'edit']"> </fa-icon>
-    </p>
-    <!-- <p class="icono cruz-del">
-      Eliminar
-      <fa-icon [icon]="['fas', 'times']"> </fa-icon>
-    </p> -->
-    <h4>{{ experiencia.nombre }}</h4>
-    <h6>{{ experiencia.tiempo }}</h6>
-    <p>{{ experiencia.descripcion }}</p>
-    <p>{{ experiencia.nota1 }}</p>
-    <p>{{ experiencia.nota2 }}</p>
+<app-subtitulo #subtitulo1 [subtitulo]="'Experiencia'" 
+    (agregandoDesdeBtnAgregar)="formAgregar1.cambiarEstado()"></app-subtitulo>
+<app-form-agregar #formAgregar1 [tipo]="'experiencias'" 
+    (cambiandoEstado)="subtitulo1.cambiarDesdeForm()"></app-form-agregar>
 
-    <!-- <p class="icono save">Guardar
-      <fa-icon [icon]="['fas', 'check']"></fa-icon>
-    </p> -->
+
+<ul>
+  <li *ngFor="let experiencia of miExperiencia" 
+    [ngClass]="{ editable: experiencia.editar }"
+    value="{{ experiencia.id }}"
+  >
+    <app-button-edit-del #btnEditDel [objeto]="experiencia" [tipo]="'experiencias'"></app-button-edit-del>
+    <app-exp #compExp [objeto]="experiencia"></app-exp>
+    <app-button-cancelar-guardar
+      [objeto]="experiencia"
+      [tipo]="'experiencias'"
+     
+    ></app-button-cancelar-guardar>
+
   </li>
 </ul>
+
+<!-- (reset)="reset()"
+(reset)="btnEditDel.reset()"  -->
+
+
+<br>
+<br>
+<br>
+
+
+<app-subtitulo #subtitulo2 [subtitulo]="'Estudio copiado'" (agregandoDesdeBtnAgregar)="formAgregar2.cambiarEstado()"></app-subtitulo>
+<app-form-agregar #formAgregar2 [tipo]="'estudios'" (cambiandoEstado)="subtitulo2.cambiarDesdeForm()"></app-form-agregar>
+
+
+<ul>
+  <li *ngFor="let estudio of misEstudios" 
+    [ngClass]="{ editable: estudio.editar }"
+    value="{{ estudio.id }}"
+  >
+    <app-button-edit-del #btnEditDel [objeto]="estudio" [tipo]="'estudios'"></app-button-edit-del>
+    <app-exp #compExp [objeto]="estudio"></app-exp>
+    <app-button-cancelar-guardar
+      [objeto]="estudio"
+      [misObjetos]="misEstudios"
+      [tipo]="'estudios'"
+      (reset)="reset()"
+
+      
+      
+    ></app-button-cancelar-guardar>
+
+  </li>
+</ul>
+
+
+
+
+

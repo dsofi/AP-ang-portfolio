@@ -17,6 +17,26 @@ import { faEdit as farEdit } from '@fortawesome/free-regular-svg-icons';
 import { faCheck as fasCheck } from '@fortawesome/free-solid-svg-icons';
 
 import { faCircleXmark as farCircleXmark } from '@fortawesome/free-regular-svg-icons';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { AutosizeModule } from 'ngx-autosize';
+import { DataSharingService } from './services/portfolio.service';
+import { NavbarComponent } from './components/navbar/navbar.component';
+import { ButtonEditDelComponent } from './interface/button-edit-del/button-edit-del.component';
+import { EditButtonComponent } from './interface/edit-button/edit-button.component';
+import { ButtonCancelarGuardarComponent } from './interface/button-cancelar-guardar/button-cancelar-guardar.component';
+import { AppRoutingModule } from './app-routing.module';
+import { HomeComponent } from './sections/home/home.component';
+import { LoginComponent } from './modales/login/login.component';
+import { ExpComponent } from './components/exp/exp.component';
+import { SkillsComponent } from './components/skills/skills.component';
+import { FormAgregarComponent } from './interface/form-agregar/form-agregar.component';
+import { SubtituloComponent } from './components/subtitulo/subtitulo.component';
+import { TodosComponent } from './prueba/todos/todos.component';
+import { CategoriaComponent } from './prueba/categoria/categoria.component';
+import { ItemsComponent } from './prueba/items/items.component';
+import { BtnAddComponent } from './prueba/btn-add/btn-add.component';
+import { FormAddComponent } from './prueba/form-add/form-add.component';
+import { BtnEditDelComponent } from './prueba/btn-edit-del/btn-edit-del.component';
 
 @NgModule({
   declarations: [
@@ -25,15 +45,36 @@ import { faCircleXmark as farCircleXmark } from '@fortawesome/free-regular-svg-i
     ProjectComponent,
     ExperienceComponent,
     CoverComponent,
-    StudiesComponent
+    StudiesComponent,
+    NavbarComponent,
+    ButtonEditDelComponent,
+    EditButtonComponent,
+    ButtonCancelarGuardarComponent,
+    HomeComponent,
+    LoginComponent,
+    ExpComponent,
+    SkillsComponent,
+    FormAgregarComponent,
+    SubtituloComponent,
+    TodosComponent,
+    CategoriaComponent,
+    ItemsComponent,
+    BtnAddComponent,
+    FormAddComponent,
+    BtnEditDelComponent
   ],
   imports: [
     BrowserModule,
     HttpClientModule,
-    FontAwesomeModule
+    FontAwesomeModule,
+    FormsModule,
+    ReactiveFormsModule,
+    AutosizeModule,
+    AppRoutingModule
   ],
-  providers: [],
+  providers: [DataSharingService, ButtonCancelarGuardarComponent],
   bootstrap: [AppComponent]
+
 })
 
 

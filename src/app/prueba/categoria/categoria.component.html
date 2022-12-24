@@ -1,0 +1,8 @@
+<h2 style="color: yellow;">{{tipo}}</h2>
+<app-btn-add *ngIf="!showAdd" (onAdd)="onAgregar()"></app-btn-add>
+<app-form-add *ngIf="showAdd" (agregando)="addGeneral($event)"></app-form-add>
+<app-items #items *ngFor="let item of items" [objeto]="item" 
+    (eliminando)="eliminar($event)" 
+    (cancelando)="reset()"
+    (guardando)="guardar($event)"
+></app-items>

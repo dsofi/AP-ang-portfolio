@@ -1,4 +1,16 @@
-<img class="gatito" [src]="miPortfolio?.gatito" alt="">
-<h3>Sobre mí</h3>
-<p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Ab perspiciatis ex vitae minima esse ullam odit nulla quaerat placeat illo natus quis officia facere maiores hic cum, consequuntur atque modi!
-Sed nihil atque aliquam ex corporis repellendus incidunt reiciendis, quibusdam quas, saepe alias voluptas voluptates delectus asperiores ullam harum impedit eum suscipit! Impedit minus fugit tempore officiis quo doloribus molestias. Possimus autem aliquam recusandae tenetur accusamus vitae hic. Nemo, neque numquam! Voluptate!</p>
+<section class="about">
+  <img class="gatito" [src]="miPortfolio[userId].urlImage" alt="" />
+  <article class="sobre-mi">
+    <div class="rotulo">
+      <h3>Sobre mí</h3>
+      <app-edit-button></app-edit-button>
+    </div>
+    <div [ngClass]="{ editable: editable }">
+      <textarea autosize name="" id="" [readonly]="!editable" [(ngModel)]="miPortfolio[userId].sobreMi"></textarea>
+      <!-- <app-button-cancelar-guardar (btnGuardar)="guardarEdicion(miPortfolio[userId])"
+            (btnCancelar)="cancelarEdicion()" ></app-button-cancelar-guardar> -->
+    </div>
+  </article>
+</section>
+
+

@@ -1,20 +1,70 @@
-<h3>Estudios</h3>
-<ul>
-  <li *ngFor="let estudio of estudiosList">
-    <!-- <p class="icono edit">Editar
-      <fa-icon [icon]="['far', 'edit']"> </fa-icon>
-    </p> -->
-    <p class="icono cruz-del">Eliminar
-      <fa-icon [icon]="['fas', 'times']"> </fa-icon>
-    </p>
-    <h6>{{ estudio.tiempo }}</h6>
-    <h4>{{ estudio.nombre }}</h4>
-    <p>{{ estudio.descripcion }}</p>
-    <p>{{ estudio.nota1 }}</p>
-    <p>{{ estudio.nota2 }}</p>
 
-    <p class="icono save">Guardar
-      <fa-icon [icon]="['fas', 'check']"></fa-icon>
-    </p>
-  </li>
-</ul>
+
+<section class="subtitulo" [ngClass]="{ 'form-add': puedeEditar }">
+  <h3>Estudios</h3>
+  <p *ngIf="!puedeEditar && userLogueado" class="icono main-color add" 
+    (click)="habilitaEdicion()"
+    (logueo)="loguearse()"> + Agregar</p>
+</section>
+
+<!------------ FORM PARA AGREGAR ------------>
+<form *ngIf="puedeEditar" (ngSubmit)="onSubmit()" [ngClass]="{ editable: puedeEditar }" >
+  <h6><input type="text" name="tiempo" placeholder="Agregar tiempo" [(ngModel)]="tiempo"/></h6>
+  <h4><input type="text" name="nombre" placeholder="Agregar nombre" [(ngModel)]="nombre"/></h4>
+  <p><input type="text" name="descripcion" placeholder="Agregar descripción" [(ngModel)]="descripcion"/></p>
+  <p><input type="text" name="nota1" placeholder="Agregar nota" [(ngModel)]="nota1"/></p>
+  <p><input type="text" name="nota2" placeholder="Agregar otra nota" [(ngModel)]="nota2"/></p>
+
+  <!------------ BOTONES AGREGAR / CANCELAR ------------>
+  <div class="botones">
+    <button (click)="noAgregar()" class="icono second-color center">
+      Cancelar <fa-icon [icon]="['fas', 'times']"></fa-icon>
+    </button>
+    <button type="submit" class="icono main-color center">
+      Agregar <fa-icon [icon]="['fas', 'check']"></fa-icon>
+    </button>
+  </div>
+</form>
+
+
+  <ul>
+    <li *ngFor="let estudio of estudios" [ngClass]="{ editable: estudio.editar }" value={{estudio.id}}>
+  
+      <!------------ BOTON EDITAR/ELIMINAR ------------>
+    
+      <p (click)="toggleShowEdit(estudio)" *ngIf="!estudio.editar  && userLogueado" class="icono main-color edit">
+        Editar
+        <fa-icon [icon]="['far', 'edit']"></fa-icon>
+      </p>
+      <p *ngIf="estudio.editar" class="icono second-color cruz-del" (click)="borrarEstudio(estudio)">
+        Eliminar
+        <fa-icon [icon]="['fas', 'times']"></fa-icon>
+      </p>
+  
+      <!------------ DATOS PORTFOLIO ------------>
+      
+      <h6><input type="text" [(ngModel)]="estudio.tiempo" [readonly]="!estudio.editar"/></h6>
+      <h4><input type="text" [(ngModel)]="estudio.nombre" [readonly]="!estudio.editar"/></h4>
+      <p><input type="text" [(ngModel)]="estudio.descripcion" [readonly]="!estudio.editar"/></p>
+      <p><input *ngIf="estudio.nota1 != ''"
+        type="text" [(ngModel)]="estudio.nota1" [readonly]="!estudio.editar"/>
+      </p>
+      <p><input *ngIf="estudio.nota2 != ''"
+          type="text" [(ngModel)]="estudio.nota2" [readonly]="!estudio.editar"/>
+      </p>
+    
+  
+      <!------------ BOTONES EDICION HABILITADA ------------>
+      <div *ngIf="estudio.editar" class="botones">
+        <p (click)="cancelarEdicion(estudio)" class="icono second-color center">
+          Cancelar
+          <fa-icon [icon]="['fas', 'times']"></fa-icon>
+        </p>
+        <p (click)="editarEstudio(estudio)" class="icono main-color center">
+          Guardar <fa-icon [icon]="['fas', 'check']"></fa-icon>
+        </p>
+      </div>
+  
+    </li>
+  </ul>
+

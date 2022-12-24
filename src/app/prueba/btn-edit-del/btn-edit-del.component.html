@@ -1,0 +1,4 @@
+<button *ngIf="!editando" (click)="editar()">Editar</button>
+<button *ngIf="editando" (click)="cancelar()">Cancelar</button>
+<button *ngIf="editando" (click)="guardar()">Guardar</button>
+<button *ngIf="editando" (click)="eliminar()">Eliminar</button>

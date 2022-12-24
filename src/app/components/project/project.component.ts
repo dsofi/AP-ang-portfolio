@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { InterfaceService } from 'src/app/services/interface.service';
+import { PortfolioService } from 'src/app/services/portfolio.service';
 
 @Component({
   selector: 'app-project',
@@ -7,9 +9,14 @@ import { Component, OnInit } from '@angular/core';
 })
 export class ProjectComponent implements OnInit {
 
-  constructor() { }
+
+
+
+  constructor(private servPortfolio:PortfolioService, private servInterface:InterfaceService) { }
 
   ngOnInit(): void {
+    
   }
 
+  
 }

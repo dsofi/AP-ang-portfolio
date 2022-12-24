@@ -1,0 +1,13 @@
+
+
+.icono {
+    width: 100px;
+    font-size: 12px;
+    cursor: pointer;
+    text-align: right;
+    float: right;
+}
+
+.main-color:hover {
+    color: var(--main-color);
+}
