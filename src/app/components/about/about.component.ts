@@ -13,11 +13,12 @@ export class AboutComponent implements OnInit {
   tipo:string="personas"
   personas:any[]=[];
   persona:any="";
-  userId:number=1; //TOMAR EL ID DEL USER QUE SE REGISTRE, BUSCARLO Y MOSTRAR SUS DATOS ?.. **SOLO SI TENGO TIEMPO
+  userId:number=1; 
+  //TOMAR EL ID DEL USER QUE SE REGISTRE, BUSCARLO Y MOSTRAR SUS DATOS ?.. **SOLO SI TENGO TIEMPO
+  //BUSCAR COMO HACER CON LAS FOTOS **SOLO SI TENGO TIEMPO
+  //A LAS FOTOS LES TENDRIA QUE AGREGAR BOTONCITO DE EDITAR Y POSIBILIDAD DE SUBIR UNA
 
-  constructor(private servGeneral:GeneralService) {
-  }
-
+  constructor(private servGeneral:GeneralService) {}
 
   ngOnInit(): void {
     this.servGeneral.getGeneral("personas").subscribe((data) => {

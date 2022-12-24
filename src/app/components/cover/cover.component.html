@@ -1,7 +1,7 @@
 <div class="cover">
-  <img src="assets/cover-dark.png" class="img-fluid w-100" alt="cover diagram black" />
+  <img [src]="persona.imagenCover" class="img-fluid w-100" alt="cover diagram black" />
   <div  class="container">
-    <h1>Hola! mi nombre es <span>Sofi,</span></h1>
-    <h2>soy Desarrolladora Full Stack Jr.</h2>
+    <h1>Hola! mi nombre es <span>{{persona.nombre}}</span></h1>
+    <h2>{{persona.titulo}}</h2>
   </div>
 </div>

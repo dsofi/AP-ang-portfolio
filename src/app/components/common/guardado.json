@@ -4,147 +4,91 @@
     "datos-persona": [
       {
         "id": 1,
-        "nombre": "Sofi",
-        "titulo": "estoy practicando para ser Desarrolladora FullStack Jr.",
-        "sobreMi": "Lorem, ipsum dolor sit amet consectetur adipisicing elit. Ab perspiciatis ex vitae minima esse ullam odit nulla quaerat placeat illo natus quis officia facere maiores hic cum, consequuntur atque modi! Sed nihil atque aliquam ex corporis repellendus incidunt reiciendis, quibusdam quas, saepe alias voluptas voluptates delectus asperiores ullam harum impedit eum suscipit! Lorem 123 probando cambios dsfdsggsdfsdf ",
-        "urlImage": "assets/gatito.jpg"
-      },
-      {
-        "id": 2,
-        "titulo": "Juan"
-      },
-      {
-        "nombre": "sofi",
+        "nombre": "Sofi,",
+        "titulo": "soy Desarrolladora Full Stack Jr.",
         "sobreMi": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Morbi et nibh lorem. Donec vulputate quis leo et lobortis. Nulla ante ligula, elementum et sollicitudin sit amet, consectetur in mi. Aliquam et nulla lacinia, consequat risus ornare massa nunc.",
         "foto": "assets/gatito.jpg",
-        "link": "https://github.com/dsofi"
-      }
+        "imagenCover": "assets/cover-dark.png",
+        "link": "https://github.com/dsofi",
+        "editar": false,
+        "usuario": null,
+        "estudios": [],
+        "experiencias": [],
+        "proyectos": []
+    }
     ],
     "estudios": [
       {
-        "titulo": "Estudiante de Arquitectura (FAUD)",
-        "tiempo": "mar 2015 - actualidad",
-        "descripcion": "Facultad de Arquitectura Urbanismo y Diseño (UNC) - En curso",
-        "otrasNotas": "",
-        "nota2": "",
-        "editar": false,
-        "id": 1
+          "id": 1,
+          "tiempo": "mar 2015 - actualidad",
+          "titulo": "Estudiante de Arquitectura (FAUD)",
+          "descripcion": "Facultad de Arquitectura Urbanismo y Diseño (UNC) - En curso",
+          "otrasNotas": "",
+          "imagen": null,
+          "editar": false,
+          "persona": null
       },
       {
-        "titulo": "Argentina Programa",
-        "tiempo": "mar 2022 - actualidad",
-        "descripcion": "Módulo 1 #SeProgramar - Aprobado",
-        "otrasNotas": "Módulo 2 #YoProgramo - En curso",
-        "nota2": "",
-        "editar": false,
-        "id": 2
+          "id": 2,
+          "tiempo": "mar 2022 - actualidad",
+          "titulo": "Argentina Programa",
+          "descripcion": "Módulo 1 #SeProgramar - Aprobado",
+          "otrasNotas": "Módulo 2 #YoProgramo - En curso",
+          "imagen": null,
+          "editar": false,
+          "persona": null
       },
       {
-        "titulo": "Diplomatura en Diseño UX / UI ",
-        "tiempo": "jun 2022 - actualidad",
-        "descripcion": "(Instrumenta - UTN) - En curso",
-        "otrasNotas": "",
-        "nota2": "",
-        "editar": false,
-        "id": 3
+          "id": 3,
+          "tiempo": "jun 2022 - actualidad",
+          "titulo": "Diplomatura en Diseño UX / UI ",
+          "descripcion": "(Instrumenta - UTN) - En curso",
+          "otrasNotas": "",
+          "imagen": null,
+          "editar": false,
+          "persona": null
       },
       {
-        "titulo": "Diplomatura en Tecnologías Digitales para la Arquitectura",
-        "tiempo": "oct 2019 - oct 2020",
-        "descripcion": "(FAUD - UNC) Certificados oficiales de Autodesk de:",
-        "otrasNotas": "Revit Architecture | Revit Structure | 3Ds max | Naviswork Manage",
-        "nota2": "",
-        "editar": false,
-        "id": 4
+          "id": 4,
+          "tiempo": "oct 2019 - oct 2020",
+          "titulo": "Diplomatura en Tecnologías Digitales para la Arquitectura",
+          "descripcion": "(FAUD - UNC) Certificados oficiales de Autodesk de:",
+          "otrasNotas": "Revit Architecture | Revit Structure | 3Ds max | Naviswork Manage",
+          "imagen": null,
+          "editar": false,
+          "persona": null
       },
       {
-        "titulo": "Maestro Mayor de Obras",
-        "tiempo": "mar 2009 - dic 2014",
-        "descripcion": "Escuela de Educación Técnica N°4-117 \"Ejército de los Andes\"",
-        "otrasNotas": "",
-        "nota2": "",
-        "editar": false,
-        "id": 5
-      },
-      {
-        "titulo": "El titulo de la Institución +",
-        "tiempo": "mar 2050 - jul 2080",
-        "descripcion": "Describir lo que estudie, completarlo, esto solo es una prueba",
-        "otrasNotas": "Acá puede ir una nota opcional, algo que se desee agregar",
-        "nota2": "",
-        "id": 6,
-        "editar": false
-      },
-      {
-        "titulo": "Algun titulo de algun estudio",
-        "tiempo": "jun 2030 - ago 2050",
-        "descripcion": "Describir lo que estudie, completarlo, esto solo es una prueba ",
-        "otrasNotas": "Acá puede ir una nota opcional",
-        "nota2": "",
-        "id": 7,
-        "editar": false
-      },
-      {
-        "titulo": "titulo de ejemplo",
-        "tiempo": "mar 3000 - dic 3200",
-        "descripcion": "Descripcion de ejemplo",
-        "otrasNotas": "Notas opcionales, como ejemplo 33333333333",
-        "nota2": "",
-        "id": 8,
-        "editar": false
-      },
-      {
-        "titulo": "aaaaaaaaaaaaaaaaaaaaaa",
-        "tiempo": "aaaaaaaaaaaaa",
-        "descripcion": "aaaaaaaaaaaaaaaaaaaaaaaaaaa",
-        "otrasNotas": "",
-        "nota2": "",
-        "id": 9
-      },
-      {
-        "titulo": "11111111111111111111111",
-        "tiempo": "11111111",
-        "descripcion": "111111111111114",
-        "otrasNotas": "",
-        "nota2": "",
-        "id": 10
-      },
-      {
-        "titulo": "22222222222222",
-        "tiempo": "22222222222",
-        "descripcion": "2222222222222222222222222222222222222228",
-        "otrasNotas": "",
-        "nota2": "",
-        "id": 11
+          "id": 5,
+          "tiempo": "mar 2009 - dic 2014",
+          "titulo": "Maestro Mayor de Obras",
+          "descripcion": "Escuela de Educación Técnica N°4-117 \"Ejército de los Andes\"",
+          "otrasNotas": "",
+          "imagen": null,
+          "editar": false,
+          "persona": null
       }
-    ],
-    "experiencia": [
+  ],
+    "experiencias": [
       {
-        "titulo": "Independiente",
-        "tiempo": "ene 2019 - actualidad",
-        "descripcion": "Elaboración de planos de relevamiento, municpales, legajos técnicos.",
-        "otrasNotas": "Servicios de diseño gráfico, diagramaciones, logotipos.",
-        "nota2": "",
-        "id": 1,
-        "editar": false
+          "id": 1,
+          "tiempo": "ene 2019 - actualidad",
+          "titulo": "Independiente",
+          "descripcion": "Elaboración de planos de relevamiento, municipales, legajos técnicos.",
+          "otrasNotas": "Servicios de diseño gráfico, diagramaciones, logotipos.",
+          "imagen": null,
+          "editar": false,
+          "persona": null
       },
       {
-        "titulo": "Everdeck ",
-        "tiempo": "oct 2018 - ene 2021",
-        "descripcion": "Diseños de modulación, cómputos y presupuestos. ",
-        "otrasNotas": "",
-        "nota2": "",
-        "id": 2,
-        "editar": false
-      },
-      {
-        "titulo": "",
-        "tiempo": "ene 2021 - jun 2022",
-        "descripcion": "Administración, Logística, Ventas y Diseño.  7777",
-        "otrasNotas": "",
-        "nota2": "",
-        "id": 3,
-        "editar": false
+          "id": 2,
+          "tiempo": "oct 2018 - jun 2022",
+          "titulo": "Everdeck ",
+          "descripcion": "Administración, Logística, Ventas y Diseño.",
+          "otrasNotas": "",
+          "imagen": null,
+          "editar": false,
+          "persona": null
       }
-    ]
+  ]
   }

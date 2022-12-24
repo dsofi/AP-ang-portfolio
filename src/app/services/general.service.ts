@@ -17,7 +17,6 @@ export class GeneralService {
   constructor(private http: HttpClient) { }
 
   getGeneral(categoria:string):Observable<any>{
-    console.log(`desde servicio : ${this.url}/${categoria}`)
     return this.http.get<[]>(`${this.url}/${categoria}`).pipe(delay(500));
   }
 

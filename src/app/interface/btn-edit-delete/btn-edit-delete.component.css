@@ -1,15 +1,4 @@
-.icono {
-    width: 100px;
-    font-size: 12px;
-    cursor: pointer;
-    text-align: right;
-    float: right;
-}
-
-.main-color:hover {
-    color: var(--main-color);
-}
-
-.second-color:hover {
-    color: var(--second-color);
-}
+.cruz-del, .edit{
+    padding: 5px 10px 0;
+  
+  }

@@ -39,6 +39,10 @@ import { FormAddComponent } from './prueba/form-add/form-add.component';
 import { BtnEditDelComponent } from './prueba/btn-edit-del/btn-edit-del.component';
 import { BtnEditDeleteComponent } from './interface/btn-edit-delete/btn-edit-delete.component';
 import { BtnCancelSaveComponent } from './interface/btn-cancel-save/btn-cancel-save.component';
+import { HistoryComponent } from './components/history/history.component';
+import { CategoryComponent } from './components/category/category.component';
+import { BtnAddFormComponent } from './interface/btn-add-form/btn-add-form.component';
+import { ElementsComponent } from './components/elements/elements.component';
 
 @NgModule({
   declarations: [
@@ -65,7 +69,11 @@ import { BtnCancelSaveComponent } from './interface/btn-cancel-save/btn-cancel-s
     FormAddComponent,
     BtnEditDelComponent,
     BtnEditDeleteComponent,
-    BtnCancelSaveComponent
+    BtnCancelSaveComponent,
+    HistoryComponent,
+    CategoryComponent,
+    BtnAddFormComponent,
+    ElementsComponent
   ],
   imports: [
     BrowserModule,
