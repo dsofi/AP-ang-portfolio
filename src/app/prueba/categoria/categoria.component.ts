@@ -8,6 +8,7 @@ import { PruebaService } from 'src/app/services/prueba.service';
   styleUrls: ['./categoria.component.css'],
 })
 export class CategoriaComponent implements OnInit {
+  
   @Input() tipo: string = '';
   items: any[] = [];
   subscription?: Subscription;

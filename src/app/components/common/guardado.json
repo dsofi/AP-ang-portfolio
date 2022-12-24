@@ -1,3 +1,5 @@
+
+
 {
     "datos-persona": [
       {
@@ -10,6 +12,12 @@
       {
         "id": 2,
         "titulo": "Juan"
+      },
+      {
+        "nombre": "sofi",
+        "sobreMi": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Morbi et nibh lorem. Donec vulputate quis leo et lobortis. Nulla ante ligula, elementum et sollicitudin sit amet, consectetur in mi. Aliquam et nulla lacinia, consequat risus ornare massa nunc.",
+        "foto": "assets/gatito.jpg",
+        "link": "https://github.com/dsofi"
       }
     ],
     "estudios": [

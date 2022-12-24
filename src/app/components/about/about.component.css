@@ -1,27 +1,25 @@
 
 .about{
   display: flex;
-  /* background-color: #202020; */
   justify-content: space-evenly;
   align-items:flex-start;
   margin-bottom: 160px;
+  /* background-color: #202020; */
 }
 
-
 .sobre-mi{
-  --prueba:2000px;
   width: 50%;
-  /* background-color: var(--gray-color); */
   padding: 0 60px;
   border-left: 2px solid var(--main-color);
   margin-top: 2.5%;
+  /* background-color: var(--gray-color); */
 }
 
 p {
   margin-top: 15px;
 }
 
-.gatito{
+.foto{
   width: 20%;
 }
 
@@ -34,14 +32,13 @@ textarea{
   resize: vertical;
   width: 95%;
   padding: 10px 10px 0;
+  font-size: .9rem;
   /* background-color: red; */
 }
 
 textarea:read-only{
   resize: none;
 }
-
-
 
 .rotulo{
   display: flex;

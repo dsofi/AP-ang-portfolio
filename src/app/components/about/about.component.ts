@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { Subscription } from 'rxjs';
-import { InterfaceService } from 'src/app/services/interface.service';
-import { PortfolioService } from 'src/app/services/portfolio.service';
+import { GeneralService } from 'src/app/services/general.service';
+import { Persona } from '../modelos/Persona';
 
 @Component({
   selector: 'app-about',
@@ -9,45 +9,39 @@ import { PortfolioService } from 'src/app/services/portfolio.service';
   styleUrls: ['./about.component.css']
 })
 export class AboutComponent implements OnInit {
-  miPortfolio:any[]=[{
-    "titulo": "",
-    "sobreMi":""
-  }];
-  userId:any=0;
-  editable:boolean=false;
-  user:any="kkkk";
-  // userLogueado:boolean=false;
-  subscription?:Subscription;
+  
+  tipo:string="personas"
+  personas:any[]=[];
+  persona:any="";
+  userId:number=1; //TOMAR EL ID DEL USER QUE SE REGISTRE, BUSCARLO Y MOSTRAR SUS DATOS ?.. **SOLO SI TENGO TIEMPO
 
-  constructor(
-    private servPortfolio:PortfolioService, private servInterface:InterfaceService
-  ) { 
-    this.subscription = this.servInterface.onMostrarModoEdicion().subscribe((value) => 
-      this.editable = value)
-      // this.subscription = this.servPortfolio.onLogueo().subscribe((value) => 
-      // this.userLogueado = value)
+  constructor(private servGeneral:GeneralService) {
   }
+
 
   ngOnInit(): void {
-    this.servPortfolio.getDatosPersona().subscribe(data =>{
-      this.miPortfolio=data;});
+    this.servGeneral.getGeneral("personas").subscribe((data) => {
+      this.personas = data;
+      if (this.personas.length > 0) {
+        this.persona = this.personas[0];
+      }
+    });
+    
+  }
+
+  editar(){
+    this.persona.editar = true;
+  }
+
+  cancelar(){
+    this.persona.editar = false;
+    this.ngOnInit();
   }
   
-
-
-  // FUNCIONABA
-  // guardarEdicion(user:any){
-  //   this.servInterface.guardarCambios(user).subscribe((user) => 
-  //     (this.user = user));
-  //     console.log("desde el componente : " + this.user.sobreMi)
-  // }
-
-  // cancelarEdicion():void{
-  //   this.ngOnInit();
-  //   // this.servInterface.mostrarModoEdicion();
-    
-  // }
-
-
-
+  guardar(objeto:any){
+    this.persona.editar = false;
+    console.log("guardando");
+    this.servGeneral.editGeneral(objeto,this.tipo).subscribe((elem) => objeto=elem);
+  }
+  
 }

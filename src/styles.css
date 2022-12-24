@@ -49,6 +49,11 @@ li {
   margin-bottom: 10px;
 }
 
+h3{
+  font-size: 1.2rem;
+  font-weight: bold;
+}
+
 /* h3::before {
   content: "";
   display: inline-block;
