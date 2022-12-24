@@ -7,7 +7,8 @@ import { PortfolioService } from 'src/app/services/portfolio.service';
   styleUrls: ['./cover.component.css']
 })
 export class CoverComponent implements OnInit {
-  datosPersona:any[]=[{"id": "",
+  datosPersona:any[]=[
+    {"id": "",
   "nombre": ""},{"id": "",
   "nombre": ""}];
   load:boolean=false;
@@ -21,13 +22,5 @@ export class CoverComponent implements OnInit {
       this.datosPersona=datos;
       this.load = true;
     });
-
-
-
-    
   }
-
-  
-
-
 }

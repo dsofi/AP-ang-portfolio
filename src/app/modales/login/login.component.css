@@ -21,7 +21,7 @@ button,input{
     display: flex;
     align-items: center;
     justify-content: center;
-    background-color: rgba(0, 0, 0, 0.8);
+    background-color: rgba(0, 0, 0, 0.2);
     z-index: 9000;
     color: #000;
 
@@ -67,7 +67,7 @@ button[type="submit"]{
     background-color: black;
     color: white;
     padding: 10px 30px;
-    margin-top: 140px;
+    margin-top: 110px;
     cursor: pointer;
 }
 
@@ -85,6 +85,12 @@ input{
     border-bottom: 1px solid var(--light-gray);
 }
 
+.form-inicio{
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    height: 100%;
+}
 
 .error{
     color: var(--dark-red);
@@ -92,15 +98,15 @@ input{
     font-size: 12px;
 }
 
-.form-inicio{
-    display: flex;
-    flex-direction: column;
-    justify-content: flex-start;
-    height: 100%;
+p.error{
+    margin-bottom: -5px;
+    padding-bottom: 0;
 }
+
 .vacios{
-    height: 15px;
+    height: 30px;
 }
+
 .form-inicio:last-child{
     justify-self: flex-end;
 }

@@ -18,14 +18,11 @@ export class NavbarComponent implements OnInit {
 
 
   userLogueado:boolean=false;
-  modalVisible=true;
 
 
   constructor(private myService: PortfolioService) { 
     this.subscriptionUser = this.myService.onLogueo().subscribe((value) => 
       this.userLogueado = value);
-    this.subscriptionModal = this.myService.onModal().subscribe((value) => 
-      this.modalVisible = value);
   }
 
   ngOnInit(): void {

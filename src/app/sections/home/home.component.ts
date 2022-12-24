@@ -10,8 +10,6 @@ import { PortfolioService } from 'src/app/services/portfolio.service';
 export class HomeComponent implements OnInit {
 
   userLogueado:boolean=false;
-  modalVisible:boolean=true;
-
   subscription?: Subscription;
 
 

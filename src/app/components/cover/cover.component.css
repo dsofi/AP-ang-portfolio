@@ -3,41 +3,78 @@
     font-family: monospace;
 }
 
-.container{
+.cover{
     position: relative;
 }
 
-img{
-    width: 100%;
-}
-
-h1, h2{
-    font-weight: 100;
+.container{
+    text-align: right;
     position: absolute;
     top: 15%;
     right: 7.5%;
-    margin-left: 36%;
-    text-align: center;
-    letter-spacing: .1rem;
 }
 
-h1 span{
+h2{
+    font-size: 1.5rem;
+    margin-right: 3%;
+}
+
+span{
     color: var(--main-color);
     letter-spacing: .25rem;
 }
 
-h2{
-    top: 20%;
-    
+@media (max-width: 800px){
+    .container{
+        top:20%;
+    }
+
+    img{
+        height: 500px;
+        width: 100%;
+        object-fit: cover;
+    }
+
+    h1{
+        font-size: 1.5rem;
+    }
+    h2{
+        font-size: 1rem;
+    }
 }
 
-
 @media (max-width: 500px) {
+    .container{
+        margin-right: 0;
+        padding: 0;
+    }
     h1{
-        top: 12%;
-        font-size: 1.2rem;
+        font-size: 1.25rem;
+    }
+    h2{
+        font-size: .9rem;
     }
   }
-  
+
+  @media (max-width: 400px) {
+    .container{
+        right: 16px;
+    }
+    img{
+        height: 420px;
+    }
+    h1{
+        font-size: 1rem;
+    }
+    span{        
+        letter-spacing: .06rem;
+    }
+    h2{
+        font-size: .8rem;
+    }
+  }
+
+
+
 
   

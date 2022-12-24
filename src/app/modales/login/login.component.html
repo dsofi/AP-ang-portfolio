@@ -1,4 +1,4 @@
-<ng-container *ngIf="modalVisible">
+<ng-container>
   <div class="pantalla">
     <div class="login">
       <div class="header">
@@ -9,18 +9,21 @@
       </div>
       <div class="contenedor">
         <form [formGroup]="form" (ngSubmit)="onEnviar($event)" class="form-inicio">
-          <input type="text" formControlName="usuario" placeholder="Usuario"/>
+          <input type="text" formControlName="usuario" placeholder="Usuario" autocomplete="off"/>
           <div class="vacios">
-              <div *ngIf="usuario?.errors  && usuario?.touched" >
+              <div *ngIf="usuario?.errors  && usuario?.touched" class="text-errores" >
                   <p *ngIf="usuario?.hasError('required')" class="error">El usuario es requerido.</p>
                   <p *ngIf="usuario?.hasError('minlength')" class="error">Debe tener al menos 5 caracteres.</p>
+                  <p *ngIf="usuario?.hasError('pattern')" class="error">Solo puede contener letras y/o números.</p>
+
               </div>
           </div>
-          <input type="password" formControlName="password" placeholder="Contraseña"/>
+          <input type="password" formControlName="password" placeholder="Contraseña" autocomplete="off"/>
           <div class="vacios">
-              <div *ngIf="password?.errors  && password?.touched" >
+              <div *ngIf="password?.errors  && password?.touched" class="text-errores" >
                 <p *ngIf="password?.hasError('required')" class="error">La contraseña es requerida.</p>
                 <p *ngIf="password?.hasError('minlength')" class="error">Debe tener al menos 8 caracteres.</p>
+                <p *ngIf="password?.hasError('pattern')" class="error">Solo puede contener letras y/o números.</p>
               </div>
           </div>
           <button type="submit">Iniciar Sesión</button>

@@ -18,19 +18,11 @@ export class LoginComponent implements OnInit {
 
   form:FormGroup;
 
-
-  subscriptionModal?: Subscription;
-  modalVisible=true;
-
-
   constructor(private myService: PortfolioService, private formBuilder:FormBuilder, private autenticacionServ:AutenticacionService, private ruta:Router) {
-    this.subscriptionModal = this.myService.onModal().subscribe((value) => 
-    this.modalVisible = value);
 
     this.form=this.formBuilder.group({
-      password:["",[Validators.required, Validators.minLength(8)]],
-      usuario:["",[Validators.required, Validators.minLength(5)]] 
-      //AGREGAR LOS OTROS DATOS
+      password:["",[Validators.required, Validators.minLength(8), Validators.pattern('[a-zA-Z0-9]*')]],
+      usuario:["",[Validators.required, Validators.minLength(5), Validators.pattern('[a-zA-Z0-9]*')]] 
     })
 
     
@@ -74,7 +66,7 @@ export class LoginComponent implements OnInit {
       if(this.form.valid){
         //llamar al servicio para enviar los datos al servidor
         //tambien podemos ejecutar alguna logica extra
-        this.modalVisible=false;
+        // this.modalVisible=false;
       }else{
         //validaciones para que se ejecuten los msjes de error en el template
         this.form.markAllAsTouched();

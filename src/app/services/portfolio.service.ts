@@ -25,7 +25,6 @@ export class PortfolioService {
   private urlNuevaBD = `http://localhost:8080`;
 
   private userLogueado:boolean = false;
-  private modalVisible:boolean = false;
   private subjectUser = new Subject<any>();
   private subjectModal = new Subject<any>();
 
@@ -73,9 +72,6 @@ export class PortfolioService {
   loguearse():void{
     this.userLogueado = !this.userLogueado;
     this.subjectUser.next(this.userLogueado);
-    // this.modalVisible = !this.modalVisible;
-    // this.subjectModal.next(this.modalVisible);
-    // console.log("modal desde servicio:" + this.modalVisible);
   }
 
   onLogueo():Observable<any>{
