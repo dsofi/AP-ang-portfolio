@@ -13,6 +13,7 @@ export class ButtonEditDelComponent implements OnInit {
 
   @Input() objeto:any;
   @Input() tipo:string='';
+  @Output() onDelete = new EventEmitter();
 
   objetos:any[] = [];
   userLogueado:boolean=false;
@@ -22,7 +23,8 @@ export class ButtonEditDelComponent implements OnInit {
   constructor(private servInterface:InterfaceService, private servPortfolio:PortfolioService) { 
    
       this.subscription = this.servPortfolio.onLogueo().subscribe((value) => 
-      this.userLogueado = value)
+      this.userLogueado = value);
+      console.log("desde btn edit, user logueado" + this.userLogueado);
   }
 
   ngOnInit(): void { 
@@ -37,8 +39,16 @@ export class ButtonEditDelComponent implements OnInit {
 
   borrar(objeto:any){
     this.servInterface.toggleShowEdit(objeto);
-    this.servInterface.borrarGeneral(objeto, this.tipo).subscribe(() =>
-    (this.objetos = this.objetos.filter((e: any) => e.id !== objeto.id)));
+    this.onDelete.emit(objeto);
+    // this.servInterface.borrarGeneral(objeto, this.tipo).subscribe(() =>
+    // (this.objetos = this.objetos.filter((e: any) => e.id !== objeto.id)));
+  }
+
+  reset(){
+    console.log("desde btn reseteando");
+    // this.servPortfolio.loguearse();
+    // console.log("desde btn reseteando");
+    console.log("despues de reset, desde btn : " + this.userLogueado);
   }
 
  

@@ -9,18 +9,19 @@
     [ngClass]="{ editable: experiencia.editar }"
     value="{{ experiencia.id }}"
   >
-    <app-button-edit-del [objeto]="experiencia" [tipo]="'experiencias'"></app-button-edit-del>
+    <app-button-edit-del #btnEditDel [objeto]="experiencia" [tipo]="'experiencias'"></app-button-edit-del>
     <app-exp #compExp [objeto]="experiencia"></app-exp>
     <app-button-cancelar-guardar
       [objeto]="experiencia"
       [tipo]="'experiencias'"
-      (reset)="reset()"
-  
+     
     ></app-button-cancelar-guardar>
 
   </li>
 </ul>
 
+<!-- (reset)="reset()"
+(reset)="btnEditDel.reset()"  -->
 
 
 <br>
@@ -37,37 +38,21 @@
     [ngClass]="{ editable: estudio.editar }"
     value="{{ estudio.id }}"
   >
-    <app-button-edit-del [objeto]="estudio" [tipo]="'estudios'"></app-button-edit-del>
+    <app-button-edit-del #btnEditDel [objeto]="estudio" [tipo]="'estudios'"></app-button-edit-del>
     <app-exp #compExp [objeto]="estudio"></app-exp>
     <app-button-cancelar-guardar
       [objeto]="estudio"
       [misObjetos]="misEstudios"
       [tipo]="'estudios'"
       (reset)="reset()"
+
+      
       
     ></app-button-cancelar-guardar>
 
   </li>
 </ul>
 
-
-<!-- <h3>Estudios</h3>
-<ul>
-  <li
-    *ngFor="let estudio of misEstudios"
-    [ngClass]="{ editable: estudio.editar }"
-    value="{{ estudio.id }}"
-  >
-    <app-button-edit-del [objeto]="estudio"></app-button-edit-del>
-    <app-exp #compExp [objeto]="estudio" ></app-exp>
-    <app-button-cancelar-guardar
-      [objeto]="estudio"
-      [tipo]="'estudios'"
-      (reset)="compExp.reset()"
-    ></app-button-cancelar-guardar>
-
-  </li>
-</ul> -->
 
 
 

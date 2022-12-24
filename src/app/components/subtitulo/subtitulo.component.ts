@@ -21,6 +21,7 @@ export class SubtituloComponent implements OnInit {
    
     this.subscription = this.servPortfolio.onLogueo().subscribe((value) => 
     this.userLogueado = value);
+    console.log("desde SUBTITULO, user logueado" + this.userLogueado);
     // this.servInterface.stateCanAdd$.subscribe(state => this.puedeAgregar = state);
 }
 

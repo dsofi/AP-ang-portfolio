@@ -31,6 +31,12 @@ import { ExpComponent } from './components/exp/exp.component';
 import { SkillsComponent } from './components/skills/skills.component';
 import { FormAgregarComponent } from './interface/form-agregar/form-agregar.component';
 import { SubtituloComponent } from './components/subtitulo/subtitulo.component';
+import { TodosComponent } from './prueba/todos/todos.component';
+import { CategoriaComponent } from './prueba/categoria/categoria.component';
+import { ItemsComponent } from './prueba/items/items.component';
+import { BtnAddComponent } from './prueba/btn-add/btn-add.component';
+import { FormAddComponent } from './prueba/form-add/form-add.component';
+import { BtnEditDelComponent } from './prueba/btn-edit-del/btn-edit-del.component';
 
 @NgModule({
   declarations: [
@@ -49,7 +55,13 @@ import { SubtituloComponent } from './components/subtitulo/subtitulo.component';
     ExpComponent,
     SkillsComponent,
     FormAgregarComponent,
-    SubtituloComponent
+    SubtituloComponent,
+    TodosComponent,
+    CategoriaComponent,
+    ItemsComponent,
+    BtnAddComponent,
+    FormAddComponent,
+    BtnEditDelComponent
   ],
   imports: [
     BrowserModule,

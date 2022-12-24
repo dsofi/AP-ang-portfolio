@@ -81,6 +81,8 @@ export class PortfolioService {
   onLogueo():Observable<any>{
     return this.subjectUser.asObservable();
   }
+
+  //session storage true o false o id del user, borrarlo cuando desloguea
   
   onModal():Observable<any>{
     return this.subjectModal.asObservable();

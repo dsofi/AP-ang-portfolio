@@ -27,25 +27,22 @@ export class ButtonCancelarGuardarComponent implements OnInit {
   ngOnInit(): void {
   }
   
-  cancelar(objeto:any, tipo:string){
-    this.reset.emit(objeto);
-    this.servInterface.cancelar(objeto,tipo).subscribe((cambios) => 
-    (objeto = cambios));
+  cancelar(objeto:any){
+    objeto.editar = !objeto.editar;
+    this.reset.emit();
   }
+  // cancelar(objeto:any, tipo:string){
+  //   this.servInterface.cancelar(objeto,tipo);
+  //   this.reset.emit();
+  //   this.ngOnInit();
+  //   console.log("desde btn cancelar : " + objeto.titulo )
+  // }
 
   guardar(objeto:any, tipo:string){
     this.servInterface.editarGeneral(objeto,tipo).subscribe((cambios)=>
     (objeto = cambios));
     objeto.editar = false;
   }
-
-  // guardar(objeto:any, tipo:string, misObjetos:any[]){
-  //   this.servInterface.guardarGeneral(objeto, tipo).subscribe((cambios) => 
-  //   (this.objeto = cambios));
-  //   console.log("desde btn guardar" + misObjetos);
-  //   console.log("desde btn guardar" + objeto);
-  //   console.log("desde btn guardar" + tipo);
-  // }
 
 }
 

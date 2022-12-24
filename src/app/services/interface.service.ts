@@ -49,7 +49,10 @@ export class InterfaceService {
 
   cancelar(objeto:any, tipo:string){
     this.toggleShowEdit(objeto);
-    // return this.http.get(`${this.urlNueva}/${tipo}/${objeto.id}`);    
+    console.log("desde servicio cancelar : " + objeto.titulo);
+    const objetoAnterior = this.http.get(`${this.urlNueva}/${tipo}/${objeto.id}`);
+    console.log("desde serv Objeto anterior" + objeto.titulo)
+    return objetoAnterior;    
     return this.http.get(`${this.urlNueva}/${tipo}`);    
   }
 

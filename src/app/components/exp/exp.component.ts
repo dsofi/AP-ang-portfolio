@@ -12,7 +12,6 @@ export class ExpComponent implements OnInit {
 
   @Input() objeto:any;
 
-  miExperiencia:any[]=[];
 
   subscription?:Subscription; 
   mySubscription: any;
@@ -27,12 +26,6 @@ export class ExpComponent implements OnInit {
   }
 
   ngOnInit(): void {
-    this.servPortfolio.getGeneral("experiencias").subscribe(data=>{
-      this.miExperiencia=data});
-  }
-
-  reset(){
-    console.log("resetttttt")
   }
 
 }
