@@ -1,4 +1,4 @@
-<p *ngIf="!objeto.editar" class="icono main-color edit" (click)="editar()">Editar 
+<p *ngIf="!objeto.editar && userLogueado" class="icono main-color edit" (click)="editar()">Editar 
     <fa-icon [icon]="['far', 'edit']"></fa-icon>
 </p>
 <p *ngIf="objeto.editar && puedeEliminar" class="icono second-color cruz-del" (click)="eliminar()">Eliminar

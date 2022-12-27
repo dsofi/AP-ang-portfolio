@@ -4,11 +4,7 @@ import { BehaviorSubject, Observable, Subject } from 'rxjs';
 import { Estudio } from '../components/common/int-Estudio';
 import { OutletContext } from '@angular/router';
 
-const httpOptions = {
-  headers: new HttpHeaders({
-    'Content-Type': 'application/json',
-  }),
-};
+const httpOptions = { headers: new HttpHeaders({'Content-Type': 'application/json'})};
 
 @Injectable({
   providedIn: 'root',
@@ -52,8 +48,6 @@ export class PortfolioService {
   obtenerDatos(): Observable<Estudio[]> {
     return this.http.get<Estudio[]>(this.estudiosApiUrl);
   }
-
-
 
   agregarEstudio(estudio: Estudio) {
     return this.http.post<Estudio>(this.estudiosApiUrl, estudio, httpOptions);

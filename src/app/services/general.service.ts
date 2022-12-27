@@ -2,6 +2,7 @@ import { Injectable } from '@angular/core';
 import { delay, Observable, Subject } from 'rxjs';
 import { HttpClient } from '@angular/common/http';
 
+
 @Injectable({
   providedIn: 'root'
 })
@@ -13,6 +14,8 @@ export class GeneralService {
   private subjectAdd = new Subject<any>();
   private editando:boolean = false;
   private subjectEditando = new Subject<any>();
+  private userLogueado:boolean = false;
+  private subjectUserLogueado = new Subject<any>();
   
   constructor(private http: HttpClient) { }
 
@@ -52,4 +55,23 @@ export class GeneralService {
   onToggleEditando():Observable<any>{
     return this.subjectEditando.asObservable();
   }
+
+  toggleUserLogueado():void{
+    this.userLogueado = !this.userLogueado;
+    this.subjectUserLogueado.next(this.userLogueado);
+  }
+
+  onToggleLogueado():Observable<any>{
+    return this.subjectUserLogueado.asObservable();
+  }
+
+
+
+  // setUserLogueado(value:string){
+  //   sessionStorage.setItem("userLogueado",value);
+  // }
+
+  // getUserLogueado(){
+  //   sessionStorage.
+  // }
 }
