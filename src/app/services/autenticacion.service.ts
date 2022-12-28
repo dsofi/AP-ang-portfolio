@@ -1,25 +1,36 @@
 import { Injectable } from '@angular/core';
-import { HttpClient } from '@angular/common/http';
-import { BehaviorSubject, Observable } from 'rxjs';
-import { map } from 'rxjs/operators';
+import { HttpClient, HttpHeaders, HttpResponse } from '@angular/common/http';
+import { BehaviorSubject, Observable, throwError } from 'rxjs';
+import { catchError, map } from 'rxjs/operators';
 
 @Injectable({
   providedIn: 'root'
 })
 export class AutenticacionService {
-  url="urlap.com";
+  url=`http://localhost:8080/iniciar-sesion`;
   currentUserSubject:BehaviorSubject<any>;
   
   constructor(private http:HttpClient) { 
-    console.log("El serv funciona");
-    this.currentUserSubject = new BehaviorSubject<any>(JSON.parse(sessionStorage.getItem('currentUser')||'{}'));
+    this.currentUserSubject = new BehaviorSubject<any>(sessionStorage.getItem('currentUser')||'...');
   }
 
-  iniciarSesion(credenciales:any):Observable<any>{
-    return this.http.post(this.url, credenciales).pipe(map(data=>{
-      sessionStorage.setItem('currentUser',JSON.stringify(data))
-      return data;
-    }))
+   iniciarSesion(credenciales:any):Observable<any>{
+    const headers = new HttpHeaders().set('Content-Type', 'application/json');
+    return this.http.post(this.url, JSON.stringify(credenciales), { headers }).pipe(
+      map((data:any) => {
+        let token = data.token;
+        sessionStorage.setItem('currentUser', token ? token : '');
+        this.currentUserSubject.next(data);
+        return data;
+      }),
+      catchError(error => {
+        console.log("ERROR: ", error); 
+        return (error);
+      })
+  )}
+
+  get UsuarioAutenticado(){
+    return this.currentUserSubject.value;
   }
 }
 

@@ -53,7 +53,8 @@ button,input{
 }
 
 h4{
-    margin: 60px 0 60px 10px;
+    margin: 60px 0 60px 15px;
+    font-size: 1.6rem;
 }
 
 label{
@@ -67,7 +68,7 @@ button[type="submit"]{
     background-color: black;
     color: white;
     padding: 10px 30px;
-    margin-top: 110px;
+    margin-top: 95px;
     cursor: pointer;
 }
 
@@ -109,4 +110,9 @@ p.error{
 
 .form-inicio:last-child{
     justify-self: flex-end;
+}
+
+.msj{
+    position: relative;
+    visibility: hidden;
 }

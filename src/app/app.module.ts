@@ -8,7 +8,7 @@ import { ExperienceComponent } from './components/experience/experience.componen
 import { CoverComponent } from './components/cover/cover.component';
 import { StudiesComponent } from './components/studies/studies.component';
 
-import { HttpClientModule } from '@angular/common/http';
+import { HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http';
 import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 
 import { FaIconLibrary } from '@fortawesome/angular-fontawesome';
@@ -43,6 +43,7 @@ import { HistoryComponent } from './components/history/history.component';
 import { CategoryComponent } from './components/category/category.component';
 import { BtnAddFormComponent } from './interface/btn-add-form/btn-add-form.component';
 import { ElementsComponent } from './components/elements/elements.component';
+import { InterceptorService } from './services/interceptor.service';
 
 @NgModule({
   declarations: [
@@ -84,7 +85,8 @@ import { ElementsComponent } from './components/elements/elements.component';
     AutosizeModule,
     AppRoutingModule
   ],
-  providers: [DataSharingService, ButtonCancelarGuardarComponent],
+  providers: [DataSharingService, ButtonCancelarGuardarComponent,
+    { provide: HTTP_INTERCEPTORS, useClass: InterceptorService, multi:true }],
   bootstrap: [AppComponent]
 
 })

@@ -16,8 +16,12 @@ export class GeneralService {
   private subjectEditando = new Subject<any>();
   private userLogueado:boolean = false;
   private subjectUserLogueado = new Subject<any>();
+
+  currentUser = sessionStorage.getItem('currentUser') || '...';
   
-  constructor(private http: HttpClient) { }
+  
+  constructor(private http: HttpClient) {
+   }
 
   getGeneral(categoria:string):Observable<any>{
     return this.http.get<[]>(`${this.url}/${categoria}`).pipe(delay(500));
@@ -64,6 +68,8 @@ export class GeneralService {
   onToggleLogueado():Observable<any>{
     return this.subjectUserLogueado.asObservable();
   }
+
+ 
 
 
 

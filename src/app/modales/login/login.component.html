@@ -9,23 +9,27 @@
       </div>
       <div class="contenedor">
         <form [formGroup]="form" (ngSubmit)="onEnviar($event)" class="form-inicio">
-          <input type="text" formControlName="usuario" placeholder="Usuario" autocomplete="off"/>
+          <input type="text" formControlName="user" placeholder="Usuario" autocomplete="off"/>
           <div class="vacios">
-              <div *ngIf="usuario?.errors  && usuario?.touched" class="text-errores" >
-                  <p *ngIf="usuario?.hasError('required')" class="error">El usuario es requerido.</p>
-                  <p *ngIf="usuario?.hasError('minlength')" class="error">Debe tener al menos 5 caracteres.</p>
-                  <p *ngIf="usuario?.hasError('pattern')" class="error">Solo puede contener letras y/o números.</p>
+              <div *ngIf="user?.errors  && user?.touched" class="text-errores" >
+                  <p *ngIf="user?.hasError('required')" class="error">Ingrese el nombre de usuario.</p>
+                  <p *ngIf="user?.hasError('minlength')" class="error">Debe tener al menos 5 caracteres.</p>
+                  <p *ngIf="user?.hasError('pattern')" class="error">Solo puede contener letras y/o números.</p>
 
               </div>
           </div>
           <input type="password" formControlName="password" placeholder="Contraseña" autocomplete="off"/>
           <div class="vacios">
               <div *ngIf="password?.errors  && password?.touched" class="text-errores" >
-                <p *ngIf="password?.hasError('required')" class="error">La contraseña es requerida.</p>
+                <p *ngIf="password?.hasError('required')" class="error">Ingrese la contraseña.</p>
                 <p *ngIf="password?.hasError('minlength')" class="error">Debe tener al menos 8 caracteres.</p>
                 <p *ngIf="password?.hasError('pattern')" class="error">Solo puede contener letras y/o números.</p>
               </div>
-          </div>
+          </div>          
+            
+          <p class="error" [ngClass]="{'msj': sinMensaje}">Usuario o contraseña incorrectos</p>
+         
+          
           <button type="submit">Iniciar Sesión</button>
         </form>
       </div>
