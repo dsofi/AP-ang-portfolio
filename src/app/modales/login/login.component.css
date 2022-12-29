@@ -12,6 +12,7 @@ input:-webkit-autofill {
 button,input{
     all: unset;
 }
+
 .pantalla{
     position: fixed;
     top: 0;
@@ -24,12 +25,11 @@ button,input{
     background-color: rgba(0, 0, 0, 0.2);
     z-index: 9000;
     color: #000;
-
-
 }
+
 .login{
     width: 280px;
-    height: 450px;
+    height: 460px;
     background-color: white;
     z-index: 9000;
 }
@@ -39,7 +39,6 @@ button,input{
     display: flex;
     justify-content: space-between;
     padding: 5px 10px;
-
 }
 
 .close{
@@ -53,13 +52,8 @@ button,input{
 }
 
 h4{
-    margin: 60px 0 60px 15px;
+    margin: 50px 0 40px 15px;
     font-size: 1.6rem;
-}
-
-label{
-    margin-left: 20px;
-    font-size: 14px;
 }
 
 button[type="submit"]{
@@ -68,8 +62,7 @@ button[type="submit"]{
     background-color: black;
     color: white;
     padding: 10px 30px;
-    margin-top: 95px;
-    cursor: pointer;
+    margin-top: 60px;
 }
 
 button:hover{
@@ -86,6 +79,10 @@ input{
     border-bottom: 1px solid var(--light-gray);
 }
 
+.invalid{
+    border-bottom: 1px solid var(--dark-red);
+}
+
 .form-inicio{
     display: flex;
     flex-direction: column;
@@ -97,22 +94,25 @@ input{
     color: var(--dark-red);
     margin-left: 25px;
     font-size: 12px;
-}
-
-p.error{
     margin-bottom: -5px;
     padding-bottom: 0;
 }
 
-.vacios{
-    height: 30px;
+.grande{
+    font-size: 14px;
 }
 
-.form-inicio:last-child{
-    justify-self: flex-end;
+.espacioTextos{
+    height: 30px;
 }
 
 .msj{
     position: relative;
     visibility: hidden;
+}
+
+.notas{
+    padding-top: 10px;
+    margin: 15px 25px;
+    border-top: 1px solid var(--light-gray);
 }

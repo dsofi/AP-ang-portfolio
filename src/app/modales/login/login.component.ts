@@ -1,10 +1,9 @@
-import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
+import { Component, OnInit} from '@angular/core';
 import { Validators } from '@angular/forms';
 
-import { FormBuilder, FormControl, FormGroup } from '@angular/forms';
+import { FormBuilder, FormGroup } from '@angular/forms';
 import { AutenticacionService } from 'src/app/services/autenticacion.service';
-import { Route, Router } from '@angular/router';
-import { GeneralService } from 'src/app/services/general.service';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-login',
@@ -13,7 +12,7 @@ import { GeneralService } from 'src/app/services/general.service';
 })
 export class LoginComponent implements OnInit {
   form: FormGroup;
-  sinMensaje:boolean=true;
+  mostrarMensajeError:boolean=false;
 
   constructor(
     private formBuilder: FormBuilder,
@@ -45,24 +44,28 @@ export class LoginComponent implements OnInit {
     return this.form.get('user');
   }
 
-  get passwordValid() {
+  get userInvalid() {
+    return this.user?.touched && !this.user?.valid;
+  }
+  
+  get passwordInvalid() {
     return this.password?.touched && !this.password?.valid;
   }
+
 
   onEnviar(event: Event) {
     event.preventDefault;  
     if (this.form.valid) {
-      const observador = {
-        next: (data:any) => {
+      this.autenticacionServ.iniciarSesion(this.form.value).subscribe({
+        next: () => {
           this.ruta.navigate(['/home']);
         },
-        error: (error:any) => {
+        error: () => {
           console.log("Error en el login. Usuario o contraseña incorrectos.");
           this.form.markAllAsTouched();
-          this.sinMensaje = false;
+          this.mostrarMensajeError = true;
         }
-      }    
-      this.autenticacionServ.iniciarSesion(this.form.value).subscribe(observador);
+      }    );
     } else {
       this.form.markAllAsTouched();
     }

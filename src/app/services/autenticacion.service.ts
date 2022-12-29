@@ -1,5 +1,5 @@
 import { Injectable } from '@angular/core';
-import { HttpClient, HttpHeaders, HttpResponse } from '@angular/common/http';
+import { HttpClient} from '@angular/common/http';
 import { BehaviorSubject, Observable, throwError } from 'rxjs';
 import { catchError, map } from 'rxjs/operators';
 
@@ -7,6 +7,7 @@ import { catchError, map } from 'rxjs/operators';
   providedIn: 'root'
 })
 export class AutenticacionService {
+
   url=`http://localhost:8080/iniciar-sesion`;
   currentUserSubject:BehaviorSubject<any>;
   
@@ -15,8 +16,7 @@ export class AutenticacionService {
   }
 
    iniciarSesion(credenciales:any):Observable<any>{
-    const headers = new HttpHeaders().set('Content-Type', 'application/json');
-    return this.http.post(this.url, JSON.stringify(credenciales), { headers }).pipe(
+    return this.http.post(this.url, JSON.stringify(credenciales)).pipe(
       map((data:any) => {
         let token = data.token;
         sessionStorage.setItem('currentUser', token ? token : '');
