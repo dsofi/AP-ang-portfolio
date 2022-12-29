@@ -1,6 +1,4 @@
 import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
-import { Subscription } from 'rxjs';
-import { GeneralService } from 'src/app/services/general.service';
 
 @Component({
   selector: 'app-btn-add-form',
@@ -12,25 +10,23 @@ export class BtnAddFormComponent implements OnInit {
   @Input() tipo:string="";
   @Output() agregando:EventEmitter<any>= new EventEmitter;
   showAdd:boolean=false;
-  
-  userLogueado:boolean=false;
+  isLogged:boolean=false;
 
   titulo: string = '';
   tiempo: string = '';
   descripcion: string = '';
   otrasNotas: string = '';
 
-  constructor(private servGeneral:GeneralService) { 
-    this.servGeneral.onToggleLogueado().subscribe((valor) => (this.userLogueado = valor));
-
-  }
+  constructor() {  }
 
   ngOnInit(): void {
-    
+    const currentUser = (sessionStorage.getItem('currentUser')||'...');
+    if (currentUser && currentUser.length > 20) {
+      this.isLogged = true;
+    }else{this.isLogged=false};
   }
 
   onAgregar(){
-    console.log("click agregar");
     this.showAdd=true;
   }
 

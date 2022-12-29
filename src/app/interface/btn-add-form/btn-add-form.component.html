@@ -1,4 +1,4 @@
-<p *ngIf="!showAdd && userLogueado" (click)="onAgregar()" class="icono main-color arriba">+Agregar {{tipo}}</p>
+<p *ngIf="!showAdd && isLogged" (click)="onAgregar()" class="icono main-color arriba">+Agregar {{tipo}}</p>
 <div *ngIf="showAdd" class="editable">
     <div class="campos">
         <h6><input type="text" name="tiempo" placeholder="Agregar tiempo" 

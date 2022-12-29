@@ -19,6 +19,11 @@ p {
   margin-top: 15px;
 }
 
+.btnEdit{
+  position: relative;
+  bottom: 15px;
+}
+
 .foto{
   width: 20%;
 }
@@ -46,7 +51,3 @@ textarea:read-only{
   /* background-color: red; */
 }
 
-.editable{
-  background-color: #202020;
-  width: 100%;
-}

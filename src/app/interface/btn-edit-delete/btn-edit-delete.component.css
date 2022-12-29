@@ -1,4 +1,6 @@
 .cruz-del, .edit{
-    padding: 5px 10px 0;
+    padding: 5px 10px 0; 
+    position: relative;
+    top: 10px; 
   
   }

@@ -13,9 +13,15 @@ export class ElementsComponent implements OnInit {
   @Output() guardando:EventEmitter<any> = new EventEmitter();
   @Output() toggleEdit:EventEmitter<any> = new EventEmitter();
 
+  isLogged:boolean=false;
+
   constructor() { }
 
   ngOnInit(): void {
+    const currentUser = (sessionStorage.getItem('currentUser')||'...');
+    if (currentUser && currentUser.length > 20) {
+      this.isLogged = true;
+    }else{this.isLogged=false};
   }
 
   editar(objeto:any){

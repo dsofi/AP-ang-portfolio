@@ -45,7 +45,9 @@ body {
 }
 
 .elemento {
-  padding: 5px 10px;
+  padding: 0px 10px 0px 70px;
+  margin: 20px 0;
+  
 }
 
 h3,h4{
@@ -54,11 +56,11 @@ h3,h4{
 }
 
 h3{
-  font-size: 1.2rem;
+  font-size: 1.3rem;
 }
 
 h4{
-  font-size: 1rem;
+  font-size: 1.1rem;
 }
 
 h6 {
@@ -66,6 +68,7 @@ h6 {
   color: var(--second-color);
   margin: 0;
   font-size: .75rem;
+  line-height: 1rem;
 }
 
 p {
@@ -84,9 +87,9 @@ p {
 
 .flex-container {
   display: flex;
-  flex-direction: column;
-  margin: 10px 20px;
-  align-items: center;
+  flex-direction: column;  
+  margin: 10px 100px;
+  /* align-items:flex-start; */
 }
 
 .flex-item {
@@ -105,7 +108,7 @@ input, button {
 }
 
 .editable {
-  background-color: rgb(20, 20, 20);
+  background-color: rgb(20, 20, 20);  
 }
 
 input:-internal-autofill-selected{
@@ -122,10 +125,15 @@ input:-internal-autofill-selected{
   padding: 5px 10px;
   margin-bottom: 10px;
 }
+
+.lineasDiv{
+  border-top: 1px solid var(--gray-color);
+
+}
   
 .botones {
   margin: 10px 10px 0;
-  border-top: 1px solid rgb(60, 60, 60);
+  border-top: 1px solid var(--gray-color);
   padding: 10px 0;
   display: flex;
   justify-content: space-around;    
@@ -139,8 +147,8 @@ input:-internal-autofill-selected{
   cursor: pointer;
   text-align: right;
   float: right;
-  margin-bottom: 0;
 }
+
 .center {
   text-align: center;
 }

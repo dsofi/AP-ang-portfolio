@@ -1,5 +1,4 @@
 import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
-import { GeneralService } from 'src/app/services/general.service';
 
 @Component({
   selector: 'app-btn-edit-delete',
@@ -13,11 +12,13 @@ export class BtnEditDeleteComponent implements OnInit {
   @Output() onEdit:EventEmitter<any> = new EventEmitter;
   @Output() onDelete:EventEmitter<any> = new EventEmitter;
 
-  userLogueado:boolean=false;
+  isLogged:boolean=false;
 
-  constructor(private servGeneral:GeneralService) { 
-    this.servGeneral.onToggleLogueado().subscribe((valor) => (this.userLogueado = valor));
-
+  constructor() { 
+    const currentUser = (sessionStorage.getItem('currentUser')||'...');
+    if (currentUser && currentUser.length > 20) {
+      this.isLogged = true;
+    }else{this.isLogged=false};
   }
 
   ngOnInit(): void {

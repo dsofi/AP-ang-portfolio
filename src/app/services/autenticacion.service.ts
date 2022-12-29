@@ -1,6 +1,6 @@
 import { Injectable } from '@angular/core';
 import { HttpClient} from '@angular/common/http';
-import { BehaviorSubject, Observable, throwError } from 'rxjs';
+import { BehaviorSubject, Observable, Subject, throwError } from 'rxjs';
 import { catchError, map } from 'rxjs/operators';
 
 @Injectable({
@@ -10,6 +10,8 @@ export class AutenticacionService {
 
   url=`http://localhost:8080/iniciar-sesion`;
   currentUserSubject:BehaviorSubject<any>;
+  private authStateSubject: Subject<boolean> = new Subject<boolean>();
+  authStateObservable: Observable<boolean> = this.authStateSubject.asObservable();
   
   constructor(private http:HttpClient) { 
     this.currentUserSubject = new BehaviorSubject<any>(sessionStorage.getItem('currentUser')||'...');
@@ -21,6 +23,7 @@ export class AutenticacionService {
         let token = data.token;
         sessionStorage.setItem('currentUser', token ? token : '');
         this.currentUserSubject.next(data);
+        this.updateAuthState(true);
         return data;
       }),
       catchError(error => {
@@ -28,6 +31,17 @@ export class AutenticacionService {
         return (error);
       })
   )}
+
+  cerrarSesion() {
+    sessionStorage.removeItem('currentUser');
+    this.currentUserSubject.next(null);
+    this.updateAuthState(false);
+    window.location.reload();
+  }
+
+  updateAuthState(state: boolean): void {
+    this.authStateSubject.next(state);
+  }
 
   get UsuarioAutenticado(){
     return this.currentUserSubject.value;
