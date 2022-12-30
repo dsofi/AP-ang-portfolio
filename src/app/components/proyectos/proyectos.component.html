@@ -1,0 +1,16 @@
+
+    <div class="container-fluid">
+        <div class="slider-wrap">
+            <div class="slider-main">
+                <div *ngFor="let proyecto of misProyectos" class="item">
+                    <app-btn-edit-delete></app-btn-edit-delete>
+                    <div class="titulo">{{proyecto.titulo}}</div>
+                    <div class="desc">{{proyecto.descripcion}}</div>
+                </div>
+            </div>
+            <div class="button-area">
+                <button type="button" class="prev" appPrev>Prev</button>
+                <button type="button" class="next" appNext>Next</button>
+            </div>
+        </div>
+    </div>

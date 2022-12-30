@@ -1,0 +1,57 @@
+
+.container-fluid{
+    display: flex;
+    justify-content: center;
+    width: 100%;
+}
+
+.slider-wrap{
+    position: relative;
+    width: 780px;
+    overflow: hidden;
+    height: 240px;
+}
+
+.slider-main{
+    position: absolute;
+    width: 200%;
+}
+
+.item{
+    display: inline-block;
+    width: 240px;
+    height: 240px;
+    background-color: red;
+    position: relative;
+    margin: 0 10px;
+}
+
+.titulo, .desc{
+    position: absolute;
+    top: 150px;
+    left: 20px;
+}
+
+.desc{
+    top: 180px;
+    font-size: 12px;
+}
+
+.button-area{
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    height: 240px;
+}
+
+.prev, .next{
+    width: 50px;
+    z-index: 80;
+}
+
+.next{
+    text-align: right;
+}
+
+

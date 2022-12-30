@@ -29,6 +29,10 @@ import { ElementsComponent } from './components/elements/elements.component';
 import { InterceptorService } from './services/interceptor.service';
 import { CuadroDialogoComponent } from './modales/cuadro-dialogo/cuadro-dialogo.component';
 import { FooterComponent } from './components/footer/footer.component';
+import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
+import { ProyectosComponent } from './components/proyectos/proyectos.component';
+import { NextDirective } from './directives/next.directive';
+import { PrevDirective } from './directives/prev.directive';
 
 @NgModule({
   declarations: [
@@ -45,7 +49,10 @@ import { FooterComponent } from './components/footer/footer.component';
     BtnAddFormComponent,
     ElementsComponent,
     CuadroDialogoComponent,
-    FooterComponent
+    FooterComponent,
+    ProyectosComponent,
+    NextDirective,
+    PrevDirective
   ],
   imports: [
     BrowserModule,
@@ -54,7 +61,8 @@ import { FooterComponent } from './components/footer/footer.component';
     FormsModule,
     ReactiveFormsModule,
     AutosizeModule,
-    AppRoutingModule
+    AppRoutingModule,
+    NgbModule
   ],
   providers: [{ provide: HTTP_INTERCEPTORS, useClass: InterceptorService, multi:true }],
   bootstrap: [AppComponent]
