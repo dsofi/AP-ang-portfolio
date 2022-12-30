@@ -1,5 +1,5 @@
 import { Injectable } from '@angular/core';
-import { delay, Observable, Subject } from 'rxjs';
+import { Observable, Subject } from 'rxjs';
 import { HttpClient } from '@angular/common/http';
 
 
@@ -10,21 +10,19 @@ import { HttpClient } from '@angular/common/http';
 export class GeneralService {
 
   private url = `http://localhost:8080`;
+
   private showAdd:boolean = false;
-  private subjectAdd = new Subject<any>();
+  private subjectAdd = new Subject<any>();  
   private editando:boolean = false;
   private subjectEditando = new Subject<any>();
-  private userLogueado:boolean = false;
-  private subjectUserLogueado = new Subject<any>();
 
-  currentUser = sessionStorage.getItem('currentUser') || '...';
-  
+  currentUser = sessionStorage.getItem('currentUser') || '...';  
   
   constructor(private http: HttpClient) {
    }
 
   getGeneral(categoria:string):Observable<any>{
-    return this.http.get<[]>(`${this.url}/${categoria}`).pipe(delay(500));
+    return this.http.get<[]>(`${this.url}/${categoria}`);
   }
 
   addGeneral(objeto:any, tipo:string){
@@ -59,25 +57,4 @@ export class GeneralService {
   onToggleEditando():Observable<any>{
     return this.subjectEditando.asObservable();
   }
-
-  toggleUserLogueado():void{
-    this.userLogueado = !this.userLogueado;
-    this.subjectUserLogueado.next(this.userLogueado);
-  }
-
-  onToggleLogueado():Observable<any>{
-    return this.subjectUserLogueado.asObservable();
-  }
-
- 
-
-
-
-  // setUserLogueado(value:string){
-  //   sessionStorage.setItem("userLogueado",value);
-  // }
-
-  // getUserLogueado(){
-  //   sessionStorage.
-  // }
 }

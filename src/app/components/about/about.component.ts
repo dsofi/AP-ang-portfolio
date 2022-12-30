@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { Subscription } from 'rxjs';
 import { GeneralService } from 'src/app/services/general.service';
-import { Persona } from '../modelos/Persona';
+import { Persona } from '../../modelos/Persona';
 
 @Component({
   selector: 'app-about',

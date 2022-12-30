@@ -3,10 +3,7 @@ import { BrowserModule } from '@angular/platform-browser';
 
 import { AppComponent } from './app.component';
 import { AboutComponent } from './components/about/about.component';
-import { ProjectComponent } from './components/project/project.component';
-import { ExperienceComponent } from './components/experience/experience.component';
 import { CoverComponent } from './components/cover/cover.component';
-import { StudiesComponent } from './components/studies/studies.component';
 
 import { HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http';
 import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
@@ -15,28 +12,14 @@ import { FaIconLibrary } from '@fortawesome/angular-fontawesome';
 import { faTimes as fasTimes } from '@fortawesome/free-solid-svg-icons';
 import { faEdit as farEdit } from '@fortawesome/free-regular-svg-icons';
 import { faCheck as fasCheck } from '@fortawesome/free-solid-svg-icons';
+import { faHeart } from '@fortawesome/free-solid-svg-icons';
 
-import { faCircleXmark as farCircleXmark } from '@fortawesome/free-regular-svg-icons';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { AutosizeModule } from 'ngx-autosize';
-import { DataSharingService } from './services/portfolio.service';
 import { NavbarComponent } from './components/navbar/navbar.component';
-import { ButtonEditDelComponent } from './interface/button-edit-del/button-edit-del.component';
-import { EditButtonComponent } from './interface/edit-button/edit-button.component';
-import { ButtonCancelarGuardarComponent } from './interface/button-cancelar-guardar/button-cancelar-guardar.component';
 import { AppRoutingModule } from './app-routing.module';
 import { HomeComponent } from './sections/home/home.component';
 import { LoginComponent } from './modales/login/login.component';
-import { ExpComponent } from './components/exp/exp.component';
-import { SkillsComponent } from './components/skills/skills.component';
-import { FormAgregarComponent } from './interface/form-agregar/form-agregar.component';
-import { SubtituloComponent } from './components/subtitulo/subtitulo.component';
-import { TodosComponent } from './prueba/todos/todos.component';
-import { CategoriaComponent } from './prueba/categoria/categoria.component';
-import { ItemsComponent } from './prueba/items/items.component';
-import { BtnAddComponent } from './prueba/btn-add/btn-add.component';
-import { FormAddComponent } from './prueba/form-add/form-add.component';
-import { BtnEditDelComponent } from './prueba/btn-edit-del/btn-edit-del.component';
 import { BtnEditDeleteComponent } from './interface/btn-edit-delete/btn-edit-delete.component';
 import { BtnCancelSaveComponent } from './interface/btn-cancel-save/btn-cancel-save.component';
 import { HistoryComponent } from './components/history/history.component';
@@ -44,37 +27,25 @@ import { CategoryComponent } from './components/category/category.component';
 import { BtnAddFormComponent } from './interface/btn-add-form/btn-add-form.component';
 import { ElementsComponent } from './components/elements/elements.component';
 import { InterceptorService } from './services/interceptor.service';
+import { CuadroDialogoComponent } from './modales/cuadro-dialogo/cuadro-dialogo.component';
+import { FooterComponent } from './components/footer/footer.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     AboutComponent,
-    ProjectComponent,
-    ExperienceComponent,
     CoverComponent,
-    StudiesComponent,
     NavbarComponent,
-    ButtonEditDelComponent,
-    EditButtonComponent,
-    ButtonCancelarGuardarComponent,
     HomeComponent,
     LoginComponent,
-    ExpComponent,
-    SkillsComponent,
-    FormAgregarComponent,
-    SubtituloComponent,
-    TodosComponent,
-    CategoriaComponent,
-    ItemsComponent,
-    BtnAddComponent,
-    FormAddComponent,
-    BtnEditDelComponent,
     BtnEditDeleteComponent,
     BtnCancelSaveComponent,
     HistoryComponent,
     CategoryComponent,
     BtnAddFormComponent,
-    ElementsComponent
+    ElementsComponent,
+    CuadroDialogoComponent,
+    FooterComponent
   ],
   imports: [
     BrowserModule,
@@ -85,8 +56,7 @@ import { InterceptorService } from './services/interceptor.service';
     AutosizeModule,
     AppRoutingModule
   ],
-  providers: [DataSharingService, ButtonCancelarGuardarComponent,
-    { provide: HTTP_INTERCEPTORS, useClass: InterceptorService, multi:true }],
+  providers: [{ provide: HTTP_INTERCEPTORS, useClass: InterceptorService, multi:true }],
   bootstrap: [AppComponent]
 
 })
@@ -96,7 +66,7 @@ import { InterceptorService } from './services/interceptor.service';
 export class AppModule {
 
   constructor(library: FaIconLibrary) {
-    library.addIcons(farCircleXmark, fasTimes, farEdit, fasCheck );
+    library.addIcons( fasTimes, farEdit, fasCheck, faHeart );
   }
   }
  

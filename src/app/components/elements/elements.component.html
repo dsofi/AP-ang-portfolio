@@ -24,7 +24,7 @@
         [(ngModel)]="objeto.descripcion" [readonly]="!objeto.editar"/>
     </p>
     <p>
-      <input *ngIf="objeto.otrasNotas != ''" type="text" name="nota1" autocomplete="off"
+      <input *ngIf="objeto.otrasNotas != '' || objeto.editar" type="text" name="otrasNotas" autocomplete="off"
         [(ngModel)]="objeto.otrasNotas" [readonly]="!objeto.editar"/>
     </p>
     <app-btn-cancel-save *ngIf="objeto.editar"
@@ -33,3 +33,5 @@
     ></app-btn-cancel-save>
   </div>
 </div>
+
+

@@ -29,7 +29,7 @@ button,input{
 
 .login{
     width: 280px;
-    height: 460px;
+    height: 480px;
     background-color: white;
     z-index: 9000;
 }
@@ -62,7 +62,7 @@ button[type="submit"]{
     background-color: black;
     color: white;
     padding: 10px 30px;
-    margin-top: 60px;
+    margin-top: 70px;
 }
 
 button:hover{

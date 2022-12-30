@@ -1,6 +1,5 @@
 import { Component, OnInit } from '@angular/core';
 import { GeneralService } from 'src/app/services/general.service';
-import { PortfolioService } from 'src/app/services/portfolio.service';
 
 @Component({
   selector: 'app-cover',

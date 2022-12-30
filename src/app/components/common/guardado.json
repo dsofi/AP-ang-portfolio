@@ -1,94 +1,92 @@
-
-
 {
-    "datos-persona": [
-      {
-        "id": 1,
-        "nombre": "Sofi,",
-        "titulo": "soy Desarrolladora Full Stack Jr.",
-        "sobreMi": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Morbi et nibh lorem. Donec vulputate quis leo et lobortis. Nulla ante ligula, elementum et sollicitudin sit amet, consectetur in mi. Aliquam et nulla lacinia, consequat risus ornare massa nunc.",
-        "foto": "assets/gatito.jpg",
-        "imagenCover": "assets/cover-dark.png",
-        "link": "https://github.com/dsofi",
-        "editar": false,
-        "usuario": null,
-        "estudios": [],
-        "experiencias": [],
-        "proyectos": []
+  "datos-persona": [
+    {
+      "id": 1,
+      "nombre": "Sofi,",
+      "titulo": "soy Desarrolladora Full Stack Jr.",
+      "sobreMi": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Morbi et nibh lorem. Donec vulputate quis leo et lobortis. Nulla ante ligula, elementum et sollicitudin sit amet, consectetur in mi. Aliquam et nulla lacinia, consequat risus ornare massa nunc.",
+      "foto": "assets/gatito.jpg",
+      "imagenCover": "assets/cover-dark.png",
+      "link": "https://github.com/dsofi",
+      "editar": false,
+      "usuario": null,
+      "estudios": [],
+      "experiencias": [],
+      "proyectos": []
     }
-    ],
-    "estudios": [
-      {
-          "id": 1,
-          "tiempo": "mar 2015 - actualidad",
-          "titulo": "Estudiante de Arquitectura (FAUD)",
-          "descripcion": "Facultad de Arquitectura Urbanismo y Diseño (UNC) - En curso",
-          "otrasNotas": "",
-          "imagen": null,
-          "editar": false,
-          "persona": null
-      },
-      {
-          "id": 2,
-          "tiempo": "mar 2022 - actualidad",
-          "titulo": "Argentina Programa",
-          "descripcion": "Módulo 1 #SeProgramar - Aprobado",
-          "otrasNotas": "Módulo 2 #YoProgramo - En curso",
-          "imagen": null,
-          "editar": false,
-          "persona": null
-      },
-      {
-          "id": 3,
-          "tiempo": "jun 2022 - actualidad",
-          "titulo": "Diplomatura en Diseño UX / UI ",
-          "descripcion": "(Instrumenta - UTN) - En curso",
-          "otrasNotas": "",
-          "imagen": null,
-          "editar": false,
-          "persona": null
-      },
-      {
-          "id": 4,
-          "tiempo": "oct 2019 - oct 2020",
-          "titulo": "Diplomatura en Tecnologías Digitales para la Arquitectura",
-          "descripcion": "(FAUD - UNC) Certificados oficiales de Autodesk de:",
-          "otrasNotas": "Revit Architecture | Revit Structure | 3Ds max | Naviswork Manage",
-          "imagen": null,
-          "editar": false,
-          "persona": null
-      },
-      {
-          "id": 5,
-          "tiempo": "mar 2009 - dic 2014",
-          "titulo": "Maestro Mayor de Obras",
-          "descripcion": "Escuela de Educación Técnica N°4-117 \"Ejército de los Andes\"",
-          "otrasNotas": "",
-          "imagen": null,
-          "editar": false,
-          "persona": null
-      }
   ],
-    "experiencias": [
-      {
-          "id": 1,
-          "tiempo": "ene 2019 - actualidad",
-          "titulo": "Independiente",
-          "descripcion": "Elaboración de planos de relevamiento, municipales, legajos técnicos.",
-          "otrasNotas": "Servicios de diseño gráfico, diagramaciones, logotipos.",
-          "imagen": null,
-          "editar": false,
-          "persona": null
-      },
-      {
-          "id": 2,
-          "tiempo": "oct 2018 - jun 2022",
-          "titulo": "Everdeck ",
-          "descripcion": "Administración, Logística, Ventas y Diseño.",
-          "otrasNotas": "",
-          "imagen": null,
-          "editar": false,
-          "persona": null
-      }
+  "estudios": [
+    {
+      "id": 1,
+      "tiempo": "mar 2015 - actualidad",
+      "titulo": "Estudiante de Arquitectura (FAUD)",
+      "descripcion": "Facultad de Arquitectura Urbanismo y Diseño (UNC) - En curso",
+      "otrasNotas": "Promedio actual con aplazos: 8.92 - sin aplazos: 9.11",
+      "imagen": "assets/logo-faud-dark.jpg",
+      "editar": false,
+      "persona": null
+    },
+    {
+      "id": 2,
+      "tiempo": "mar 2022 - actualidad",
+      "titulo": "Argentina Programa",
+      "descripcion": "Módulo 1 #SeProgramar - Aprobado",
+      "otrasNotas": "Módulo 2 #YoProgramo - En curso",
+      "imagen": "assets/logo-argprog-mini-dark.jpg",
+      "editar": false,
+      "persona": null
+    },
+    {
+      "id": 6,
+      "tiempo": "jun 2022 - dic 2022",
+      "titulo": "Diplomatura en Diseño UX / UI - Instrumenta (UTN)",
+      "descripcion": "Arquitectura de la Información, Prototipos, Patrones de Diseño,",
+      "otrasNotas": "Métricas, Atomic Design, Heurísticas, Guías de estilos, etc.",
+      "imagen": "assets/logo-instrumenta-dark.jpg",
+      "editar": false,
+      "persona": null
+    },
+    {
+      "id": 8,
+      "tiempo": "oct 2019 - oct 2020",
+      "titulo": "Diplomatura en Tecnologías Digitales para la Arquitectura",
+      "descripcion": "(FAUD - UNC) Certificados oficiales de Autodesk de:",
+      "otrasNotas": "Revit Architecture | Revit Structure | 3Ds max | Naviswork Manage",
+      "imagen": "assets/logo-unc-dark.jpg",
+      "editar": false,
+      "persona": null
+    },
+    {
+      "id": 9,
+      "tiempo": "mar 2009 - dic 2014",
+      "titulo": "Maestro Mayor de Obras",
+      "descripcion": "Escuela de Educación Técnica N°4-117 \"Ejército de los Andes\"",
+      "otrasNotas": "",
+      "imagen": "assets/logo-enet-dark.jpg",
+      "editar": false,
+      "persona": null
+    }
+  ],
+  "experiencias": [
+    {
+      "id": 1,
+      "tiempo": "ene 2019 - actualidad",
+      "titulo": "Independiente",
+      "descripcion": "Elaboración de planos de relevamiento, municipales, legajos técnicos.",
+      "otrasNotas": "Servicios de diseño gráfico, diagramaciones, logotipos.",
+      "imagen": "assets/logo-hexag-dark.jpg",
+      "editar": false,
+      "persona": null
+    },
+    {
+      "id": 2,
+      "tiempo": "oct 2018 - jun 2022",
+      "titulo": "Everdeck ",
+      "descripcion": "hasta dic 2020 : Diseños de modulación, cómputos y presupuestos.",
+      "otrasNotas": "desde ene 2021 : Administración, Logística, Ventas y Diseño.",
+      "imagen": "assets/logo-everdeck-dark.jpg",
+      "editar": false,
+      "persona": null
+    }
   ]
-  }
+}
