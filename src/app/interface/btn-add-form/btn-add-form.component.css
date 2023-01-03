@@ -1,5 +1,6 @@
 .arriba{
-  margin:-40px 10px;
-  bottom: 40px;
-  width: 130px
-}
+  float: right;
+  position: relative;
+  top: -35px;
+  height: 0;
+} 

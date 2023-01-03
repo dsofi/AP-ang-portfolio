@@ -1,14 +1,16 @@
 
 .about{
   display: flex;
-  justify-content: space-evenly;
+  justify-content: center;
   align-items:flex-start;
   margin-bottom: 160px;
+  gap: 150px;
   /* background-color: #202020; */
 }
 
 .sobre-mi{
   width: 50%;
+  max-width: 750px;
   padding: 0 60px;
   border-left: 2px solid var(--main-color);
   margin-top: 2.5%;
@@ -19,13 +21,14 @@ p {
   margin-top: 15px;
 }
 
-.btnEdit{
+/* .btnEdit{
   position: relative;
   bottom: 15px;
-}
+} */
 
 .foto{
   width: 20%;
+  max-width: 300px;
 }
 
 h3{
@@ -33,17 +36,13 @@ h3{
 }
 
 textarea{
-  all: unset;
-  resize: vertical;
   width: 95%;
   padding: 10px 10px 0;
   font-size: .9rem;
   /* background-color: red; */
 }
 
-textarea:read-only{
-  resize: none;
-}
+
 
 .rotulo{
   display: flex;

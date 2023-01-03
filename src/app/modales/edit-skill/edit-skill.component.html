@@ -1,0 +1,35 @@
+<button *ngIf="isLogged" (click)="open(content)" class="icono main-color">
+    {{button}}
+</button>
+  
+<ng-template #content let-modal>
+	<div class="modal-header">
+		<h4 class="modal-title" id="modal-basic-title">{{titulo}} skills</h4>
+		<button type="button" class="btn-close" aria-label="Close" (click)="modal.dismiss()"></button>
+	</div>
+	<div class="modal-body">
+		<form enctype="multipart/form-data">
+			<div class="mb-3">
+                <label for="nombre">Nombre :</label>				
+				<div class="input-group">                    
+					<input id="nombre" class="form-control" placeholder="Ingrese el nombre" name="nombre"
+                    autocomplete="off" [(ngModel)]="nombre"/>	
+                </div>
+                <label for="imagen">Imagen :</label>				
+                <div class="input-group">
+                    <input id="imagen" class="form-control" placeholder="Ingrese la dirección de la imagen" name="imagen"
+                        [(ngModel)]="imagen"/>	
+                    <!-- <input type="file" id="imagen" class="form-control" name="imagen"
+                        (change)="onFileChange($event)" [(ngModel)]="imagen"/>		 -->
+                </div>
+            </div>
+		</form>
+	</div>
+	<div class="modal-footer">
+		<button type="button" class="btn btn-outline-dark" (click)="modal.dismiss()">Cancelar</button>
+		<button type="button" class="btn btn-outline-dark" (click)="onGuardar(); modal.close()">Guardar</button>
+	</div>
+</ng-template>
+
+
+

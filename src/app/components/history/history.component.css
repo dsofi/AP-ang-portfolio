@@ -1,0 +1,19 @@
+
+.history{
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 60px;
+}
+
+.grande{
+    width: 600px;
+}
+
+.chica{
+    width: 540px;
+}
+
+.exper-mb{
+    margin-bottom: 40px;
+}

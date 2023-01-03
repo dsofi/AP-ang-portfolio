@@ -1,0 +1,69 @@
+img{
+    border-radius: 100%;
+}
+
+img:hover{
+    animation: Aumentar 2s ease;
+}
+
+@keyframes Aumentar {
+    0% {scale: 1;
+        transform: rotate(0deg)}
+    50% {scale: 1.5;
+        transform: rotate(360deg)}
+    100% {scale: 1;}
+  }
+
+.skills{
+    display: flex;
+    gap: 20px;
+    justify-content: center;
+    margin: 60px auto 0;
+    width: 900px;
+    flex-wrap: wrap;
+    /* background-color: blue; */
+}
+
+.cajita{
+    /* background-color: green; */
+    width: 120px;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    padding: 10px 20px;
+}
+
+.titulo{
+    text-align: center;
+    margin-top: 120px;
+}
+
+.nombre{
+    text-align: center;
+    font-size: 12px;
+    margin-top: 10px;
+}
+
+.urlImage{
+    width: 200px;
+    text-align: center;
+    justify-self: center;
+    font-size: 10px;
+    padding: 0;
+
+}
+
+.campos{
+    width: 600px;
+    margin: auto;
+}
+
+.btnEdit{
+    /* background-color: red; */
+    width: 110px;
+    height: 30px;
+}
+
+h4{
+    color: black;
+}

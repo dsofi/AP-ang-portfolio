@@ -1,6 +1,12 @@
+<div class="history">
+  <div class="columna grande">
+    <app-category [tipo]="'estudios'"></app-category>
+  </div>
 
-<div class="flex-container">
-    <app-category class="flex-item" [tipo]="'experiencias'"></app-category>
-    <app-category class="flex-item" [tipo]="'estudios'"></app-category>
-    <app-category class="flex-item" [tipo]="'proyectos'"></app-category>
+  <div class="columna chica">
+    <div class="exper-mb">
+        <app-category [tipo]="'experiencias'"></app-category>
+    </div>
+    <app-category [tipo]="'idiomas'"></app-category>
+  </div>
 </div>

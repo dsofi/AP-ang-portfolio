@@ -1,37 +1,39 @@
 
-
-
-<div [ngClass]="{ editable: objeto.editar }">
+<div class="registro">
   
-  <div class="elemento" [ngClass]="{ lineasDiv: isLogged }">
-    <app-btn-edit-delete [puedeEliminar]="true" [objeto]="objeto"
-  (onEdit)="editar(objeto)"
-  (onDelete)="eliminar(objeto)"
-></app-btn-edit-delete>
-
-    <img class="loguitos" [src]="objeto.imagen" alt="Logos" />
-    <h6>
-      <input type="text" name="tiempo" autocomplete="off"
-        [(ngModel)]="objeto.tiempo" [readonly]="!objeto.editar"/>
-    </h6>
-    <h4>
-      <input
-        type="text" name="titulo" autocomplete="off"
-        [(ngModel)]="objeto.titulo" [readonly]="!objeto.editar"/>
-    </h4>
-    <p>
-      <input type="text" name="descripcion" autocomplete="off"
-        [(ngModel)]="objeto.descripcion" [readonly]="!objeto.editar"/>
-    </p>
-    <p>
-      <input *ngIf="objeto.otrasNotas != '' || objeto.editar" type="text" name="otrasNotas" autocomplete="off"
-        [(ngModel)]="objeto.otrasNotas" [readonly]="!objeto.editar"/>
-    </p>
-    <app-btn-cancel-save *ngIf="objeto.editar"
-      (onGuardar)="guardar(objeto)"
-      (onCancelar)="cancelar()"
-    ></app-btn-cancel-save>
+  <div> 
+    <div class="desaparecer">
+      <app-btn-edit-delete [puedeEliminar]="true" [objeto]="objeto"
+        (onEdit)="editar(objeto)"
+        (onDelete)="eliminar(objeto)"
+      ></app-btn-edit-delete>
+    </div>
+  
+  <div [ngClass]="{editable: objeto.editar}">
+    <div class="elemento" [ngClass]="{lineasDiv: isLogged}">
+      <img [src]="objeto.imagen" alt="Logos" />
+    
+      <div class="datos">
+        <input type="text" name="tiempo" autocomplete="off" class="tiempo"
+          [(ngModel)]="objeto.tiempo" [readonly]="!objeto.editar"/>
+        <input
+          type="text" name="titulo" autocomplete="off" class="titulo"
+          [(ngModel)]="objeto.titulo" [readonly]="!objeto.editar"/>
+        <input type="text" name="descripcion" autocomplete="off" class="descripcion"
+          [(ngModel)]="objeto.descripcion" [readonly]="!objeto.editar"/>
+        <input *ngIf="objeto.otrasNotas != '' || objeto.editar" type="text" name="otrasNotas" autocomplete="off"
+          [(ngModel)]="objeto.otrasNotas" [readonly]="!objeto.editar" class="descripcion"/>
+      </div>
+    </div>
+    
+    
+      <app-btn-cancel-save *ngIf="objeto.editar"
+        (onGuardar)="guardar(objeto)"
+        (onCancelar)="cancelar()"
+      ></app-btn-cancel-save>
+    </div>
   </div>
+  
 </div>
 
 

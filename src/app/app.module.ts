@@ -9,7 +9,7 @@ import { HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http';
 import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 
 import { FaIconLibrary } from '@fortawesome/angular-fontawesome';
-import { faTimes as fasTimes } from '@fortawesome/free-solid-svg-icons';
+import { faAngleLeft, faAngleRight, faTimes as fasTimes } from '@fortawesome/free-solid-svg-icons';
 import { faEdit as farEdit } from '@fortawesome/free-regular-svg-icons';
 import { faCheck as fasCheck } from '@fortawesome/free-solid-svg-icons';
 import { faHeart } from '@fortawesome/free-solid-svg-icons';
@@ -33,6 +33,8 @@ import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { ProyectosComponent } from './components/proyectos/proyectos.component';
 import { NextDirective } from './directives/next.directive';
 import { PrevDirective } from './directives/prev.directive';
+import { SkillsComponent } from './components/skills/skills.component';
+import { EditSkillComponent } from './modales/edit-skill/edit-skill.component';
 
 @NgModule({
   declarations: [
@@ -52,7 +54,9 @@ import { PrevDirective } from './directives/prev.directive';
     FooterComponent,
     ProyectosComponent,
     NextDirective,
-    PrevDirective
+    PrevDirective,
+    SkillsComponent,
+    EditSkillComponent
   ],
   imports: [
     BrowserModule,
@@ -74,7 +78,7 @@ import { PrevDirective } from './directives/prev.directive';
 export class AppModule {
 
   constructor(library: FaIconLibrary) {
-    library.addIcons( fasTimes, farEdit, fasCheck, faHeart );
+    library.addIcons( fasTimes, farEdit, fasCheck, faHeart, faAngleRight, faAngleLeft);
   }
   }
  

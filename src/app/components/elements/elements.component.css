@@ -1,10 +1,7 @@
-p{
-    font-size: 14px;
+
+img{
+    height: 40px;
+    margin: 30px 15px;
 }
 
-.loguitos{
-    height: 40px;
-    position: relative;
-    top: 50px;
-    right: 60px;
-}
+
