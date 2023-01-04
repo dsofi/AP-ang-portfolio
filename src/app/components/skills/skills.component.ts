@@ -1,4 +1,5 @@
 import { Component, ElementRef, OnInit, ViewChild } from '@angular/core';
+import { firstValueFrom } from 'rxjs';
 import { GeneralService } from 'src/app/services/general.service';
 
 @Component({
@@ -9,85 +10,39 @@ import { GeneralService } from 'src/app/services/general.service';
 export class SkillsComponent implements OnInit {
 
   skills:any[]=[];
-  nombre:string="";
-  imagen:string="";
+  isLogged:boolean=false;
 
-  @ViewChild('form') form: ElementRef;
-
-  constructor(private servGeneral:GeneralService) { 
-    this.form = new ElementRef(null);
-  }
+  constructor(private servGeneral:GeneralService) {   }
 
   ngOnInit(): void {
     this.servGeneral.getGeneral("skills").subscribe((data) => (this.skills = data));
-  }
-
-  submit(){
-    const {nombre, imagen} = this;
-      const objeto:any = {nombre, imagen};
-
-      this.nombre = '';
-      this.imagen = '';
-
-      this.servGeneral.addGeneral(objeto,"skills").subscribe((data) => this.skills.push(data));
-
+    const currentUser = (sessionStorage.getItem('currentUser')||'...');
+    if (currentUser && currentUser.length > 20) {
+      this.isLogged = true;
+    }else{this.isLogged=false};
   }
 
   agregar(objeto:any){
     this.servGeneral.addGeneral(objeto, "skills").subscribe((data) => this.skills.push(data));
-    // objeto.editar = false;
   }
 
-  guardar(objeto:any){
-    this.servGeneral.editGeneral(objeto, "skills").subscribe((data) => objeto=data);
-    // objeto.editar = false;
-    console.log("guardando desde SKILLS : " + objeto)
+  guardar(objeto: any) {
+    firstValueFrom(this.servGeneral.editGeneral(objeto, "skills")).then((data) => {
+      objeto = data;
+      this.reset();
+    }).catch((error) => {
+      console.error(error);
+    });
   }
-
-  
 
   eliminar(objeto: any) {
     this.servGeneral.deleteGeneral(objeto, "skills").subscribe(() => 
       (this.skills = this.skills.filter((o) => o.id !== objeto.id)));
   }
 
-  editar(objeto:any){
-    objeto.editar = true;
-  }
-
-  
-
   reset(){
     this.ngOnInit();
   }
 
-  //
-
-
-  onSubmit() {
-    const formData = new FormData(this.form.nativeElement);
-
-    fetch('/upload', {
-      method: 'POST',
-      body: formData
-    })
-    .then((response) => {
-      if (response.ok) {
-        // la respuesta del servidor fue exitosa (código de estado HTTP 2xx)
-        return response.json();
-      } else {
-        // la respuesta del servidor fue fallida (código de estado HTTP diferente a 2xx)
-        throw new Error('Error al subir la imagen');
-      }
-    })
-    .then((responseData) => {
-      // la respuesta del servidor incluye datos en formato JSON
-      console.log(responseData);
-    })
-    .catch((error) => {
-      // maneja cualquier error
-      console.error(error);
-    });
-  }
 
 }

@@ -1,7 +1,8 @@
-*{
+label,h4{
     color: black;
 }
 
-.icono{
-    color: white;
+.tit-center{
+    display: flex;
+    justify-content: center;
 }

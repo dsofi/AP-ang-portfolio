@@ -116,3 +116,8 @@ input{
     margin: 15px 25px;
     border-top: 1px solid var(--light-gray);
 }
+
+p{
+    margin: 0;
+    font-size: 12px;
+}

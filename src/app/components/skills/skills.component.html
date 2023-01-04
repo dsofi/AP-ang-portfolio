@@ -2,48 +2,24 @@
   <h3>Skills</h3>
  
 </div>
-<app-edit-skill [titulo]="'Agregar'" [button]="'+Agregar skills'" [editando]="false"
+<app-edit-skill [titulo]="'Agregar'" [button]="'+Agregar skills'"
     (guardando)="agregar($event)"></app-edit-skill>
 
-<!-- <div *ngIf="showAdd" class="campos editable">
-  <input type="text" name="nombre" placeholder="Nombre skill" class="descripcion"
-    [(ngModel)]="nombre" autocomplete="off"/>
-  <input type="text" name="imagen" placeholder="URL Imagen" class="descripcion"
-    [(ngModel)]="imagen" autocomplete="off"/>
-  <div class="botones">
-    <button (click)="cancelar()" class="icono second-color center">
-      Cancelar <fa-icon [icon]="['fas', 'times']"></fa-icon>
-    </button>
-    <button (click)="submit()" class="icono main-color center">
-      Guardar <fa-icon [icon]="['fas', 'check']"></fa-icon>
-    </button>
-  </div>
-</div> -->
-
 <div class="skills">
-  <div *ngFor="let objeto of skills" class="cajita">
-    <div class="btnEdit">
-        <app-edit-skill [titulo]="'Editar'" [button]="'Editar'" [editando]="true"
-    (guardando)="guardar($event)"></app-edit-skill>
-      <!-- <app-btn-edit-delete [puedeEliminar]="true" [objeto]="objeto"
-        (onEdit)="editar(objeto)" (onDelete)="eliminar(objeto)">
-      </app-btn-edit-delete> -->
-    </div>
+  <div *ngFor="let objeto of skills" class="cajita">   
+    
+    <button *ngIf="isLogged" (click)="eliminar(objeto)" class="icono second-color cruz-del">&times;</button> 
     <img [src]="objeto.imagen" alt="Logo {{ objeto.nombre }}"/>
-    <div [ngClass]="{ editable: objeto.editar }">        
-        <input type="text" name="nombre" autocomplete="off" class="nombre"
-        [(ngModel)]="objeto.nombre" [readonly]="!objeto.editar"/>
-      <!-- <app-btn-cancel-save *ngIf="objeto.editar"
-        (onGuardar)="guardar(objeto)" (onCancelar)="reset()">
-      </app-btn-cancel-save> -->
+    <p>{{objeto.nombre}}</p>
+    <div class="edit">
+        <app-edit-skill [titulo]="'Editar'" [button]="'&#x270E; Editar'" [objeto]="objeto"
+            (guardando)="guardar($event)">
+        </app-edit-skill>
     </div>
+        
+   
   </div>
 </div>
-
- <!-- <form action="" enctype="multipart/form-data">
-                <label for="imagen">Imagen:</label>
-            <input type="file" name="file" id="imagen">
-            </form> -->
 
 
 

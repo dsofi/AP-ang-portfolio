@@ -4,14 +4,6 @@
 //     password: string;
 //   }
   
-//   form: FormGroup;
-  
-//   constructor(private formBuilder: FormBuilder) {
-//     this.form = this.formBuilder.group<LoginData>({
-//       user: ['', Validators.required],
-//       password: ['', Validators.required],
-//     });
-//   }
 
 
 // OPCION DE QUE UN USUARIO SE REGISTRE, 
@@ -30,4 +22,6 @@
 // BOTON DE RESTAURAR DATOS,
 // ELIMINAR TODOS LOS REGISTROS, RECORRER EL ARRAY ?
 // METODO POST PARA TODOS
+
+// SECCION DE CONTACTAME, QUE ENVIE UN MAIL ?
 
