@@ -8,14 +8,8 @@ import { Subscription } from 'rxjs';
 })
 export class HomeComponent implements OnInit {
 
-  userLogueado:boolean=false;
-  subscription?: Subscription;
-
   constructor() { }
 
   ngOnInit(): void {
   }
-
-  
-
 }

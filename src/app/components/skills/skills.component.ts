@@ -1,4 +1,4 @@
-import { Component, ElementRef, OnInit, ViewChild } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { firstValueFrom } from 'rxjs';
 import { GeneralService } from 'src/app/services/general.service';
 
@@ -10,7 +10,7 @@ import { GeneralService } from 'src/app/services/general.service';
 export class SkillsComponent implements OnInit {
 
   skills:any[]=[];
-  isLogged:boolean=false;
+  isLogged:boolean=false;  
 
   constructor(private servGeneral:GeneralService) {   }
 
@@ -29,7 +29,7 @@ export class SkillsComponent implements OnInit {
   guardar(objeto: any) {
     firstValueFrom(this.servGeneral.editGeneral(objeto, "skills")).then((data) => {
       objeto = data;
-      this.reset();
+      this.ngOnInit();
     }).catch((error) => {
       console.error(error);
     });
@@ -39,10 +39,5 @@ export class SkillsComponent implements OnInit {
     this.servGeneral.deleteGeneral(objeto, "skills").subscribe(() => 
       (this.skills = this.skills.filter((o) => o.id !== objeto.id)));
   }
-
-  reset(){
-    this.ngOnInit();
-  }
-
 
 }

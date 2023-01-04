@@ -1,5 +1,5 @@
 import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
-import { NgbModal, NgbModalModule } from '@ng-bootstrap/ng-bootstrap';
+import { NgbModal } from '@ng-bootstrap/ng-bootstrap';
 
 @Component({
   selector: 'app-edit-skill',
@@ -17,6 +17,7 @@ export class EditSkillComponent implements OnInit {
 
   nombre:string="";
   imagen:string="";
+  showMensaje:boolean=false;
 
   constructor(private modalService: NgbModal) { }
 
@@ -26,8 +27,8 @@ export class EditSkillComponent implements OnInit {
       this.isLogged = true;
     }else{this.isLogged=false};
     if (this.objeto) {
-      this.nombre = this.objeto.nombre;
-      this.imagen = this.objeto.imagen;
+      this.nombre= this.objeto.nombre;
+      this.imagen= this.objeto.imagen;
     };
   }
 
@@ -36,18 +37,22 @@ export class EditSkillComponent implements OnInit {
   }  
 
   onGuardar(){
-    const skill = {
-      nombre: this.nombre,
-      imagen: this.imagen,
-      id: this.objeto ? this.objeto.id : ""
-    };
-    
-    this.nombre = '';
-    this.imagen = '';
-    this.guardando.emit(skill);
+    if (this.nombre !== "" && this.imagen !== ""){
+      const skill = {
+        nombre: this.nombre,
+        imagen: this.imagen,
+        id: this.objeto ? this.objeto.id : ""
+      };      
+      this.nombre = '';
+      this.imagen = '';
+      this.guardando.emit(skill);
+      this.showMensaje=false;
+      this.modalService.dismissAll();
+    } else this.showMensaje=true;
   }
 
   cancelar(){
+    this.showMensaje=false;
     if (this.objeto) {
       this.nombre = this.objeto.nombre;
       this.imagen = this.objeto.imagen;
@@ -56,5 +61,4 @@ export class EditSkillComponent implements OnInit {
       this.imagen = '';
     }
   }
-
 }

@@ -16,8 +16,7 @@ export class CuadroDialogoComponent implements OnInit {
 
   ngOnInit(): void {
     this.formModal = new window.bootstrap.Modal(
-      document.getElementById("contenedor-modal")
-    );
+      document.getElementById('contenedor-modal'));
   }
 
   openModal(){
@@ -30,9 +29,5 @@ export class CuadroDialogoComponent implements OnInit {
 
   cerrarSesion(){
     this.authServ.cerrarSesion();
-
   }
-
-
-
 }

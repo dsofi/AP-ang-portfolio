@@ -1,8 +1,12 @@
-label,h4{
+label,h4,p{
     color: black;
 }
 
 .tit-center{
     display: flex;
     justify-content: center;
+}
+
+p{
+    margin-top: 10px;
 }

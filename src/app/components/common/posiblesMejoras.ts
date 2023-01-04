@@ -3,8 +3,6 @@
 //     user: string;
 //     password: string;
 //   }
-  
-
 
 // OPCION DE QUE UN USUARIO SE REGISTRE, 
 // QUE NO TENGA PERMISOS PARA EDITAR, 
@@ -17,11 +15,25 @@
 
 // INVESTIGAR FUNCION DRAG AND DROP.
 
-// CONSULTA : Cambiar nombre de proyecto de Spring Boot ? ("segunda")
-
 // BOTON DE RESTAURAR DATOS,
 // ELIMINAR TODOS LOS REGISTROS, RECORRER EL ARRAY ?
 // METODO POST PARA TODOS
 
 // SECCION DE CONTACTAME, QUE ENVIE UN MAIL ?
 
+// SUBIR IMAGENES DE LOGOS EN HISTORY (ESTUDIOS, EXP, IDIOMAS),
+// O QUE ESTÉ LA OPCIÓN DE QUE QUEDE VACÍO
+
+// PREGUNTAR ANTES DE ELIMINAR. MODAL- ¿QUIERES ELIMINAR {{OBJETO.NOMBRE}}?
+
+
+
+// CONSULTAS : 
+
+// Cambiar nombre de proyecto de Spring Boot ? ("segunda")
+
+// One to many, Many to one. (Skills, para poder clasificarlas) -después hacerlo con personas-
+
+// Error 403 cuando recién inicio sesión, al actualizar la página si funciona
+
+// Una vez que hacemos el despliegue, podemos seguir probando cosas en el localhost?

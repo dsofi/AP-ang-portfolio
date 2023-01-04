@@ -4,7 +4,6 @@
         {{button}}
     </button>
 </div>
-
   
 <ng-template #content let-modal>
 	<div class="modal-header">
@@ -16,20 +15,25 @@
 			<div class="mb-3">
                 <label for="nombre">Nombre :</label>				
 				<div class="input-group">                    
-					<input id="nombre" class="form-control" placeholder="Ingrese el nombre" name="nombre"
+					<input id="nombre" class="form-control" placeholder="Ingrese el nombre" name="nombre" 
                     autocomplete="off" [value]="objeto?.nombre" [(ngModel)]="nombre"/>	
                 </div>
+                
                 <label for="imagen">Imagen :</label>				
                 <div class="input-group">
-                    <input id="imagen" class="form-control" placeholder="Ingrese la dirección de la imagen" name="imagen"
-                    [value]="objeto?.imagen" [(ngModel)]="imagen"/>	                    
+                    <input id="imagen" class="form-control" placeholder="Ingrese la dirección de la imagen" 
+                    name="imagen" [value]="objeto?.imagen" [(ngModel)]="imagen"/>	                    
+                </div>
+
+                <div *ngIf="showMensaje">
+                    <p>Los campos son obligatorios.</p>
                 </div>
             </div>
 		</form>
 	</div>
 	<div class="modal-footer">
 		<button type="button" class="btn btn-outline-dark" (click)="cancelar(); modal.close()">Cancelar</button>
-		<button type="button" class="btn btn-outline-dark" (click)="onGuardar(); modal.close()">Guardar</button>
+		<button type="button" class="btn btn-outline-dark" (click)="onGuardar()">Guardar</button>
 	</div>
 </ng-template>
 
