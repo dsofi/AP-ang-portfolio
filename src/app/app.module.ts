@@ -9,10 +9,12 @@ import { HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http';
 import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 
 import { FaIconLibrary } from '@fortawesome/angular-fontawesome';
-import { faAngleLeft, faAngleRight, faTimes as fasTimes } from '@fortawesome/free-solid-svg-icons';
+import { faAngleLeft, faAngleRight, faGripHorizontal, faTimes as fasTimes } from '@fortawesome/free-solid-svg-icons';
 import { faEdit as farEdit } from '@fortawesome/free-regular-svg-icons';
 import { faCheck as fasCheck } from '@fortawesome/free-solid-svg-icons';
 import { faHeart } from '@fortawesome/free-solid-svg-icons';
+import { faEllipsis } from '@fortawesome/free-solid-svg-icons';
+
 
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { AutosizeModule } from 'ngx-autosize';
@@ -35,6 +37,7 @@ import { NextDirective } from './directives/next.directive';
 import { PrevDirective } from './directives/prev.directive';
 import { SkillsComponent } from './components/skills/skills.component';
 import { EditSkillComponent } from './modales/edit-skill/edit-skill.component';
+import { DragDropModule } from '@angular/cdk/drag-drop';
 
 @NgModule({
   declarations: [
@@ -66,7 +69,8 @@ import { EditSkillComponent } from './modales/edit-skill/edit-skill.component';
     ReactiveFormsModule,
     AutosizeModule,
     AppRoutingModule,
-    NgbModule
+    NgbModule,
+    DragDropModule
   ],
   providers: [{ provide: HTTP_INTERCEPTORS, useClass: InterceptorService, multi:true }],
   bootstrap: [AppComponent]
@@ -78,7 +82,7 @@ import { EditSkillComponent } from './modales/edit-skill/edit-skill.component';
 export class AppModule {
 
   constructor(library: FaIconLibrary) {
-    library.addIcons( fasTimes, farEdit, fasCheck, faHeart, faAngleRight, faAngleLeft);
+    library.addIcons( fasTimes, farEdit, fasCheck, faHeart, faAngleRight, faAngleLeft, faGripHorizontal, faEllipsis);
   }
   }
  

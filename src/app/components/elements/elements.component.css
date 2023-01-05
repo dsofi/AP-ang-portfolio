@@ -4,4 +4,19 @@ img{
     margin: 30px 15px;
 }
 
+.desaparecer{
+    display: flex;
+    justify-content: space-between;
+}
+
+.mover{
+    cursor: move;
+    padding: 5px 10px 0;
+}
+
+.registro{
+    background-color: black;
+}
+
+
 

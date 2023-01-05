@@ -89,90 +89,114 @@
       "persona": null
     }
   ],
-  "skills":[
+  "idiomas": [
     {
-        "id": 1,
-        "nombre": "VS Code",
-        "imagen": "assets/skills-vscode.jpg",
-        "tiposkill": null
+      "id": 1,
+      "tiempo": "mar 2007 - dic 2010",
+      "titulo": "Inglés Nivel B2 - The House Institute",
+      "descripcion": "",
+      "otrasNotas": "",
+      "imagen": "assets/logo-thehouse-dark.jpg",
+      "editar": false,
+      "orden": 0,
+      "persona": null
     },
     {
-        "id": 2,
-        "nombre": "HTML 5",
-        "imagen": "assets/skills-html5.jpg",
-        "tiposkill": null
-    },
-    {
-        "id": 3,
-        "nombre": "CSS 3",
-        "imagen": "assets/skills-css3.jpg",
-        "tiposkill": null
-    },
-    {
-        "id": 4,
-        "nombre": "JavaScript",
-        "imagen": "assets/skills-javascript.jpg",
-        "tiposkill": null
-    },
-    {
-        "id": 5,
-        "nombre": "GIT",
-        "imagen": "assets/skills-git.jpg",
-        "tiposkill": null
-    },
-    {
-        "id": 6,
-        "nombre": "Git Hub",
-        "imagen": "assets/skills-github.jpg",
-        "tiposkill": null
-    },
-    {
-        "id": 7,
-        "nombre": "TypeScript",
-        "imagen": "assets/skills-typescript.jpg",
-        "tiposkill": null
-    },
-    {
-        "id": 8,
-        "nombre": "Angular",
-        "imagen": "assets/skills-angular.jpg",
-        "tiposkill": null
-    },
-    {
-        "id": 9,
-        "nombre": "MySQL",
-        "imagen": "assets/skills-mysql.jpg",
-        "tiposkill": null
-    },
-    {
-        "id": 10,
-        "nombre": "Spring Boot",
-        "imagen": "assets/skills-springboot.jpg",
-        "tiposkill": null
-    },
-    {
-        "id": 11,
-        "nombre": "Photoshop",
-        "imagen": "assets/skills-photoshop.jpg",
-        "tiposkill": null
-    },
-    {
-        "id": 12,
-        "nombre": "Illustrator",
-        "imagen": "assets/skills-illustrator.jpg",
-        "tiposkill": null
-    },
-    {
-        "id": 13,
-        "nombre": "Figma",
-        "imagen": "assets/skills-figma.jpg",
-        "tiposkill": null
-    },
-    {
-        "id": 14,
-        "nombre": "Whimsical",
-        "imagen": "assets/skills-whimsical.jpg",
-        "tiposkill": null
+      "id": 2,
+      "tiempo": "ago 2021 - jun 2022",
+      "titulo": "Italiano Nivel B2 (DIFA - UNC)",
+      "descripcion": "Departamento de Idiomas con Fines Académicos",
+      "otrasNotas": "",
+      "imagen": "assets/logo-lenguas-dark.jpg",
+      "editar": false,
+      "orden": 1,
+      "persona": null
     }
-]
+  ],
+  "skills": [
+    {
+      "id": 1,
+      "nombre": "VS Code",
+      "imagen": "assets/skills-vscode.jpg",
+      "tiposkill": null
+    },
+    {
+      "id": 2,
+      "nombre": "HTML 5",
+      "imagen": "assets/skills-html5.jpg",
+      "tiposkill": null
+    },
+    {
+      "id": 3,
+      "nombre": "CSS 3",
+      "imagen": "assets/skills-css3.jpg",
+      "tiposkill": null
+    },
+    {
+      "id": 4,
+      "nombre": "JavaScript",
+      "imagen": "assets/skills-javascript.jpg",
+      "tiposkill": null
+    },
+    {
+      "id": 5,
+      "nombre": "GIT",
+      "imagen": "assets/skills-git.jpg",
+      "tiposkill": null
+    },
+    {
+      "id": 6,
+      "nombre": "Git Hub",
+      "imagen": "assets/skills-github.jpg",
+      "tiposkill": null
+    },
+    {
+      "id": 7,
+      "nombre": "TypeScript",
+      "imagen": "assets/skills-typescript.jpg",
+      "tiposkill": null
+    },
+    {
+      "id": 8,
+      "nombre": "Angular",
+      "imagen": "assets/skills-angular.jpg",
+      "tiposkill": null
+    },
+    {
+      "id": 9,
+      "nombre": "MySQL",
+      "imagen": "assets/skills-mysql.jpg",
+      "tiposkill": null
+    },
+    {
+      "id": 10,
+      "nombre": "Spring Boot",
+      "imagen": "assets/skills-springboot.jpg",
+      "tiposkill": null
+    },
+    {
+      "id": 11,
+      "nombre": "Photoshop",
+      "imagen": "assets/skills-photoshop.jpg",
+      "tiposkill": null
+    },
+    {
+      "id": 12,
+      "nombre": "Illustrator",
+      "imagen": "assets/skills-illustrator.jpg",
+      "tiposkill": null
+    },
+    {
+      "id": 13,
+      "nombre": "Figma",
+      "imagen": "assets/skills-figma.jpg",
+      "tiposkill": null
+    },
+    {
+      "id": 14,
+      "nombre": "Whimsical",
+      "imagen": "assets/skills-whimsical.jpg",
+      "tiposkill": null
+    }
+  ]
 }

@@ -5,8 +5,8 @@
 <app-edit-skill [titulo]="'Agregar'" [button]="'+Agregar skills'"
     (guardando)="agregar($event)"></app-edit-skill>
 
-<div class="skills">
-  <div *ngFor="let objeto of skills" class="cajita">       
+<div class="skills" cdkDropList (cdkDropListDropped)="drop($event)">
+  <div *ngFor="let objeto of skills" class="cajita" cdkDrag>       
     <button *ngIf="isLogged" (click)="eliminar(objeto)" class="icono second-color cruz-del">&times;</button> 
     <img [src]="objeto.imagen" alt="Logo {{ objeto.nombre }}"/>
     <p>{{objeto.nombre}}</p>

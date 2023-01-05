@@ -13,7 +13,7 @@
 // AGREGAR BOTON DE EDITAR, Y QUE HAYA COMO UN INPUT PARA SUBIR LA IMAGEN.
 // O SINO UN INPUT OCULTO PARA ESCRIBIR LA RUTA DE ASSETS.
 
-// INVESTIGAR FUNCION DRAG AND DROP.
+// **LISTO - INVESTIGAR FUNCION DRAG AND DROP.
 
 // BOTON DE RESTAURAR DATOS,
 // ELIMINAR TODOS LOS REGISTROS, RECORRER EL ARRAY ?
@@ -28,12 +28,22 @@
 
 
 
+
+
+
+
 // CONSULTAS : 
 
-// Cambiar nombre de proyecto de Spring Boot ? ("segunda")
+// Cambiar nombre de proyecto de Spring Boot? ("segunda")
 
 // One to many, Many to one. (Skills, para poder clasificarlas) -después hacerlo con personas-
 
 // Error 403 cuando recién inicio sesión, al actualizar la página si funciona
 
 // Una vez que hacemos el despliegue, podemos seguir probando cosas en el localhost?
+
+// Imágenes en base de datos, no binario?
+
+// Qué otros temas / tecnologías / frameworks podemos seguir investigando?
+
+

@@ -1,3 +1,4 @@
+import { CdkDragDrop, moveItemInArray } from '@angular/cdk/drag-drop';
 import { Component, OnInit } from '@angular/core';
 import { firstValueFrom } from 'rxjs';
 import { GeneralService } from 'src/app/services/general.service';
@@ -38,6 +39,13 @@ export class SkillsComponent implements OnInit {
   eliminar(objeto: any) {
     this.servGeneral.deleteGeneral(objeto, "skills").subscribe(() => 
       (this.skills = this.skills.filter((o) => o.id !== objeto.id)));
+  }
+
+  drop(event:CdkDragDrop<any>){
+    console.log(event);
+    const anterior = event.previousIndex;
+    const actual = event.currentIndex;
+    moveItemInArray(this.skills,anterior,actual);
   }
 
 }

@@ -1,16 +1,19 @@
 
-<div class="registro">
-  
+<div class="registro" cdkDrag [cdkDragDisabled]="!isLogged">  
   <div> 
     <div class="desaparecer">
+      <button *ngIf="isLogged" cdkDragHandle class="icono main-color mover">
+        <fa-icon [icon]="['fas', 'ellipsis']"></fa-icon> Mover
+      </button>
       <app-btn-edit-delete [puedeEliminar]="true" [objeto]="objeto"
         (onEdit)="editar(objeto)"
         (onDelete)="eliminar(objeto)"
-      ></app-btn-edit-delete>
+      ></app-btn-edit-delete>      
     </div>
   
   <div [ngClass]="{editable: objeto.editar}">
     <div class="elemento" [ngClass]="{lineasDiv: isLogged}">
+      
       <img [src]="objeto.imagen" alt="Logos" />
     
       <div class="datos">
@@ -29,7 +32,7 @@
     
       <app-btn-cancel-save *ngIf="objeto.editar"
         (onGuardar)="guardar(objeto)"
-        (onCancelar)="cancelar()"
+        (onCancelar)="cancelar(objeto)"
       ></app-btn-cancel-save>
     </div>
   </div>

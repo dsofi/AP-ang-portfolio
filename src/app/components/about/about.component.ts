@@ -42,7 +42,9 @@ export class AboutComponent implements OnInit {
   guardar(objeto:any){
     this.persona.editar = false;
     console.log("guardando");
-    this.servGeneral.editGeneral(objeto,this.tipo).subscribe((elem) => objeto=elem);
+    console.log(objeto.sobreMi);
+    console.log(objeto.nombre);
+    this.servGeneral.editGeneral(objeto,this.tipo).subscribe((data) => objeto=data);
   }
   
 }

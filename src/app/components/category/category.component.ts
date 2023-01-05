@@ -1,4 +1,5 @@
-import { Component, Input, OnInit } from '@angular/core';
+import { CdkDragDrop, moveItemInArray } from '@angular/cdk/drag-drop';
+import { ChangeDetectorRef, Component, Input, OnInit } from '@angular/core';
 import { GeneralService } from 'src/app/services/general.service';
 
 @Component({
@@ -11,7 +12,7 @@ export class CategoryComponent implements OnInit {
   @Input() tipo:string="";
   elementos:any[]=[];
   
-  constructor(private servGeneral:GeneralService) { }
+  constructor(private servGeneral:GeneralService, private cdr: ChangeDetectorRef) { }
 
   ngOnInit(): void {
     this.servGeneral.getGeneral(this.tipo).subscribe((data) => (this.elementos = data));
@@ -32,6 +33,13 @@ export class CategoryComponent implements OnInit {
   
   reset(){
     this.ngOnInit();
+  }
+
+  drop(event: CdkDragDrop<any>){
+    const anterior = event.previousIndex;
+    const actual = event.currentIndex;
+    moveItemInArray(this.elementos,anterior,actual);
+    this.servGeneral.orderGeneral(this.elementos,`${this.tipo}/order`).subscribe(() => this.cdr.detectChanges());
   }
 
 }

@@ -32,7 +32,7 @@ export class ElementsComponent implements OnInit {
     this.eliminando.emit(objeto);
   }
 
-  cancelar(){
+  cancelar(objeto:any){
     this.cancelando.emit();
   }
 

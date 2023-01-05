@@ -39,6 +39,11 @@ export class GeneralService {
     const url = `${this.url}/${tipo}/${objeto.id}`;
     return this.http.put(url,objeto);
   }
+
+  orderGeneral(objeto:any, tipo:string){
+    const url = `${this.url}/${tipo}`;
+    return this.http.put(url,objeto);
+  }
   
   toggleAdd():void{
     this.showAdd = !this.showAdd;
