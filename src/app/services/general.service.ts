@@ -9,7 +9,7 @@ import { HttpClient } from '@angular/common/http';
 
 export class GeneralService {
 
-  private url = `http://localhost:8080`;
+  private url = `https://portfolio-backend-jej3.onrender.com`;
 
   private showAdd:boolean = false;
   private subjectAdd = new Subject<any>();  

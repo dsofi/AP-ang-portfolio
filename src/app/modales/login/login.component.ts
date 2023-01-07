@@ -58,7 +58,9 @@ export class LoginComponent implements OnInit {
     if (this.form.valid) {
       this.autenticacionServ.iniciarSesion(this.form.value).subscribe({
         next: () => {
-          this.ruta.navigate(['/home']);
+          this.ruta.navigate(['/home']).then(() => {
+            window.location.reload();
+          });
         },
         error: () => {
           console.log("Error en el login. Usuario o contraseña incorrectos.");

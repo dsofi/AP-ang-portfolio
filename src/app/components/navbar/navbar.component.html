@@ -2,7 +2,7 @@
   <a href="https://www.argentina.gob.ar/produccion/transformacion-digital-y-economia-del-conocimiento/argentina-programa" target="_blank">
     <img src="assets/logo-argprog-dark.png" alt="Logo Argentina Programa" class="logoArgPrograma"/>
   </a>
-  <button *ngIf="!isLogged" routerLink="/iniciar-sesion" class="boton-login">Ingresar</button>
+  <button *ngIf="!isLogged" [routerLink]="['/iniciar-sesion']" class="boton-login">Ingresar</button>
   <button *ngIf="isLogged" (click)="cerrarSesion()" class="boton-login">Salir</button>
 </nav>
 

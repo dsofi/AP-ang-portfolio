@@ -38,6 +38,7 @@ import { PrevDirective } from './directives/prev.directive';
 import { SkillsComponent } from './components/skills/skills.component';
 import { EditSkillComponent } from './modales/edit-skill/edit-skill.component';
 import { DragDropModule } from '@angular/cdk/drag-drop';
+import { ContactComponent } from './components/contact/contact.component';
 
 @NgModule({
   declarations: [
@@ -59,7 +60,8 @@ import { DragDropModule } from '@angular/cdk/drag-drop';
     NextDirective,
     PrevDirective,
     SkillsComponent,
-    EditSkillComponent
+    EditSkillComponent,
+    ContactComponent
   ],
   imports: [
     BrowserModule,
