@@ -20,8 +20,9 @@ img:hover{
     gap: 20px;
     justify-content: center;
     margin: 60px auto 0;
-    width: 900px;
+    max-width: 900px;
     flex-wrap: wrap;
+    min-width: 248px;
     /* background-color: blue; */
 }
 

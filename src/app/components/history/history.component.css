@@ -17,3 +17,13 @@
 .exper-mb{
     margin-bottom: 40px;
 }
+
+@media (max-width: 1220px){
+    .chica{
+        width: 600px;
+    }
+
+    .exper-mb{
+        margin-bottom: 60px;
+    }
+}

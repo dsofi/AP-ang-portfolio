@@ -19,7 +19,7 @@ h2{
     margin-right: 3%;
 }
 
-span{
+.nombre{
     color: var(--main-color);
     letter-spacing: .25rem;
 }
@@ -47,30 +47,35 @@ span{
     .container{
         margin-right: 0;
         padding: 0;
+        right: 16px;
     }
-    h1{
-        font-size: 1.25rem;
-    }
-    h2{
-        font-size: .9rem;
+    
+    img{
+        opacity: 0.6;
     }
   }
 
   @media (max-width: 400px) {
     .container{
-        right: 16px;
+        width: 248px;
+        text-align: center;
     }
-    img{
-        height: 420px;
+
+    .hola{
+        display: block;
     }
-    h1{
-        font-size: 1rem;
+
+    .saludo{
+        font-size: 1.2rem;
     }
-    span{        
-        letter-spacing: .06rem;
+
+    .nombre{
+        letter-spacing: 0.1rem;
     }
+
     h2{
-        font-size: .8rem;
+        width: 175px;
+        margin: 0 auto;
     }
   }
 

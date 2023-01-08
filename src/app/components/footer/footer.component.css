@@ -15,3 +15,9 @@ p{
 span{
     letter-spacing: .1rem;
 }
+
+@media (max-width: 600px){
+    p{
+        padding: 10px 25px;
+    }
+}

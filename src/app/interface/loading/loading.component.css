@@ -13,7 +13,7 @@
         escalando2 5s ease-in-out 100s forwards,
         escalando3 10s ease-in-out 110s forwards,
         rotando2 10s ease-in-out 120s forwards,
-        juntando 10s ease-in-out 130s forwards;
+        juntando 6s ease-in-out 130s forwards;
 }  
 .square:hover {
     border-color: var(--second-color)
