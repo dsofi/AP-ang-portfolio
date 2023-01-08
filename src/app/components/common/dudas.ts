@@ -38,12 +38,19 @@
 
 // One to many, Many to one. (Skills, para poder clasificarlas) -después hacerlo con personas-
 
-// Error 403 cuando recién inicio sesión, al actualizar la página si funciona
-
 // Una vez que hacemos el despliegue, podemos seguir probando cosas en el localhost?
+
+// Se ve el token en el session storage
 
 // Imágenes en base de datos, no binario?
 
 // Qué otros temas / tecnologías / frameworks podemos seguir investigando?
 
+
+
+
+
+// RESUELTAS :
+
+// ** LISTO - Error 403 cuando recién inicio sesión, al actualizar la página si funciona
 

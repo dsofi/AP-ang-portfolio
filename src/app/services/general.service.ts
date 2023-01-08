@@ -15,6 +15,7 @@ export class GeneralService {
   private subjectAdd = new Subject<any>();  
   private editando:boolean = false;
   private subjectEditando = new Subject<any>();
+  subjectIsLoading = new Subject<boolean>();
 
   currentUser = sessionStorage.getItem('currentUser') || '...';  
   
@@ -61,5 +62,13 @@ export class GeneralService {
 
   onToggleEditando():Observable<any>{
     return this.subjectEditando.asObservable();
+  }
+
+  showLoading():void{
+    this.subjectIsLoading.next(true);
+  }
+
+  hideLoading():void{
+    this.subjectIsLoading.next(false);
   }
 }

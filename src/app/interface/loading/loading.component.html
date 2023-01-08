@@ -1,0 +1,23 @@
+<div *ngIf="isLoading | async" class="overlay">
+     
+<div class="cont-squares">
+    <div class="squares">
+        <div class="square" *ngFor="let square of squares"
+            [ngStyle]="{ 'animation-delay': square.delay, 'transform': square.transform }"
+            [ngStyle]="square.style"
+            [style.width.px]="square.width"
+            [style.height.px]="square.width"
+            [style.left.px]="square.left"
+            [style.opacity]="square.opacity"
+            [style.animation-duration]="square.duration"
+        ></div>
+    </div>
+</div>
+<div class="texto final" [ngStyle]="escribFrase">
+    <p class="frase">{{frase}}</p>
+</div>
+<div class="texto" [ngStyle]="escribiendo">
+    <p class="mensaje">{{mensaje}}</p>
+</div>
+ 
+</div>

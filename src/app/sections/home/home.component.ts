@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { Subscription } from 'rxjs';
+import { GeneralService } from 'src/app/services/general.service';
 
 @Component({
   selector: 'app-home',
@@ -8,7 +8,10 @@ import { Subscription } from 'rxjs';
 })
 export class HomeComponent implements OnInit {
 
-  constructor() { }
+  isLoading =  this.servGeneral.subjectIsLoading;
+
+  constructor(private servGeneral:GeneralService) {   }
+
 
   ngOnInit(): void {
   }

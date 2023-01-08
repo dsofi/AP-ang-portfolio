@@ -147,3 +147,16 @@ h3{
   color: var(--second-color);
 }
 
+.cont-squares{
+  display: flex;
+  justify-content: center;
+}    
+
+.squares{
+  width: 1200px;
+  height: 85vh; 
+  display: flex;
+  justify-content: center;
+  position: relative;
+}
+
