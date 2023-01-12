@@ -1,6 +1,7 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 
+
 import { AppComponent } from './app.component';
 import { AboutComponent } from './components/about/about.component';
 import { CoverComponent } from './components/cover/cover.component';
@@ -40,6 +41,7 @@ import { EditSkillComponent } from './modales/edit-skill/edit-skill.component';
 import { DragDropModule } from '@angular/cdk/drag-drop';
 import { ContactComponent } from './components/contact/contact.component';
 import { LoadingComponent } from './interface/loading/loading.component';
+import { ConfirmDeleteComponent } from './modales/confirm-delete/confirm-delete.component';
 
 @NgModule({
   declarations: [
@@ -63,7 +65,8 @@ import { LoadingComponent } from './interface/loading/loading.component';
     SkillsComponent,
     EditSkillComponent,
     ContactComponent,
-    LoadingComponent
+    LoadingComponent,
+    ConfirmDeleteComponent
   ],
   imports: [
     BrowserModule,

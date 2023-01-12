@@ -1,3 +1,4 @@
+import { ThisReceiver } from '@angular/compiler';
 import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
 
 @Component({
@@ -31,6 +32,10 @@ export class BtnAddFormComponent implements OnInit {
   }
 
   cancelar(){
+    this.titulo = "";
+    this.tiempo = "";
+    this.descripcion = "";
+    this.otrasNotas = "";
     this.showAdd=false;
   }
 

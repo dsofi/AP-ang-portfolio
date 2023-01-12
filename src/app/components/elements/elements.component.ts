@@ -14,6 +14,7 @@ export class ElementsComponent implements OnInit {
   @Output() toggleEdit:EventEmitter<any> = new EventEmitter();
 
   isLogged:boolean=false;
+  
 
   constructor() { }
 
@@ -28,8 +29,13 @@ export class ElementsComponent implements OnInit {
     objeto.editar = true;
   }
 
+  confirmarEliminacion(nombre:string): boolean {
+    return window.confirm('¿Deseas eliminar ' + nombre + '?');
+  }
+
   eliminar(objeto:any){
-    this.eliminando.emit(objeto);
+    if (this.confirmarEliminacion(objeto.titulo))
+    {this.eliminando.emit(objeto);}
   }
 
   cancelar(objeto:any){
@@ -40,6 +46,14 @@ export class ElementsComponent implements OnInit {
     objeto.editar = false;
     this.guardando.emit(objeto);
   }
+
+  
+
+  // eliminar(objeto: any): void {
+  //   if (this.confirmarEliminacion()) {
+  //     // Aquí puedes escribir el código para eliminar el objeto
+  //   }
+  // }
 
   
 

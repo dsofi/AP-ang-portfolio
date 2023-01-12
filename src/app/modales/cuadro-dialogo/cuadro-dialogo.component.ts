@@ -10,21 +10,21 @@ declare var window:any;
 })
 export class CuadroDialogoComponent implements OnInit {
 
-  formModal:any;
+  cerrarSesionModal:any;
 
   constructor(private authServ:AutenticacionService) { }
 
   ngOnInit(): void {
-    this.formModal = new window.bootstrap.Modal(
-      document.getElementById('contenedor-modal'));
+    this.cerrarSesionModal = new window.bootstrap.Modal(
+      document.getElementById('cerrar-sesion-modal'));
   }
 
   openModal(){
-    this.formModal.show();
+    this.cerrarSesionModal.show();
   }
 
   closeModal(){
-    this.formModal.hide();
+    this.cerrarSesionModal.hide();
   }
 
   cerrarSesion(){

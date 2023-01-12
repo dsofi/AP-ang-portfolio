@@ -150,6 +150,7 @@ h3{
 .cont-squares{
   display: flex;
   justify-content: center;
+  overflow-x: hidden;
 }    
 
 .squares{

@@ -33,7 +33,7 @@ export class EditSkillComponent implements OnInit {
   }
 
   open(content:any){
-    this.modalService.open(content, { keyboard: false, backdrop: 'static' });
+    this.modalService.open(content, { windowClass: 'mi-modal', keyboard: false, backdrop: 'static'});
   }  
 
   onGuardar(){

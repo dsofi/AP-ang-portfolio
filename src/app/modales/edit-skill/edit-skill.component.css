@@ -1,5 +1,11 @@
+
+
 label,h4,p{
     color: black;
+}
+
+h4{
+    font-size: 22px;
 }
 
 .tit-center{
@@ -7,6 +13,17 @@ label,h4,p{
     justify-content: center;
 }
 
-p{
-    margin-top: 10px;
+button{
+    border-radius: 0;
+}
+
+::ng-deep .modal-content{
+    border-radius: 0;
+}
+
+@media (max-width: 575px){
+    ::ng-deep .modal-dialog{
+        top: 15%;
+    }
+
 }

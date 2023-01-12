@@ -5,7 +5,7 @@
     </button>
 </div>
   
-<ng-template #content let-modal>
+<ng-template #content let-modal class="rounded-0">
 	<div class="modal-header">
 		<h4 class="modal-title" id="modal-basic-title">{{titulo}} skills</h4>
 		<button type="button" class="btn-close" aria-label="Close" (click)="cancelar(); modal.close()"></button>
@@ -14,7 +14,7 @@
 		<form enctype="multipart/form-data">
 			<div class="mb-3">
                 <label for="nombre">Nombre :</label>				
-				<div class="input-group">                    
+				<div class="input-group mb-3">                    
 					<input id="nombre" class="form-control" placeholder="Ingrese el nombre" name="nombre" 
                     autocomplete="off" [value]="objeto?.nombre" [(ngModel)]="nombre"/>	
                 </div>
