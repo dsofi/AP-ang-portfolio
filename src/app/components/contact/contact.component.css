@@ -1,9 +1,12 @@
 
+.cont-contact{
+    background-color: var(--dark-gray);
+    width: 100%;
+}
 .contact-me{
     max-width: 600px;
     min-width: 225px;
-    margin: 120px auto 0;
-    background-color: var(--dark-gray);
+    margin: 120px auto 0;    
     padding: 20px;
 }
 
@@ -15,7 +18,7 @@ h3{
 h3::after{
     content: "";
     display: block;
-    margin: 10px auto 15px;
+    margin: 10px auto 50px;
     width: 60px;
     height: 2px;
     background-color: var(--main-color);
@@ -28,6 +31,10 @@ input{
 textarea{
     width: 100%;
     padding-left: 10px;
+}
+
+form > div:nth-child(2){
+    min-height: 90px;
 }
 
 button{
@@ -64,7 +71,6 @@ textarea:focus ~ label,
 textarea:valid ~ label,
 input:not(:placeholder-shown) ~ label{
     transform: translateY(-20px);
-    color: var(--second-color);
     font-size: 12px;
 }
 

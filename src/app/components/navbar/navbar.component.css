@@ -6,7 +6,15 @@ nav {
     left: 0;
     right: 0;
     z-index: 30;
-    width: 100vw;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    
+}
+
+.int-nav{
+    width: 100%;
+    max-width: 2000px;
     display: flex;
     justify-content: space-between;
     padding: 1% 6% 0.5%;
@@ -20,5 +28,16 @@ button{
     text-align: center;
     padding: 0 20px;
     border: solid 1px white;
+}
+
+@media (max-width: 500px){
+    nav{
+        /* width: calc(100vw - 20px); */
+        padding: 1% 25px 0.5% 5px;
+    }
+
+    button{
+        padding: 0 10px;
+    }
 }
 
