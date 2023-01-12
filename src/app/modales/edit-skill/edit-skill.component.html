@@ -1,11 +1,11 @@
 
 <div class="tit-center">
-    <button *ngIf="isLogged" (click)="open(content)" class="icono main-color edit">
+    <button *ngIf="isLogged" (click)="open(editSkill)" class="icono main-color edit">
         {{button}}
     </button>
 </div>
   
-<ng-template #content let-modal class="rounded-0">
+<ng-template #editSkill let-modal class="rounded-0">
 	<div class="modal-header">
 		<h4 class="modal-title" id="modal-basic-title">{{titulo}} skills</h4>
 		<button type="button" class="btn-close" aria-label="Close" (click)="cancelar(); modal.close()"></button>

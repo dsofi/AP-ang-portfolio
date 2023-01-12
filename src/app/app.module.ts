@@ -32,7 +32,7 @@ import { ElementsComponent } from './components/elements/elements.component';
 import { InterceptorService } from './services/interceptor.service';
 import { CuadroDialogoComponent } from './modales/cuadro-dialogo/cuadro-dialogo.component';
 import { FooterComponent } from './components/footer/footer.component';
-import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
+import { NgbActiveModal, NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { ProyectosComponent } from './components/proyectos/proyectos.component';
 import { NextDirective } from './directives/next.directive';
 import { PrevDirective } from './directives/prev.directive';
@@ -42,6 +42,7 @@ import { DragDropModule } from '@angular/cdk/drag-drop';
 import { ContactComponent } from './components/contact/contact.component';
 import { LoadingComponent } from './interface/loading/loading.component';
 import { ConfirmDeleteComponent } from './modales/confirm-delete/confirm-delete.component';
+import { ConfirmMailComponent } from './modales/confirm-mail/confirm-mail.component';
 
 @NgModule({
   declarations: [
@@ -66,7 +67,8 @@ import { ConfirmDeleteComponent } from './modales/confirm-delete/confirm-delete.
     EditSkillComponent,
     ContactComponent,
     LoadingComponent,
-    ConfirmDeleteComponent
+    ConfirmDeleteComponent,
+    ConfirmMailComponent
   ],
   imports: [
     BrowserModule,
@@ -79,7 +81,7 @@ import { ConfirmDeleteComponent } from './modales/confirm-delete/confirm-delete.
     NgbModule,
     DragDropModule
   ],
-  providers: [{ provide: HTTP_INTERCEPTORS, useClass: InterceptorService, multi:true }],
+  providers: [{ provide: HTTP_INTERCEPTORS, useClass: InterceptorService, multi:true }, NgbActiveModal],
   bootstrap: [AppComponent]
 
 })

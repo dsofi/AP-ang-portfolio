@@ -1,4 +1,3 @@
-import { ThisReceiver } from '@angular/compiler';
 import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
 
 @Component({
@@ -41,7 +40,7 @@ export class BtnAddFormComponent implements OnInit {
 
   submit(){
     const { titulo, tiempo, descripcion, otrasNotas} = this;
-      const objeto:any = { titulo, tiempo, descripcion, otrasNotas};
+    const objeto:any = { titulo, tiempo, descripcion, otrasNotas};
 
       this.titulo = '';
       this.tiempo = '';

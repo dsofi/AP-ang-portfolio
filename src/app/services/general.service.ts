@@ -71,4 +71,9 @@ export class GeneralService {
   hideLoading():void{
     this.subjectIsLoading.next(false);
   }
+
+  enviarMail(mail:any){
+    const url = `${this.url}/enviar-mail`;
+    return this.http.post<any>(url, mail);
+  }
 }
