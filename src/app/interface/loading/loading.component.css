@@ -102,6 +102,3 @@ p.mensaje::after{
 @keyframes titilando-final {to{background: transparent}}
 @keyframes aparecer {to{top:30%}}
 
-.mensaje{
-    margin-bottom: 200px;
-}

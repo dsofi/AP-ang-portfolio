@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { GeneralService } from 'src/app/services/general.service';
 
 @Component({
   selector: 'app-proyectos',
@@ -7,21 +8,17 @@ import { Component, OnInit } from '@angular/core';
 })
 export class ProyectosComponent implements OnInit {
 
-  misProyectos:any[]=[
-    {"titulo":"Nombre 1","descripcion":"blabla UNO. Lorem ipsum dolor sit amet, consectetur adipiscing elit."},
-    {"titulo":"Nombre 2","descripcion":"blabla DOS. Lorem ipsum dolor sit amet, consectetur adipiscing elit."},
-    {"titulo":"Nombre 3","descripcion":"blabla TRES. Lorem ipsum dolor sit amet, consectetur adipiscing elit."},
-    {"titulo":"Nombre 4","descripcion":"blabla CUATRO. Lorem ipsum dolor sit amet, consectetur adipiscing elit."},
-    {"titulo":"Nombre 5","descripcion":"blabla CINCO. Lorem ipsum dolor sit amet, consectetur adipiscing elit."},
-    {"titulo":"Nombre 6","descripcion":"blabla SEIS. Lorem ipsum dolor sit amet, consectetur adipiscing elit."},
-    {"titulo":"Nombre 7","descripcion":"blabla SIETE. Lorem ipsum dolor sit amet, consectetur adipiscing elit."},
-    {"titulo":"Nombre 8","descripcion":"blabla OCHO. Lorem ipsum dolor sit amet, consectetur adipiscing elit."},
-    {"titulo":"Nombre 9","descripcion":"blabla NUEVE. Lorem ipsum dolor sit amet, consectetur adipiscing elit."}
-  ]
+  misProyectos:any[]=[]
 
-  constructor() { }
+  constructor(private servGeneral:GeneralService) { 
+    this.servGeneral.getGeneral("proyectos").subscribe((data) => (this.misProyectos = data));
+  }
 
   ngOnInit(): void {
+  }
+
+  addGeneral(objeto:any){
+    this.servGeneral.addGeneral(objeto,"proyectos").subscribe((data) => this.misProyectos.push(data));
   }
 
 }

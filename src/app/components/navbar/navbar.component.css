@@ -31,9 +31,9 @@ button{
 }
 
 @media (max-width: 500px){
-    nav{
+    .int-nav{
         /* width: calc(100vw - 20px); */
-        padding: 1% 25px 0.5% 5px;
+        padding: 1% 10px 0 0;
     }
 
     button{
