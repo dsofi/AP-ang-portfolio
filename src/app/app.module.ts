@@ -6,6 +6,7 @@ import { AppComponent } from './app.component';
 import { AboutComponent } from './components/about/about.component';
 import { CoverComponent } from './components/cover/cover.component';
 
+
 import { HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http';
 import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 
@@ -79,7 +80,8 @@ import { ConfirmMailComponent } from './modales/confirm-mail/confirm-mail.compon
     AutosizeModule,
     AppRoutingModule,
     NgbModule,
-    DragDropModule
+    DragDropModule,
+    AutosizeModule
   ],
   providers: [{ provide: HTTP_INTERCEPTORS, useClass: InterceptorService, multi:true }, NgbActiveModal],
   bootstrap: [AppComponent]

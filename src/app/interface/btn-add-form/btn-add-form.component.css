@@ -4,3 +4,9 @@
   top: -35px;
   height: 0;
 } 
+
+textarea{
+  overflow:hidden;
+  width: 100%;
+}
+

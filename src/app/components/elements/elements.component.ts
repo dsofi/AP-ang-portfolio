@@ -1,4 +1,4 @@
-import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
+import { Component, ElementRef, EventEmitter, Input, OnInit, Output, ViewChild } from '@angular/core';
 
 @Component({
   selector: 'app-elements',
@@ -13,10 +13,12 @@ export class ElementsComponent implements OnInit {
   @Output() guardando:EventEmitter<any> = new EventEmitter();
   @Output() toggleEdit:EventEmitter<any> = new EventEmitter();
 
-  isLogged:boolean=false;
-  
 
-  constructor() { }
+
+  isLogged:boolean=false; 
+
+  constructor() { 
+  }
 
   ngOnInit(): void {
     const currentUser = (sessionStorage.getItem('currentUser')||'...');
@@ -54,6 +56,11 @@ export class ElementsComponent implements OnInit {
   //     // Aquí puedes escribir el código para eliminar el objeto
   //   }
   // }
+
+  autoGrowTextZone(e:any) {
+    e.target.style.height = "0px";
+    e.target.style.height = (e.target.scrollHeight + 15)+"px";
+  }
 
   
 

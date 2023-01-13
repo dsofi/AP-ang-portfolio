@@ -3,12 +3,15 @@
     <div class="campos">
         <input type="text" name="tiempo" placeholder="Agregar tiempo" class="tiempo" 
             [(ngModel)]="tiempo" autocomplete="off"/>
-        <input type="text" name="titulo" placeholder="Agregar titulo" class="titulo"
-            [(ngModel)]="titulo" autocomplete="off"/>
-        <input type="text" name="descripcion" placeholder="Agregar descripción" class="descripcion"
-            [(ngModel)]="descripcion" autocomplete="off"/>
-        <input type="text" name="otrasNotas" placeholder="Agregar nota" class="descripcion"
-            [(ngModel)]="otrasNotas" autocomplete="off"/>
+        <textarea type="text" name="titulo" placeholder="Agregar titulo" class="titulo"
+            autosize [minRows]="1" [maxRows]="6" [useImportant]="true"
+            [(ngModel)]="titulo" autocomplete="off"></textarea>
+        <textarea type="text" name="descripcion" placeholder="Agregar descripción" class="descripcion"
+            autosize [minRows]="1" [maxRows]="6" [useImportant]="true"
+            [(ngModel)]="descripcion" autocomplete="off"></textarea>
+        <textarea type="text" name="otrasNotas" placeholder="Agregar nota" class="descripcion"
+            autosize [minRows]="1" [maxRows]="6" [useImportant]="true"
+            [(ngModel)]="otrasNotas" autocomplete="off"></textarea>
     </div>
 
     <div class="botones">
