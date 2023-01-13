@@ -1,17 +1,20 @@
 <button *ngIf="!showAdd && isLogged" (click)="onAgregar()" class="icono main-color arriba">+Agregar {{tipo}}</button>
 <div *ngIf="showAdd" class="editable">
     <div class="campos">
-        <input type="text" name="tiempo" placeholder="Agregar tiempo" class="tiempo" 
+        <input type="text" name="tiempo" placeholder="Agregar tiempo*" class="tiempo" required=""
             [(ngModel)]="tiempo" autocomplete="off"/>
-        <textarea type="text" name="titulo" placeholder="Agregar titulo" class="titulo"
-            autosize [minRows]="1" [maxRows]="6" [useImportant]="true"
+        <textarea type="text" name="titulo" placeholder="Agregar titulo*" class="titulo"
+            autosize [minRows]="1" [maxRows]="6" [useImportant]="true" required=""
             [(ngModel)]="titulo" autocomplete="off"></textarea>
-        <textarea type="text" name="descripcion" placeholder="Agregar descripción" class="descripcion"
-            autosize [minRows]="1" [maxRows]="6" [useImportant]="true"
+        <textarea type="text" name="descripcion" placeholder="Agregar descripción*" class="descripcion"
+            autosize [minRows]="1" [maxRows]="6" [useImportant]="true" required=""
             [(ngModel)]="descripcion" autocomplete="off"></textarea>
-        <textarea type="text" name="otrasNotas" placeholder="Agregar nota" class="descripcion"
-            autosize [minRows]="1" [maxRows]="6" [useImportant]="true"
+        <textarea type="text" name="otrasNotas" placeholder="Agregar nota (opcional)" class="descripcion"
+            autosize [minRows]="1" [maxRows]="6" [useImportant]="true" required=""
             [(ngModel)]="otrasNotas" autocomplete="off"></textarea>
+        <textarea type="text" name="imagen" placeholder="Agregar url de imagen (opcional)" class="descripcion"
+            autosize [minRows]="1" [maxRows]="6" [useImportant]="true" required=""
+            [(ngModel)]="imagen" autocomplete="off"></textarea>
     </div>
 
     <div class="botones">

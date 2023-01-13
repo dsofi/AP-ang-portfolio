@@ -1,5 +1,5 @@
 import { CdkDragDrop, moveItemInArray } from '@angular/cdk/drag-drop';
-import { Component, OnInit } from '@angular/core';
+import { ChangeDetectorRef, Component, OnInit } from '@angular/core';
 import { firstValueFrom } from 'rxjs';
 import { GeneralService } from 'src/app/services/general.service';
 
@@ -13,7 +13,7 @@ export class SkillsComponent implements OnInit {
   skills:any[]=[];
   isLogged:boolean=false;  
 
-  constructor(private servGeneral:GeneralService) {   }
+  constructor(private servGeneral:GeneralService, private cdr: ChangeDetectorRef) {   }
 
   ngOnInit(): void {
     this.servGeneral.getGeneral("skills").subscribe((data) => (this.skills = data));
@@ -42,10 +42,11 @@ export class SkillsComponent implements OnInit {
   }
 
   drop(event:CdkDragDrop<any>){
-    console.log(event);
     const anterior = event.previousIndex;
     const actual = event.currentIndex;
     moveItemInArray(this.skills,anterior,actual);
+    this.servGeneral.orderGeneral(this.skills,`sklls/order`).subscribe(() => this.cdr.detectChanges());
+
   }
 
 }

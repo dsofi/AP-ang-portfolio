@@ -12,10 +12,13 @@
     </div>  
   
     <div [ngClass]="{editable: objeto.editar}">
-      <div class="elemento" [ngClass]="{lineasDiv: isLogged}">
-        
-        <img [src]="objeto.imagen" alt="Logos" />
+      <div class="elemento" [ngClass]="{lineasDiv: isLogged}">      
       
+        <div [ngClass]="{imgedit: objeto.editar}" (click)="editarImagen(objeto)" class="imagen-vacio">
+          <p *ngIf="objeto.editar && (objeto.imagen == null || objeto.imagen == '') ">+</p>
+          <img *ngIf="objeto.imagen != null || objeto.imagen != ''" [src]="objeto.imagen"/>
+        </div>
+              
         <div class="datos">
           <input type="text" name="tiempo" autocomplete="off" class="tiempo"
             [(ngModel)]="objeto.tiempo" [readonly]="!objeto.editar"/>

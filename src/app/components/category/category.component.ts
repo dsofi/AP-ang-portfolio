@@ -23,6 +23,8 @@ export class CategoryComponent implements OnInit {
   }
 
   guardar(objeto:any){
+    console.log("desde categoria" + objeto.imagen);
+    console.log("desde categoria" + objeto.titulo);
     this.servGeneral.editGeneral(objeto, this.tipo).subscribe((data) => objeto=data);
   }
 

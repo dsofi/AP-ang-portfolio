@@ -5,8 +5,33 @@
 }
 
 img{
-    height: 40px;
-    margin: 30px 15px;
+    width: 60%;
+}
+
+.imgedit{
+    cursor: pointer;    
+}
+
+.imgedit img:hover{
+    opacity: 0.6;
+}
+
+.imagen-vacio{
+    width: 80px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.imagen-vacio:hover{
+    color: var(--main-color);
+}
+
+.imagen-vacio p{
+    /* background-color: red; */
+    text-align: right;
+    margin: 0;
+    width: 55px;
 }
 
 .desaparecer{
@@ -26,5 +51,7 @@ img{
 textarea{
     overflow:hidden;
 }
+
+
 
 

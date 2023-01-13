@@ -16,6 +16,7 @@ export class BtnAddFormComponent implements OnInit {
   tiempo: string = '';
   descripcion: string = '';
   otrasNotas: string = '';
+  imagen:string = '';
 
   constructor() {  }
 
@@ -35,22 +36,25 @@ export class BtnAddFormComponent implements OnInit {
     this.tiempo = "";
     this.descripcion = "";
     this.otrasNotas = "";
+    this.imagen = "";
     this.showAdd=false;
   }
 
   submit(){
-    const { titulo, tiempo, descripcion, otrasNotas} = this;
-    const objeto:any = { titulo, tiempo, descripcion, otrasNotas};
+    const { titulo, tiempo, descripcion, otrasNotas, imagen} = this;
+    const objeto:any = { titulo, tiempo, descripcion, otrasNotas, imagen};
 
+    if (!titulo || !tiempo || !descripcion) {
+      alert('Título, tiempo y descripción son campos obligatorios');
+      return;
+    }
       this.titulo = '';
       this.tiempo = '';
       this.descripcion = '';
       this.otrasNotas = '';
+      this.imagen = '';
 
       this.showAdd=false;
-
       this.agregando.emit(objeto);
-
   }
-
 }

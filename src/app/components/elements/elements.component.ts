@@ -62,6 +62,21 @@ export class ElementsComponent implements OnInit {
     e.target.style.height = (e.target.scrollHeight + 15)+"px";
   }
 
+  editarImagen(objeto:any){
+    if (objeto.editar){
+      let urlImagen = prompt("Introduce la URL de la imagen.\nSi deseas mantener la misma imagen deja el input vacío y presiona 'Aceptar'.\nSi deseas eliminar la imagen presiona 'Cancelar'.");
+      if (urlImagen !== ""){
+        objeto.imagen = urlImagen;
+        console.log(objeto.tiempo);
+        console.log(objeto.titulo);
+        console.log(objeto.imagen);
+        console.log("TERMINA DESDE ELEMENTO");
+        
+      }
+      this.guardando.emit(objeto);
+    }
+  }
+
   
 
   
