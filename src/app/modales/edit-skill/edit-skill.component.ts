@@ -18,8 +18,7 @@ export class EditSkillComponent implements OnInit {
 
   nombre:string="";
   imagen:string="";
-  tiposkill:any={};
-  tiposkillSelected: any;
+  tiposkill:any={id: "", nombre: ""};
 
   listaskills:any[]=[];
 
@@ -45,7 +44,8 @@ export class EditSkillComponent implements OnInit {
   }  
 
   onGuardar(){
-    if (this.nombre !== "" && this.imagen !== ""){
+    if (this.nombre !== "" && this.imagen !== "" && this.tiposkill !== null &&
+    JSON.stringify(this.tiposkill) !== JSON.stringify({ id: "", nombre: "" })){
       const skill = {
         nombre: this.nombre,
         imagen: this.imagen,

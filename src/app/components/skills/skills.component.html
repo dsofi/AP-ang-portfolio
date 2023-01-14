@@ -5,17 +5,17 @@
 <app-edit-skill [titulo]="'Agregar'" [button]="'+Agregar skills'"
     (guardando)="agregar($event)"></app-edit-skill>
 
-    <div *ngFor="let group of skills | agruparPor: 'tiposkill'">
-      <div class="tiposkill">{{group.key}}</div>
-  <div class="skills" cdkDropList (cdkDropListDropped)="drop($event, group.value)">
+<div *ngFor="let group of skills | agruparPor: 'tiposkill'">
+  <!-- <div class="tiposkill">{{group.key}}</div> -->
+  <div class="skills" cdkDropList cdkDropListOrientation="horizontal" (cdkDropListDropped)="drop($event, group.value)">
     <div *ngFor="let objeto of group.value" class="cajita" cdkDrag [cdkDragDisabled]="!isLogged">
       <button *ngIf="isLogged" (click)="eliminar(objeto)" class="icono second-color cruz-del">&times;</button>
       <img [src]="objeto.imagen" alt="Logo {{ objeto.nombre }}"/>
-      <p>{{objeto.nombre}}</p>
+      <p [ngClass]="{move: isLogged}">{{objeto.nombre}}</p>
       <div class="edit">
-          <app-edit-skill [titulo]="'Editar'" [button]="'&#x270E; Editar'" [objeto]="objeto"
-              (guardando)="guardar($event)">
-          </app-edit-skill>
+        <app-edit-skill [titulo]="'Editar'" [button]="'&#x270E; Editar'" [objeto]="objeto"
+          (guardando)="guardar($event)">
+        </app-edit-skill>
       </div>
     </div>
   </div>

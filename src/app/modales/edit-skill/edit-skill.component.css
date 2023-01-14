@@ -1,7 +1,10 @@
 
-
-label,h4,p{
+label,h4{
     color: black;
+}
+
+p{
+    color: var(--dark-red);
 }
 
 h4{
@@ -15,6 +18,11 @@ h4{
 
 button{
     border-radius: 0;
+}
+
+.txt-second{
+    font-size: 13px;
+    color: var(--gray-color);
 }
 
 ::ng-deep .modal-content{

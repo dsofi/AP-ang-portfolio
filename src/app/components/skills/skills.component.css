@@ -1,25 +1,27 @@
 img{
     border-radius: 100%;
     width: 80px;
+    cursor: none;
 }
 
 img:hover{
-    animation: Aumentar 2s ease;
+    animation: Aumentar 2s ease forwards;
 }
 
 @keyframes Aumentar {
-    0% {scale: 1;
-        transform: rotate(0deg)}
-    50% {scale: 1.5;
+    0% {scale: 1}
+    30% {scale: 1.2}
+    60% {scale: 0.9}
+    80% {scale: 1.1}
+    100% {scale: 1;
         transform: rotate(360deg)}
-    100% {scale: 1;}
   }
 
 .skills{
     display: flex;
-    gap: 25px;
+    gap: 5px;
     justify-content: center;
-    margin: 60px auto 0;
+    margin: 25px auto 0;
     max-width: 900px;
     flex-wrap: wrap;
     min-width: 248px;
@@ -42,8 +44,12 @@ img:hover{
 
 p{
     font-size: 12px;
-    margin: 10px auto 0;
+    margin: 5px auto 0;
     text-align: center;
+}
+
+.move{    
+    cursor: move;
 }
 
 .icono{

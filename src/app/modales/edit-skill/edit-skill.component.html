@@ -20,15 +20,14 @@
                 </div>
                 
                 <label for="imagen">Imagen :</label>				
-                <div class="input-group">
-                    <input id="imagen" class="form-control" placeholder="Ingrese la dirección de la imagen" 
-                    name="imagen" [value]="objeto?.imagen" [(ngModel)]="imagen"/>	                    
+                <div class="input-group mb-3">
+                    <input id="imagen" class="form-control" placeholder="Ingrese la dirección de la imagen" name="imagen" 
+                    autocomplete="off" [value]="objeto?.imagen" [(ngModel)]="imagen"/>	                    
                 </div>
 
-                <label for="tiposkill">Tipo skill :</label>
+                <label for="tiposkill">Tipo de Skill : <span class="txt-second">(puede demorar en cargar las opciones)</span></label>
                 <div class="input-group mb-3">   
-                    <select name="tiposkill" id="tiposkill" class="form-select" [(ngModel)]="objeto?.tiposkill['id']" >
-                        <option value="{{objeto?.tiposkill['id']}}" selected>{{objeto?.tiposkill['id']}} - {{objeto?.tiposkill['nombre']}}</option>
+                    <select name="tiposkill" id="tiposkill" class="form-select" [(ngModel)]="tiposkill['id']" required="">
                         <option *ngFor="let tipo of listaskills" value="{{tipo.id}}">{{tipo.id}} - {{tipo.nombre}}</option>
                     </select>                 
                 </div>

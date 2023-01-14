@@ -17,7 +17,13 @@ export class SkillsComponent implements OnInit {
   constructor(private servGeneral:GeneralService, private cdr: ChangeDetectorRef) {   }
 
   ngOnInit(): void {
-    this.servGeneral.getGeneral("skills").subscribe((data) => (this.skills = data));
+    this.servGeneral.getGeneral("skills").subscribe((data: any) => {
+      this.skills = data;
+      this.skills.sort(function(a, b){
+        return a.tiposkill.id - b.tiposkill.id;
+      });
+    });
+
     const currentUser = (sessionStorage.getItem('currentUser')||'...');
     if (currentUser && currentUser.length > 20) {
       this.isLogged = true;
@@ -25,8 +31,11 @@ export class SkillsComponent implements OnInit {
   }
 
   agregar(objeto:any){
-    this.servGeneral.addGeneral(objeto, "skills").subscribe((data) => this.skills.push(data));
-    this.ngOnInit();
+    this.servGeneral.addGeneral(objeto, "skills").subscribe((data) => {
+      this.skills.push(data);
+      this.ngOnInit();      
+    });
+  
   }
 
   guardar(objeto: any) {
@@ -39,8 +48,10 @@ export class SkillsComponent implements OnInit {
   }
 
   eliminar(objeto: any) {
-    this.servGeneral.deleteGeneral(objeto, "skills").subscribe(() => 
+    if (window.confirm('¿Deseas eliminar ' + objeto.nombre + '?')){
+      this.servGeneral.deleteGeneral(objeto, "skills").subscribe(() => 
       (this.skills = this.skills.filter((o) => o.id !== objeto.id)));
+    }    
   }
 
   drop(event:CdkDragDrop<any>, groupValue: any[]){
