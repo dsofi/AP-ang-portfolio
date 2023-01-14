@@ -41,10 +41,21 @@ export class AboutComponent implements OnInit {
   
   guardar(objeto:any){
     this.persona.editar = false;
-    console.log("guardando");
-    console.log(objeto.sobreMi);
-    console.log(objeto.nombre);
+    console.log("DESDE GUARDAR : " + objeto.foto);
     this.servGeneral.editGeneral(objeto,this.tipo).subscribe((data) => objeto=data);
+  }
+
+  editarImagen(objeto:any){
+    if (objeto.editar){
+      let urlImagen = prompt("Introduce la URL de la imagen.");
+      if (urlImagen == null || urlImagen == "" || !urlImagen.match(/\.(jpeg|jpg|png)$/)){
+        objeto.foto = this.persona.foto;
+      } else {
+          objeto.foto = urlImagen;
+      } 
+      console.log("DESDE EDITAR IMG : " + objeto.foto);
+      this.guardar(objeto);
+    }
   }
   
 }

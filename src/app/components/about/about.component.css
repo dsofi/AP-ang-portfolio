@@ -24,10 +24,15 @@ p {
   margin-top: 15px;
 }
 
-/* .btnEdit{
-  position: relative;
-  bottom: 15px;
-} */
+.editFoto{
+  border: 1px solid var(--main-color);
+  padding: 6px;
+  cursor: pointer;
+}
+
+.editFoto:hover{
+  opacity: 0.6;
+}
 
 .foto{
   width: 20%;

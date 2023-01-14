@@ -61,13 +61,4 @@ export class SkillsComponent implements OnInit {
     this.servGeneral.orderGeneral(groupValue,`skills/order`).subscribe(() => this.cdr.detectChanges());
   }
 
-  // agruparPor(arreglo:any, propiedad:any) {
-  //   return arreglo.reduce((acumulador:any, objeto:any) => {
-  //     const key = objeto[propiedad];
-  //     acumulador[key] = acumulador[key] || [];
-  //     acumulador[key].push(objeto);
-  //     return acumulador;
-  //   }, {});
-  // }
-
 }

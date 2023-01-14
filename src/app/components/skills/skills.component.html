@@ -6,7 +6,6 @@
     (guardando)="agregar($event)"></app-edit-skill>
 
 <div *ngFor="let group of skills | agruparPor: 'tiposkill'">
-  <!-- <div class="tiposkill">{{group.key}}</div> -->
   <div class="skills" cdkDropList cdkDropListOrientation="horizontal" (cdkDropListDropped)="drop($event, group.value)">
     <div *ngFor="let objeto of group.value" class="cajita" cdkDrag [cdkDragDisabled]="!isLogged">
       <button *ngIf="isLogged" (click)="eliminar(objeto)" class="icono second-color cruz-del">&times;</button>
