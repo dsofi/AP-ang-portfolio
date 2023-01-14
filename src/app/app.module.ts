@@ -44,6 +44,7 @@ import { ContactComponent } from './components/contact/contact.component';
 import { LoadingComponent } from './interface/loading/loading.component';
 import { ConfirmDeleteComponent } from './modales/confirm-delete/confirm-delete.component';
 import { ConfirmMailComponent } from './modales/confirm-mail/confirm-mail.component';
+import { AgruparPorPipe } from './components/common/agrupar-por.pipe';
 
 @NgModule({
   declarations: [
@@ -69,7 +70,8 @@ import { ConfirmMailComponent } from './modales/confirm-mail/confirm-mail.compon
     ContactComponent,
     LoadingComponent,
     ConfirmDeleteComponent,
-    ConfirmMailComponent
+    ConfirmMailComponent,
+    AgruparPorPipe
   ],
   imports: [
     BrowserModule,

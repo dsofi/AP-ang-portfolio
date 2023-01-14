@@ -17,7 +17,7 @@ img:hover{
 
 .skills{
     display: flex;
-    gap: 20px;
+    gap: 25px;
     justify-content: center;
     margin: 60px auto 0;
     max-width: 900px;
@@ -32,7 +32,7 @@ img:hover{
     display: flex;
     align-items: center;
     flex-direction: column;
-    padding: 0 10px;
+    padding: 0 5px;
 }
 
 .titulo{

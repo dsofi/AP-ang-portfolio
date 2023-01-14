@@ -1,5 +1,6 @@
 import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
 import { NgbModal } from '@ng-bootstrap/ng-bootstrap';
+import { GeneralService } from 'src/app/services/general.service';
 
 @Component({
   selector: 'app-edit-skill',
@@ -17,11 +18,17 @@ export class EditSkillComponent implements OnInit {
 
   nombre:string="";
   imagen:string="";
+  tiposkill:any={};
+  tiposkillSelected: any;
+
+  listaskills:any[]=[];
+
   showMensaje:boolean=false;
 
-  constructor(private modalService: NgbModal) { }
+  constructor(private modalService: NgbModal, private servGeneral:GeneralService) { }
 
   ngOnInit(): void {
+    this.servGeneral.getGeneral("tipo-skills").subscribe((data) => (this.listaskills = data));
     const currentUser = (sessionStorage.getItem('currentUser')||'...');
     if (currentUser && currentUser.length > 20) {
       this.isLogged = true;
@@ -29,6 +36,7 @@ export class EditSkillComponent implements OnInit {
     if (this.objeto) {
       this.nombre= this.objeto.nombre;
       this.imagen= this.objeto.imagen;
+      this.tiposkill= this.objeto.tiposkill;
     };
   }
 
@@ -41,10 +49,12 @@ export class EditSkillComponent implements OnInit {
       const skill = {
         nombre: this.nombre,
         imagen: this.imagen,
+        tiposkill: this.tiposkill,
         id: this.objeto ? this.objeto.id : ""
       };      
       this.nombre = '';
       this.imagen = '';
+      this.tiposkill = {};
       this.guardando.emit(skill);
       this.showMensaje=false;
       this.modalService.dismissAll();
@@ -56,9 +66,11 @@ export class EditSkillComponent implements OnInit {
     if (this.objeto) {
       this.nombre = this.objeto.nombre;
       this.imagen = this.objeto.imagen;
+      this.tiposkill = this.objeto.tiposkill;
     } else {
       this.nombre = '';
       this.imagen = '';
+      this.tiposkill = {};
     }
   }
 }

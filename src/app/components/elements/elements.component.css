@@ -28,10 +28,14 @@ img{
 }
 
 .imagen-vacio p{
-    /* background-color: red; */
     text-align: right;
     margin: 0;
     width: 55px;
+}
+
+.imagen-vacio img{
+    align-self: flex-start ;
+    padding-top: 25px;
 }
 
 .desaparecer{

@@ -25,6 +25,14 @@
                     name="imagen" [value]="objeto?.imagen" [(ngModel)]="imagen"/>	                    
                 </div>
 
+                <label for="tiposkill">Tipo skill :</label>
+                <div class="input-group mb-3">   
+                    <select name="tiposkill" id="tiposkill" class="form-select" [(ngModel)]="objeto?.tiposkill['id']" >
+                        <option value="{{objeto?.tiposkill['id']}}" selected>{{objeto?.tiposkill['id']}} - {{objeto?.tiposkill['nombre']}}</option>
+                        <option *ngFor="let tipo of listaskills" value="{{tipo.id}}">{{tipo.id}} - {{tipo.nombre}}</option>
+                    </select>                 
+                </div>
+                
                 <div *ngIf="showMensaje">
                     <p>Los campos son obligatorios.</p>
                 </div>
@@ -39,4 +47,11 @@
 
 <!-- <input type="file" id="imagen" class="form-control" name="imagen"
                         (change)="onFileChange($event)" [(ngModel)]="imagen"/>		 -->
+
+                        <!-- <input id="tiposkill" class="form-control" placeholder="Ingrese el tiposkill" name="tiposkill" 
+                autocomplete="off" [value]="objeto?.tiposkill['id']" [(ngModel)]="tiposkill['id']"/> -->
+
+                <!-- <div *ngFor="let tipo of listaskills">
+                    <p>{{tipo.nombre}}</p>
+                </div> -->
 

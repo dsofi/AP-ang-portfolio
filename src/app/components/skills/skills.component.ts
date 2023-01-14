@@ -1,7 +1,8 @@
 import { CdkDragDrop, moveItemInArray } from '@angular/cdk/drag-drop';
-import { ChangeDetectorRef, Component, OnInit } from '@angular/core';
+import { ChangeDetectorRef, Component, NgModule, OnInit } from '@angular/core';
 import { firstValueFrom } from 'rxjs';
 import { GeneralService } from 'src/app/services/general.service';
+
 
 @Component({
   selector: 'app-skills',
@@ -25,6 +26,7 @@ export class SkillsComponent implements OnInit {
 
   agregar(objeto:any){
     this.servGeneral.addGeneral(objeto, "skills").subscribe((data) => this.skills.push(data));
+    this.ngOnInit();
   }
 
   guardar(objeto: any) {
@@ -41,12 +43,20 @@ export class SkillsComponent implements OnInit {
       (this.skills = this.skills.filter((o) => o.id !== objeto.id)));
   }
 
-  drop(event:CdkDragDrop<any>){
+  drop(event:CdkDragDrop<any>, groupValue: any[]){
     const anterior = event.previousIndex;
     const actual = event.currentIndex;
-    moveItemInArray(this.skills,anterior,actual);
-    this.servGeneral.orderGeneral(this.skills,`sklls/order`).subscribe(() => this.cdr.detectChanges());
-
+    moveItemInArray(groupValue,anterior,actual);
+    this.servGeneral.orderGeneral(groupValue,`skills/order`).subscribe(() => this.cdr.detectChanges());
   }
+
+  // agruparPor(arreglo:any, propiedad:any) {
+  //   return arreglo.reduce((acumulador:any, objeto:any) => {
+  //     const key = objeto[propiedad];
+  //     acumulador[key] = acumulador[key] || [];
+  //     acumulador[key].push(objeto);
+  //     return acumulador;
+  //   }, {});
+  // }
 
 }
