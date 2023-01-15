@@ -12,22 +12,21 @@ export class EditSkillComponent implements OnInit {
   @Input() titulo:string="";
   @Input() button:string="";
   @Input() objeto:any;
+  @Input() listaskills:any;
   @Output() guardando:EventEmitter<any> = new EventEmitter();  
 
   isLogged:boolean=false;
 
   nombre:string="";
   imagen:string="";
-  tiposkill:any={id: "", nombre: ""};
-
-  listaskills:any[]=[];
+  tiposkill:any={id: "", nombre: ""};  
 
   showMensaje:boolean=false;
 
   constructor(private modalService: NgbModal, private servGeneral:GeneralService) { }
 
   ngOnInit(): void {
-    this.servGeneral.getGeneral("tipo-skills").subscribe((data) => (this.listaskills = data));
+    
     const currentUser = (sessionStorage.getItem('currentUser')||'...');
     if (currentUser && currentUser.length > 20) {
       this.isLogged = true;

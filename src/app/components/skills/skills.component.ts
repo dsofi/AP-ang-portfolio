@@ -12,17 +12,14 @@ import { GeneralService } from 'src/app/services/general.service';
 export class SkillsComponent implements OnInit {
 
   skills:any[]=[];
+  listaSkills:any[]=[];
   isLogged:boolean=false;  
 
   constructor(private servGeneral:GeneralService, private cdr: ChangeDetectorRef) {   }
 
   ngOnInit(): void {
-    this.servGeneral.getGeneral("skills").subscribe((data: any) => {
-      this.skills = data;
-      this.skills.sort(function(a, b){
-        return a.tiposkill.id - b.tiposkill.id;
-      });
-    });
+    this.servGeneral.getGeneral("skills").subscribe((data: any) => (this.skills = data));
+    this.servGeneral.getGeneral("tipo-skills").subscribe((data) => (this.listaSkills = data));
 
     const currentUser = (sessionStorage.getItem('currentUser')||'...');
     if (currentUser && currentUser.length > 20) {
