@@ -1,6 +1,5 @@
 import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
 import { NgbModal } from '@ng-bootstrap/ng-bootstrap';
-import { GeneralService } from 'src/app/services/general.service';
 
 @Component({
   selector: 'app-edit-skill',
@@ -23,7 +22,7 @@ export class EditSkillComponent implements OnInit {
 
   showMensaje:boolean=false;
 
-  constructor(private modalService: NgbModal, private servGeneral:GeneralService) { }
+  constructor(private modalService: NgbModal) { }
 
   ngOnInit(): void {
     

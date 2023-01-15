@@ -19,6 +19,7 @@ import { HomeComponent } from './sections/home/home.component';
 import { AboutComponent } from './components/about/about.component';
 import { CoverComponent } from './components/cover/cover.component';
 import { AgruparPorPipe } from './components/common/agrupar-por.pipe';
+import { AgruparPorOrdenPipe } from './components/common/agrupar-por-orden.pipe';
 import { FooterComponent } from './components/footer/footer.component';
 import { NavbarComponent } from './components/navbar/navbar.component';
 import { SkillsComponent } from './components/skills/skills.component';
@@ -67,6 +68,7 @@ import { PrevDirective } from './directives/prev.directive';
     LoadingComponent,
     ConfirmDeleteComponent,
     ConfirmMailComponent,
+    AgruparPorOrdenPipe,
     AgruparPorPipe
   ],
   imports: [

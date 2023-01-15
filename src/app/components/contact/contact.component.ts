@@ -44,7 +44,7 @@ export class ContactComponent implements OnInit {
         },
         error: (err) => {
           console.log("Error en el envío de mail");
-          console.log(err.mensaje)
+          console.log(err.mensaje);
         }
       });  
     }

@@ -9,16 +9,18 @@
   </div>
   
   <div cdkDropList (cdkDropListDropped)="dropTipos($event)">
-    <div *ngFor="let group of skills | agruparPor: 'tiposkill'" cdkDrag [cdkDragDisabled]="!isLogged">
+    <div *ngFor="let group of skills | agruparPorOrden: 'tiposkill'" cdkDrag [cdkDragDisabled]="!isLogged">
+      
       <div class="skills" cdkDropList cdkDropListOrientation="horizontal" (cdkDropListDropped)="drop($event, group.value)">
         <div *ngIf="isLogged" class="mover" cdkDragHandle>
-          <fa-icon [icon]="['fas', 'ellipsis']"></fa-icon> Mover grupo</div>
+          <fa-icon [icon]="['fas', 'ellipsis']"></fa-icon> Mover grupo <p>(arrastre, suelte<br>y luego espere)</p>
+        </div>
         <div *ngFor="let objeto of group.value" class="cajita" cdkDrag [cdkDragDisabled]="!isLogged">
           <button *ngIf="isLogged" (click)="eliminar(objeto)" class="icono second-color cruz-del">&times;</button>
           <img [src]="objeto.imagen" alt="Logo {{ objeto.nombre }}"/>
           <p [ngClass]="{move: isLogged}">{{objeto.nombre}}</p>
           <div class="edit">
-            <app-edit-skill [titulo]="'Editar'" [button]="'&#x270E; Editar'" [objeto]="objeto" [listaskills]="listaSkills"
+            <app-edit-skill [titulo]="'Editar'" [button]="'&#x270E; Editar'" [objeto]="objeto" [listaskills]="tiposSkill"
               (guardando)="guardar($event)">
             </app-edit-skill>
           </div>

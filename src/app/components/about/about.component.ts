@@ -36,7 +36,6 @@ export class AboutComponent implements OnInit {
   
   guardar(objeto:any){
     this.persona.editar = false;
-    console.log("DESDE GUARDAR : " + objeto.foto);
     this.servGeneral.editGeneral(objeto,this.tipo).subscribe((data) => objeto=data);
   }
 
