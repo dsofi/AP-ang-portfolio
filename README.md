@@ -1,27 +1,38 @@
-# AngPortfolio
-
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 14.2.4.
-
-## Development server
-
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The application will automatically reload if you change any of the source files.
-
-## Code scaffolding
-
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
-
-## Build
-
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory.
-
-## Running unit tests
-
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
-
-## Running end-to-end tests
-
-Run `ng e2e` to execute the end-to-end tests via a platform of your choice. To use this command, you need to first add a package that implements end-to-end testing capabilities.
-
-## Further help
-
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI Overview and Command Reference](https://angular.io/cli) page.
+# :watermelon: Portfolio | Front End
+  
+Proyecto final de #YoProgamo (2do módulo de Argentina Programa).  
+Fue realizado con Angular version 14.2.4.  
+  
+El sitio muestra mis estudios, experiencia laboral, habilidades y proyectos. Puedes verlo [aquí](https://portfolio-sofi.web.app).  
+El proyecto fue diseñado para ser responsive y fácil de navegar, por lo que es accesible desde cualquier dispositivo.  
+  
+:warning: Al ingresar por primera vez, o luego de 15 minutos de inactividad suele tardar bastante en cargar, aproximadamente 5 minutos, 
+ya que se encuentra deployado en Render con un plan free. Durante esa espera aparecerá una animación indicando que aún no es visible el contenido.
+Luego de la carga podrás navegar sin problemas.  
+  
+Todo el contenido es visible sin estar logueado.  
+Al loguearse se habilitan las opciones de edición que permiten realizar un crud básico.  
+  
+Notarás que en algunas funcionalidades no hay tanta coherencia ni eficiencia, por ejemplo, para realizar modificaciones en algunos casos se hace directamente 
+sobre el mismo input, en otros casos se abre un modal, en otros casos un prompt o un confirm, o por ejemplo los modales, algunos son realizados con bootsrap,
+otros con bootsrap para angular, y otros realizados por mi. Esas diferencias se deben a que este proyecto se trata de una práctica en el proceso de aprendizaje, 
+por lo que mi intención era probar diferentes alternativas para así ir descubriendo cuáles son los pros y contras de cada una.  
+  
+Por cualquier comentario o sugerencia podes escribirme en la sección de 'contact me', me llegará por mail, y a vos también una confirmación si ha sido enviado.  
+  
+[Link a repositorio de Backend](https://github.com/dsofi/portfolio-BackEnd).  
+  
+  
+## :pencil2: CRUD  
+  
+### Agregando  
+Agregar imágenes 
+  
+### Editando  
+Agregar imágenes 
+  
+### Eliminando  
+Agregar imágenes
+  
+### Moviendo 
+Agregar imágenes
