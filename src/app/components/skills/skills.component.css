@@ -68,3 +68,14 @@ p{
 .addBtn{
     margin-top: -40px;
 }
+
+.mover{
+    align-self: center;
+    padding: 0 10px 40px;
+    cursor: move;
+    font-size: 13px;
+}
+
+.mover:hover{
+    color: var(--main-color);
+}

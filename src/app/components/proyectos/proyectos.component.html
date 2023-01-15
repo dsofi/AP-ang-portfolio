@@ -2,7 +2,7 @@
   <h3 class="rayita">Proyectos</h3>
   <div class="centBtn">
     <button *ngIf="isLogged" class="icono main-color edit" (click)="agregarProyecto()">+Agregar proyecto</button>
-    <p>(Aparecerá un nuevo proyecto al comienzo de la lista, puede demorar un poco)</p>
+    <p *ngIf="isLogged">(Aparecerá un nuevo proyecto al comienzo de la lista, puede demorar un poco)</p>
   </div>
   
   <div class="container-fluid">

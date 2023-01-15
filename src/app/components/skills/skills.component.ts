@@ -58,4 +58,11 @@ export class SkillsComponent implements OnInit {
     this.servGeneral.orderGeneral(groupValue,`skills/order`).subscribe(() => this.cdr.detectChanges());
   }
 
+  dropTipos(event: CdkDragDrop<any>){
+    const anterior = event.previousIndex;
+    const actual = event.currentIndex;
+    moveItemInArray(this.listaSkills,anterior,actual);
+    this.servGeneral.orderGeneral(this.listaSkills,`tipo-skills/order`).subscribe(() => this.cdr.detectChanges());
+  }
+
 }
