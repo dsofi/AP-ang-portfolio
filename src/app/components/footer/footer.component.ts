@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { GeneralService } from 'src/app/services/general.service';
 
 @Component({
   selector: 'app-footer',
@@ -7,9 +8,13 @@ import { Component, OnInit } from '@angular/core';
 })
 export class FooterComponent implements OnInit {
 
-  constructor() { }
+  idiomas:any[]=[];
+  tipo:string="idiomas";
+
+  constructor(private generalServ:GeneralService) { }
 
   ngOnInit(): void {
+    this.generalServ.getGeneral(this.tipo).subscribe((data) => (this.idiomas = data));
   }
 
 }

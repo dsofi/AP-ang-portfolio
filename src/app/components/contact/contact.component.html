@@ -1,5 +1,5 @@
 
-<div class="cont-contact">
+<div *ngIf="idiomas.length !== 0" class="cont-contact">
     <div class="contact-me">
         <h3 class="rayita">contact me</h3>
         <form [formGroup]="enviarMail" (ngSubmit)="enviar($event)">

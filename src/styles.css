@@ -151,8 +151,8 @@ h3{
 .cont-squares{
   display: flex;
   justify-content: center;
-  overflow: hidden;
-  height: 90vh;
+  overflow-x: hidden;
+  /* height: 85vh; */
 }    
 
 .squares{

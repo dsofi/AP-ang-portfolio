@@ -18,6 +18,8 @@ export class ContactComponent implements OnInit {
   mensaje:string = "";
   esInvalid:boolean=false;
   enviarMail:FormGroup;
+  idiomas:any[]=[];
+  tipo:string="idiomas";
 
   constructor(private generalServ:GeneralService, private formBuilder: FormBuilder, private modalServ: NgbModal) {
       
@@ -29,6 +31,7 @@ export class ContactComponent implements OnInit {
   }
 
   ngOnInit(): void {
+    this.generalServ.getGeneral(this.tipo).subscribe((data) => (this.idiomas = data));
   }
 
   enviar(event: Event){

@@ -55,14 +55,16 @@
           </div>
 
           <div *ngIf="isLogged" class="cont-opciones">
-            <div class="opciones opcBtn" (click)="editarImagen(proyecto)">
-              <p>Editar Imagen</p>
-            </div>
             <div *ngIf="!proyecto.editar" cdkDragHandle class="opciones mover">
               <p>Mover</p>
             </div>            
-            <div class="opciones opcBtn" (click)="editarLinks(proyecto)">
-              <p>Editar Links</p>
+            <div *ngIf="proyecto.editar" class="cont-opciones vert">
+              <div class="opciones opcBtn" (click)="editarImagen(proyecto)">
+                <p>Editar Imagen</p>
+              </div>
+              <div class="opciones opcBtn" (click)="editarLinks(proyecto)">
+                <p>Editar Links</p>
+              </div>
             </div>
           </div>
         </div>

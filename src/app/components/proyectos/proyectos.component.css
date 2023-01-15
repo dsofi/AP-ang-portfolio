@@ -66,6 +66,11 @@ img{
     justify-content: space-evenly;
 }
 
+.vert{
+    flex-direction: column;
+    gap: 15px;
+}
+
 .opciones{
     position: relative;
     top: -180px;    
