@@ -31,8 +31,7 @@ export class SkillsComponent implements OnInit {
     this.servGeneral.addGeneral(objeto, "skills").subscribe((data) => {
       this.skills.push(data);
       this.ngOnInit();      
-    });
-  
+    });  
   }
 
   guardar(objeto: any) {

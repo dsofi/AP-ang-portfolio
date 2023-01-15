@@ -51,8 +51,6 @@ input, button, textarea {
 
 input{
   width: 100%;
-  /* word-wrap: break-word;
-  word-break: break-all; */
 }
 
 textarea{
@@ -64,9 +62,6 @@ textarea:read-only{
 }
 
 .registro{
-  /* background-color: rebeccapurple; */
-  /* max-width: 650px; */
-  /* margin: 10px auto 20px; */
   display: flex;
   flex-direction: column;
 }
@@ -75,7 +70,6 @@ textarea:read-only{
   display: flex;
   padding-top: 5px;
   margin-bottom: 15px;
-  /* background-color: yellow; */  
 }
 
 .datos{
@@ -128,7 +122,6 @@ h3{
   display: flex;
   justify-content: space-around;    
   width: 95%;
-  /* background-color: rgb(20, 20, 20); */
 }
 
 .icono {

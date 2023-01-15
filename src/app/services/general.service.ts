@@ -12,9 +12,9 @@ export class GeneralService {
   private url = `https://portfolio-backend-jej3.onrender.com`;
 
   private showAdd:boolean = false;
-  private subjectAdd = new Subject<any>();  
+  private subjectAdd = new Subject<boolean>();  
   private editando:boolean = false;
-  private subjectEditando = new Subject<any>();
+  private subjectEditando = new Subject<boolean>();
   subjectIsLoading = new Subject<boolean>();
 
   currentUser = sessionStorage.getItem('currentUser') || '...';  

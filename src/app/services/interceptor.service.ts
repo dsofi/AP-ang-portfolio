@@ -1,6 +1,5 @@
 import { HttpEvent, HttpHandler, HttpInterceptor, HttpRequest } from '@angular/common/http';
 import { Injectable } from '@angular/core';
-import { Router } from '@angular/router';
 import { finalize, Observable } from 'rxjs';
 import { AutenticacionService } from './autenticacion.service';
 import { GeneralService } from './general.service';
@@ -14,8 +13,7 @@ export class InterceptorService implements HttpInterceptor {
 
   intercept(req: HttpRequest<any>, next: HttpHandler): Observable<HttpEvent<any>> {
     var currentUser = this.authServ.UsuarioAutenticado;
-    this.generalServ.showLoading();
-    // this.ruta.navigate(['/loading']);    
+    this.generalServ.showLoading();  
     if (currentUser && currentUser.length > 20){
       req=req.clone({ setHeaders: {Authorization: `Bearer ${currentUser}`}});
     }
@@ -24,6 +22,3 @@ export class InterceptorService implements HttpInterceptor {
     );  
   }
 }
-
-// this.ruta.navigate(['/home'])
-

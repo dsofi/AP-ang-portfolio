@@ -21,8 +21,7 @@ export class BtnEditDeleteComponent implements OnInit {
     }else{this.isLogged=false};
   }
 
-  ngOnInit(): void {
-  }
+  ngOnInit(): void {}
 
   editar(){
     this.onEdit.emit();
@@ -31,5 +30,4 @@ export class BtnEditDeleteComponent implements OnInit {
   eliminar(){
     this.onDelete.emit();
   }
-
 }

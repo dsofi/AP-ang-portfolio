@@ -25,11 +25,9 @@ img:hover{
     max-width: 900px;
     flex-wrap: wrap;
     min-width: 248px;
-    /* background-color: blue; */
 }
 
 .cajita{
-    /* background-color: green; */
     width: 120px;
     display: flex;
     align-items: center;
@@ -53,7 +51,6 @@ p{
 }
 
 .icono{
-    /* background-color: red; */
     width: 10px;
     margin-left: auto;
     font-size: 18px;
@@ -61,7 +58,6 @@ p{
 }
 
 .edit{
-    /* background-color: red; */
     margin-top: 5px;   
 }
 
