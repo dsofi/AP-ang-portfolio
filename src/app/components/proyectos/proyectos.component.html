@@ -1,20 +1,20 @@
-<div *ngIf="misProyectos.length !== 0">
-  
-    <h3 class="rayita">Proyectos</h3>
-    <div class="centBtn">
-      <button *ngIf="isLogged" class="icono main-color edit" (click)="agregarProyecto()">+Agregar proyecto</button>
-    </div>
+<div *ngIf="misProyectos.length !== 0">  
+  <h3 class="rayita">Proyectos</h3>
+  <div class="centBtn">
+    <button *ngIf="isLogged" class="icono main-color edit" (click)="agregarProyecto()">+Agregar proyecto</button>
+    <p>(Aparecerá un nuevo proyecto al comienzo de la lista, puede demorar un poco)</p>
+  </div>
   
   <div class="container-fluid">
     <div class="slider-wrap">
       <div class="slider-main" cdkDropList cdkDropListOrientation="horizontal" (cdkDropListDropped)="drop($event)">
   
         <div *ngFor="let proyecto of misProyectos" class="item" [ngClass]="{editable: proyecto.editar}" 
-              cdkDrag [cdkDragDisabled]="!isLogged">
+              cdkDrag [cdkDragDisabled]="!isLogged || proyecto.editar">
           <div class="encabezado">
             <div class="tiempo">
               <input type="text" name="tiempo" autocomplete="off" class="input-tiempo"
-                    [(ngModel)]="proyecto.tiempo" [readonly]="!proyecto.editar"/>
+                [(ngModel)]="proyecto.tiempo" [readonly]="!proyecto.editar"/>
             </div>
             <a *ngIf="proyecto.link" [href]="proyecto.link" target="_blank">Ver</a>
             <a *ngIf="proyecto.linkGithub" [href]="proyecto.linkGithub" target="_blank">Ver en Github</a>
@@ -39,23 +39,10 @@
             </div>
             <div class="desc">
               <textarea type="text" name="descripcion" autocomplete="off"
-              autosize [minRows]="1" [maxRows]="6" [useImportant]="true"
+              autosize [minRows]="1" [maxRows]="4" [useImportant]="true"
               [(ngModel)]="proyecto.descripcion" [readonly]="!proyecto.editar"></textarea>
             </div>
             <p *ngIf="isLogged" >orden: {{proyecto.orden}}</p>
-
-            <!-- <div class="detallesExtra">
-              <label for="imagen">URL Imagen: </label>
-              <input type="text" name="imagen" autocomplete="off" class="modifExtra"
-                  [(ngModel)]="proyecto.imagen" [readonly]="!proyecto.editar"/>
-              <label for="linkGithub">URL Github: </label>
-              <input type="text" name="linkGithub" autocomplete="off" class="modifExtra"
-                  [(ngModel)]="proyecto.linkGithub" [readonly]="!proyecto.editar"/>
-              <label for="link">URL Proyecto: </label>
-              <input type="text" name="link" autocomplete="off" class="modifExtra"
-                  [(ngModel)]="proyecto.link" [readonly]="!proyecto.editar"/>
-            </div> -->
-
             <div class="btnCancelSave">
               <app-btn-cancel-save *ngIf="proyecto.editar"
               (onGuardar)="guardar(proyecto)" (onCancelar)="cancelar(proyecto)"
@@ -73,14 +60,11 @@
             </div>
             <div *ngIf="!proyecto.editar" cdkDragHandle class="opciones mover">
               <p>Mover</p>
-            </div>
-            
+            </div>            
             <div class="opciones opcBtn" (click)="editarLinks(proyecto)">
               <p>Editar Links</p>
             </div>
           </div>
-
-      
         </div>
       </div>
   

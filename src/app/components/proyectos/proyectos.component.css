@@ -155,7 +155,7 @@ textarea{
 }
 
 .edit{
-    margin-bottom: 20px;
+    text-align: center;
 }
 
 .encabezado{
@@ -184,6 +184,8 @@ a:hover{
     display: flex;
     justify-content: center;
     margin-top: -40px;
+    flex-direction: column;
+    margin-bottom: 20px;
 }
 
 p{
