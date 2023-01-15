@@ -1,4 +1,4 @@
-<div class="secciones">
+<div *ngIf="elementos.length !== 0" class="secciones">
     <h3 class="text-capitalize">{{tipo}}</h3>
     <app-btn-add-form [tipo]="tipo" (agregando)="addGeneral($event)"></app-btn-add-form>
     <div cdkDropList (cdkDropListDropped)="drop($event)" class="mover">
@@ -6,7 +6,6 @@
             (eliminando)="eliminar($event)" 
             (cancelando)="reset()"
             (guardando)="guardar($event)"
-        >
-        </app-elements>
+        ></app-elements>
     </div>
 </div>

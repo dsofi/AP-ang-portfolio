@@ -1,4 +1,4 @@
-<section class="about">
+<section *ngIf="persona != ''" class="about">
   <img [ngClass]="{ editFoto: persona.editar }" class="foto" [src]="persona.foto" alt="Foto persona"
   (click)="editarImagen(persona)" />
   <article class="sobre-mi">

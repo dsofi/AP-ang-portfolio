@@ -1,20 +1,24 @@
-<div class="titulo">
-  <h3>Skills</h3>
-</div>
-
-<app-edit-skill [titulo]="'Agregar'" [button]="'+Agregar skills'"
-    (guardando)="agregar($event)"></app-edit-skill>
-
-<div *ngFor="let group of skills | agruparPor: 'tiposkill'">
-  <div class="skills" cdkDropList cdkDropListOrientation="horizontal" (cdkDropListDropped)="drop($event, group.value)">
-    <div *ngFor="let objeto of group.value" class="cajita" cdkDrag [cdkDragDisabled]="!isLogged">
-      <button *ngIf="isLogged" (click)="eliminar(objeto)" class="icono second-color cruz-del">&times;</button>
-      <img [src]="objeto.imagen" alt="Logo {{ objeto.nombre }}"/>
-      <p [ngClass]="{move: isLogged}">{{objeto.nombre}}</p>
-      <div class="edit">
-        <app-edit-skill [titulo]="'Editar'" [button]="'&#x270E; Editar'" [objeto]="objeto"
-          (guardando)="guardar($event)">
-        </app-edit-skill>
+<div *ngIf="skills.length !== 0">
+  <div class="titulo">
+    <h3 class="rayita">Skills</h3>
+  </div>
+  
+  <div *ngIf="isLogged" class="addBtn">
+    <app-edit-skill [titulo]="'Agregar'" [button]="'+Agregar skills'"
+        (guardando)="agregar($event)"></app-edit-skill>
+  </div>
+  
+  <div *ngFor="let group of skills | agruparPor: 'tiposkill'">
+    <div class="skills" cdkDropList cdkDropListOrientation="horizontal" (cdkDropListDropped)="drop($event, group.value)">
+      <div *ngFor="let objeto of group.value" class="cajita" cdkDrag [cdkDragDisabled]="!isLogged">
+        <button *ngIf="isLogged" (click)="eliminar(objeto)" class="icono second-color cruz-del">&times;</button>
+        <img [src]="objeto.imagen" alt="Logo {{ objeto.nombre }}"/>
+        <p [ngClass]="{move: isLogged}">{{objeto.nombre}}</p>
+        <div class="edit">
+          <app-edit-skill [titulo]="'Editar'" [button]="'&#x270E; Editar'" [objeto]="objeto"
+            (guardando)="guardar($event)">
+          </app-edit-skill>
+        </div>
       </div>
     </div>
   </div>

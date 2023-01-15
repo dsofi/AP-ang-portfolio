@@ -1,4 +1,4 @@
-import { Component, ElementRef, EventEmitter, Input, OnInit, Output, ViewChild } from '@angular/core';
+import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
 
 @Component({
   selector: 'app-elements',
@@ -12,8 +12,6 @@ export class ElementsComponent implements OnInit {
   @Output() cancelando:EventEmitter<any> = new EventEmitter();
   @Output() guardando:EventEmitter<any> = new EventEmitter();
   @Output() toggleEdit:EventEmitter<any> = new EventEmitter();
-
-
 
   isLogged:boolean=false; 
 
@@ -37,10 +35,10 @@ export class ElementsComponent implements OnInit {
 
   eliminar(objeto:any){
     if (this.confirmarEliminacion(objeto.titulo))
-    {this.eliminando.emit(objeto);}
+    {this.eliminando.emit(objeto)}
   }
 
-  cancelar(objeto:any){
+  cancelar(){
     this.cancelando.emit();
   }
 
@@ -48,14 +46,6 @@ export class ElementsComponent implements OnInit {
     objeto.editar = false;
     this.guardando.emit(objeto);
   }
-
-  
-
-  // eliminar(objeto: any): void {
-  //   if (this.confirmarEliminacion()) {
-  //     // Aquí puedes escribir el código para eliminar el objeto
-  //   }
-  // }
 
   autoGrowTextZone(e:any) {
     e.target.style.height = "0px";
@@ -71,9 +61,4 @@ export class ElementsComponent implements OnInit {
       this.guardando.emit(objeto);
     }
   }
-
-  
-
-  
-
 }

@@ -1,22 +1,99 @@
-
-  <h3>Proyectos</h3>
- 
-<div class="container-fluid">
-  <div class="slider-wrap">
-    <div class="slider-main">
-      <div *ngFor="let proyecto of misProyectos" class="item">
-        <app-btn-edit-delete></app-btn-edit-delete>
-        <div class="titulo">{{ proyecto.titulo }}</div>
-        <div class="desc">{{ proyecto.descripcion }}</div>
-      </div>
+<div *ngIf="misProyectos.length !== 0">
+  
+    <h3 class="rayita">Proyectos</h3>
+    <div class="centBtn">
+      <button *ngIf="isLogged" class="icono main-color edit" (click)="agregarProyecto()">+Agregar proyecto</button>
     </div>
-    <div class="button-area">
-      <button type="button" class="prev" appPrev>
-        <fa-icon [icon]="['fas', 'angle-left']" size="2x"></fa-icon>
-      </button>
-      <button type="button" class="next" appNext>
-        <fa-icon [icon]="['fas', 'angle-right']" size="2x"></fa-icon>
-      </button>
+  
+  <div class="container-fluid">
+    <div class="slider-wrap">
+      <div class="slider-main" cdkDropList cdkDropListOrientation="horizontal" (cdkDropListDropped)="drop($event)">
+  
+        <div *ngFor="let proyecto of misProyectos" class="item" [ngClass]="{editable: proyecto.editar}" 
+              cdkDrag [cdkDragDisabled]="!isLogged">
+          <div class="encabezado">
+            <div class="tiempo">
+              <input type="text" name="tiempo" autocomplete="off" class="input-tiempo"
+                    [(ngModel)]="proyecto.tiempo" [readonly]="!proyecto.editar"/>
+            </div>
+            <a *ngIf="proyecto.link" [href]="proyecto.link" target="_blank">Ver</a>
+            <a *ngIf="proyecto.linkGithub" [href]="proyecto.linkGithub" target="_blank">Ver en Github</a>
+            <div *ngIf="isLogged" >
+              <app-btn-edit-delete [puedeEliminar]="true" [objeto]="proyecto"
+                (onEdit)="editar(proyecto)"
+                (onDelete)="eliminar(proyecto)"
+              ></app-btn-edit-delete>
+            </div>
+          </div>
+  
+          <div class="franja">
+            <div class="info">
+              <div class="titulo">
+                <input type="text" name="titulo" autocomplete="off"
+                  [(ngModel)]="proyecto.titulo" [readonly]="!proyecto.editar"/>
+              </div>
+              <div class="otrasNotas">
+                <input type="text" name="otrasNotas" autocomplete="off"
+                  [(ngModel)]="proyecto.otrasNotas" [readonly]="!proyecto.editar"/>
+              </div>
+            </div>
+            <div class="desc">
+              <textarea type="text" name="descripcion" autocomplete="off"
+              autosize [minRows]="1" [maxRows]="6" [useImportant]="true"
+              [(ngModel)]="proyecto.descripcion" [readonly]="!proyecto.editar"></textarea>
+            </div>
+            <p *ngIf="isLogged" >orden: {{proyecto.orden}}</p>
+
+            <!-- <div class="detallesExtra">
+              <label for="imagen">URL Imagen: </label>
+              <input type="text" name="imagen" autocomplete="off" class="modifExtra"
+                  [(ngModel)]="proyecto.imagen" [readonly]="!proyecto.editar"/>
+              <label for="linkGithub">URL Github: </label>
+              <input type="text" name="linkGithub" autocomplete="off" class="modifExtra"
+                  [(ngModel)]="proyecto.linkGithub" [readonly]="!proyecto.editar"/>
+              <label for="link">URL Proyecto: </label>
+              <input type="text" name="link" autocomplete="off" class="modifExtra"
+                  [(ngModel)]="proyecto.link" [readonly]="!proyecto.editar"/>
+            </div> -->
+
+            <div class="btnCancelSave">
+              <app-btn-cancel-save *ngIf="proyecto.editar"
+              (onGuardar)="guardar(proyecto)" (onCancelar)="cancelar(proyecto)"
+              ></app-btn-cancel-save>
+            </div>
+          </div>
+  
+          <div class="img-proy" >
+            <img *ngIf="proyecto.imagen && esImagenValida(proyecto.imagen)" [src]="proyecto.imagen" [alt]="proyecto.titulo">
+          </div>
+
+          <div *ngIf="isLogged" class="cont-opciones">
+            <div class="opciones opcBtn" (click)="editarImagen(proyecto)">
+              <p>Editar Imagen</p>
+            </div>
+            <div *ngIf="!proyecto.editar" cdkDragHandle class="opciones mover">
+              <p>Mover</p>
+            </div>
+            
+            <div class="opciones opcBtn" (click)="editarLinks(proyecto)">
+              <p>Editar Links</p>
+            </div>
+          </div>
+
+      
+        </div>
+      </div>
+  
+      <div class="button-area">
+        <button type="button" class="prev" appPrev>
+          <fa-icon [icon]="['fas', 'angle-left']" size="2x"></fa-icon>
+        </button>
+        <button type="button" class="next" appNext>
+          <fa-icon [icon]="['fas', 'angle-right']" size="2x"></fa-icon>
+        </button>
+      </div>
+  
     </div>
   </div>
 </div>
+

@@ -16,16 +16,16 @@ export class ContactComponent implements OnInit {
   nombre:string = "";
   fromEmail:string = "";
   mensaje:string = "";
-
   esInvalid:boolean=false;
   enviarMail:FormGroup;
 
   constructor(private generalServ:GeneralService, private formBuilder: FormBuilder, private modalServ: NgbModal) {
-    
+      
     this.enviarMail = this.formBuilder.group({
       nombre: ['',[Validators.required]],
       fromEmail: ['',[Validators.required, Validators.email]],
-      mensaje: ['',[Validators.required]]}); 
+      mensaje: ['',[Validators.required]]
+    }); 
   }
 
   ngOnInit(): void {
@@ -52,21 +52,3 @@ export class ContactComponent implements OnInit {
 		modalRef.componentInstance.name = 'Confirmación envío mail';
 	}
 }
-
-
-// if (this.form.valid) {
-//   this.autenticacionServ.iniciarSesion(this.form.value).subscribe({
-//     next: () => {
-//       this.ruta.navigate(['/home']).then(() => {
-//         window.location.reload();
-//       });
-//     },
-//     error: () => {
-//       console.log("Error en el login. Usuario o contraseña incorrectos.");
-//       this.form.markAllAsTouched();
-//       this.mostrarMensajeError = true;
-//     }
-//   }    );
-// } else {
-//   this.form.markAllAsTouched();
-// }

@@ -4,26 +4,22 @@ import { Pipe, PipeTransform } from '@angular/core';
   name: 'agruparPor'
 })
 export class AgruparPorPipe implements PipeTransform {
-  transform(collection: Array<any>, property: string): Array<any> {
-        if (!collection) {
-            return [];
-        }
-
-        const groupedCollection = collection.reduce((previous, current) => {
+  transform(collection: Array<any>, tipo: string): Array<any> {
+        if (!collection) {return []}
+        const agrupado = collection.reduce((anterior, actual) => {
             let key;
-            if (current[property] === null) {
+            if (actual[tipo] === null) {
                 key = 'sin tiposkill';
             } else {
-                key = current[property].nombre;
+                key = actual[tipo].nombre;
             }
-            if (!previous[key]) {
-                previous[key] = [current];
+            if (!anterior[key]) {
+                anterior[key] = [actual];
             } else {
-                previous[key].push(current);
+                anterior[key].push(actual);
             }
-            return previous;
+            return anterior;
         }, {});
-
-        return Object.keys(groupedCollection).map(key => ({ key, value: groupedCollection[key] }));
+        return Object.keys(agrupado).map(key => ({ key, value: agrupado[key] }));
     }
 }

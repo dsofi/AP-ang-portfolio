@@ -1,4 +1,4 @@
-<div class="cover">
+<div *ngIf="persona != ''" class="cover">
   <img [src]="persona.imagenCover" class="img-fluid w-100" alt="cover diagram black" />
   <div  class="container">
     <h1><span class="hola">Hola!</span><span class="saludo"> mi nombre es </span><span class="nombre">{{persona.nombre}}</span></h1>

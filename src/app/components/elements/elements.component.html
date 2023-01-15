@@ -2,8 +2,10 @@
 <div class="registro" cdkDrag [cdkDragDisabled]="!isLogged">  
   <div> 
     <div class="desaparecer">
-      <button *ngIf="isLogged" cdkDragHandle class="icono main-color mover">
-        <fa-icon [icon]="['fas', 'ellipsis']"></fa-icon> Mover
+      <button *ngIf="isLogged" cdkDragHandle class="icono main-color mover">        
+          <div *ngIf="!objeto.editar">
+            <fa-icon [icon]="['fas', 'ellipsis']"></fa-icon> Mover  
+          </div>      
       </button>
       <app-btn-edit-delete [puedeEliminar]="true" [objeto]="objeto"
         (onEdit)="editar(objeto)"
@@ -16,7 +18,7 @@
       
         <div [ngClass]="{imgedit: objeto.editar}" (click)="editarImagen(objeto)" class="imagen-vacio">
           <p *ngIf="objeto.editar && (objeto.imagen == null || objeto.imagen == '') ">+</p>
-          <img *ngIf="objeto.imagen != null || objeto.imagen != ''" [src]="objeto.imagen"/>
+          <img *ngIf="objeto.imagen" [src]="objeto.imagen" [alt]="'Logo ' + objeto.titulo"/>
         </div>
               
         <div class="datos">
@@ -35,7 +37,7 @@
       </div>   
     
       <app-btn-cancel-save *ngIf="objeto.editar"
-        (onGuardar)="guardar(objeto)" (onCancelar)="cancelar(objeto)"
+        (onGuardar)="guardar(objeto)" (onCancelar)="cancelar()"
       ></app-btn-cancel-save>
   </div>
 </div>

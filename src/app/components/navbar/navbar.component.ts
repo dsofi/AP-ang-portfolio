@@ -1,8 +1,4 @@
 import { Component, EventEmitter, OnInit, Output } from '@angular/core';
-import { Subscription } from 'rxjs';
-import { AutenticacionService } from 'src/app/services/autenticacion.service';
-import { GeneralService } from 'src/app/services/general.service';
-
 
 @Component({
   selector: 'app-navbar',
@@ -14,7 +10,7 @@ export class NavbarComponent implements OnInit {
   @Output() modalLogout:EventEmitter<boolean> = new EventEmitter();
   isLogged:boolean=false;
 
-  constructor(private authServ:AutenticacionService) { 
+  constructor() { 
     const currentUser = (sessionStorage.getItem('currentUser')||'...');
     if (currentUser && currentUser.length > 20) {
       this.isLogged = true;
@@ -25,7 +21,6 @@ export class NavbarComponent implements OnInit {
 
   cerrarSesion(){
     this.modalLogout.emit();
-    // this.authServ.cerrarSesion();
   }
 
 }

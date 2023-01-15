@@ -1,7 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { Subscription } from 'rxjs';
 import { GeneralService } from 'src/app/services/general.service';
-import { Persona } from '../../modelos/Persona';
 
 @Component({
   selector: 'app-about',
@@ -15,8 +13,6 @@ export class AboutComponent implements OnInit {
   persona:any="";
   userId:number=1; 
   //TOMAR EL ID DEL USER QUE SE REGISTRE, BUSCARLO Y MOSTRAR SUS DATOS ?.. **SOLO SI TENGO TIEMPO
-  //BUSCAR COMO HACER CON LAS FOTOS **SOLO SI TENGO TIEMPO
-  //A LAS FOTOS LES TENDRIA QUE AGREGAR BOTONCITO DE EDITAR Y POSIBILIDAD DE SUBIR UNA
 
   constructor(private servGeneral:GeneralService) {}
 
@@ -26,8 +22,7 @@ export class AboutComponent implements OnInit {
       if (this.personas.length > 0) {
         this.persona = this.personas[0];
       }
-    });
-    
+    });    
   }
 
   editar(){
@@ -53,7 +48,6 @@ export class AboutComponent implements OnInit {
       } else {
           objeto.foto = urlImagen;
       } 
-      console.log("DESDE EDITAR IMG : " + objeto.foto);
       this.guardar(objeto);
     }
   }

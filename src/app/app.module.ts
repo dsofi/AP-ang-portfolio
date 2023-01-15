@@ -45,6 +45,7 @@ import { LoadingComponent } from './interface/loading/loading.component';
 import { ConfirmDeleteComponent } from './modales/confirm-delete/confirm-delete.component';
 import { ConfirmMailComponent } from './modales/confirm-mail/confirm-mail.component';
 import { AgruparPorPipe } from './components/common/agrupar-por.pipe';
+import { faGithub } from '@fortawesome/free-brands-svg-icons';
 
 @NgModule({
   declarations: [
@@ -95,7 +96,7 @@ import { AgruparPorPipe } from './components/common/agrupar-por.pipe';
 export class AppModule {
 
   constructor(library: FaIconLibrary) {
-    library.addIcons( fasTimes, farEdit, fasCheck, faHeart, faAngleRight, faAngleLeft, faGripHorizontal, faEllipsis);
+    library.addIcons( fasTimes, farEdit, fasCheck, faHeart, faAngleRight, faAngleLeft, faGripHorizontal, faEllipsis, faGithub);
   }
   }
  

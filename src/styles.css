@@ -163,3 +163,12 @@ h3{
   position: relative;
 }
 
+.rayita::after{
+  content: "";
+  display: block;
+  margin: 10px auto 50px;
+  width: 60px;
+  height: 2px;
+  background-color: var(--main-color);
+}
+
