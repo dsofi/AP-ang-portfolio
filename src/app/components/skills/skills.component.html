@@ -4,7 +4,7 @@
   </div>
   
   <div *ngIf="isLogged" class="addBtn">
-    <app-edit-skill [titulo]="'Agregar'" [button]="'+Agregar skills'"
+    <app-edit-skill [titulo]="'Agregar'" [button]="'+Agregar skills'" [listaskills]="tiposSkill"
         (guardando)="agregar($event)"></app-edit-skill>
   </div>
   

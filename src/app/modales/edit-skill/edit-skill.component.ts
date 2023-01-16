@@ -1,5 +1,6 @@
 import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
 import { NgbModal } from '@ng-bootstrap/ng-bootstrap';
+import { GeneralService } from 'src/app/services/general.service';
 
 @Component({
   selector: 'app-edit-skill',
@@ -18,14 +19,13 @@ export class EditSkillComponent implements OnInit {
 
   nombre:string="";
   imagen:string="";
-  tiposkill:any={id: "", nombre: ""};  
+  tiposkill:any={id: "", nombre: "", orden: ""};
 
   showMensaje:boolean=false;
 
   constructor(private modalService: NgbModal) { }
 
-  ngOnInit(): void {
-    
+  ngOnInit(): void {    
     const currentUser = (sessionStorage.getItem('currentUser')||'...');
     if (currentUser && currentUser.length > 20) {
       this.isLogged = true;
