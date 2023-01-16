@@ -1,12 +1,12 @@
 # :watermelon: Portfolio | Front End
   
 Proyecto final de #YoProgamo (2do módulo de Argentina Programa).  
-Fue realizado con Angular version 14.2.4.  
+Fue realizado con Angular versión 14.2.4.  
   
 El sitio muestra mis estudios, experiencia laboral, habilidades y proyectos. Puedes verlo [aquí](https://portfolio-sofi.web.app).  
-El proyecto fue diseñado para ser responsive y fácil de navegar, por lo que es accesible desde cualquier dispositivo.  
+Fue diseñado para ser responsive y fácil de navegar, por lo que es accesible desde cualquier dispositivo.  
   
-:warning: Al ingresar por primera vez, o luego de 15 minutos de inactividad suele tardar bastante en cargar, aproximadamente 5 minutos, 
+:warning: Al ingresar por primera vez o luego de 15 minutos de inactividad, suele tardar aproximadamente 5 minutos en cargar, 
 ya que se encuentra deployado en Render con un plan free. Durante esa espera aparecerá una animación indicando que aún no es visible el contenido.
 Luego de la carga podrás navegar sin problemas.  
   
@@ -26,13 +26,13 @@ Por cualquier comentario o sugerencia podes escribirme en la sección de 'contac
 ## :pencil2: CRUD  
   
 ### Agregando  
-Agregar imágenes 
+![Gif Agregando Experiencia](https://media.giphy.com/media/Ayabk2EmYhFiWpozPV/giphy.gif)
   
-### Editando  
-Agregar imágenes 
+### Editando parte 1   
+![Gif Editando Experiencia 1](https://media.giphy.com/media/pRWlJvHVh7IktuEFY4/giphy.gif)  
+  
+### Editando parte 2   
+![Gif Editando Experiencia 2](https://media.giphy.com/media/3tNqtU6v8u8efckw6d/giphy.gif)
   
 ### Eliminando  
-Agregar imágenes
-  
-### Moviendo 
-Agregar imágenes
+![Gif Eliminando Experiencia](https://media.giphy.com/media/qjVO4t5KBYd9bke4sX/giphy.gif)
