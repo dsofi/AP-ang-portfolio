@@ -25,10 +25,10 @@
                     autocomplete="off" [value]="objeto?.imagen" [(ngModel)]="imagen"/>	                    
                 </div>
 
-                <label for="tiposkill">Tipo de Skill : <span class="txt-second">(puede demorar en cargar las opciones)</span></label>
+                <label for="tiposkill">Tipo de Skill :</label>
                 <div class="input-group mb-3">   
                     <select name="tiposkill" id="tiposkill" class="form-select" [(ngModel)]="tiposkill['id']" required="">
-                        <option *ngFor="let tipo of listaskills" value="{{tipo.id}}">{{tipo.id}} - {{tipo.nombre}}</option>
+                        <option *ngFor="let tipo of listaskills | agruparPor:'id'" value="{{tipo.id}}">{{tipo.id}} - {{tipo.nombre}}</option>
                     </select>                 
                 </div>
                 
@@ -43,14 +43,4 @@
 		<button type="button" class="btn btn-outline-dark" (click)="onGuardar()">Guardar</button>
 	</div>
 </ng-template>
-
-<!-- <input type="file" id="imagen" class="form-control" name="imagen"
-                        (change)="onFileChange($event)" [(ngModel)]="imagen"/>		 -->
-
-                        <!-- <input id="tiposkill" class="form-control" placeholder="Ingrese el tiposkill" name="tiposkill" 
-                autocomplete="off" [value]="objeto?.tiposkill['id']" [(ngModel)]="tiposkill['id']"/> -->
-
-                <!-- <div *ngFor="let tipo of listaskills">
-                    <p>{{tipo.nombre}}</p>
-                </div> -->
 

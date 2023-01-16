@@ -1,5 +1,5 @@
 import { CdkDragDrop, moveItemInArray } from '@angular/cdk/drag-drop';
-import { ChangeDetectorRef, Component, NgModule, OnInit } from '@angular/core';
+import { ChangeDetectorRef, Component, OnInit } from '@angular/core';
 import { firstValueFrom } from 'rxjs';
 import { GeneralService } from 'src/app/services/general.service';
 
@@ -12,17 +12,14 @@ import { GeneralService } from 'src/app/services/general.service';
 export class SkillsComponent implements OnInit {
 
   skills:any[]=[];
+  tiposSkill:any[]=[]
   isLogged:boolean=false;  
 
-  constructor(private servGeneral:GeneralService, private cdr: ChangeDetectorRef) {   }
+  constructor(private servGeneral:GeneralService, private cdr: ChangeDetectorRef) {}
 
   ngOnInit(): void {
-    this.servGeneral.getGeneral("skills").subscribe((data: any) => {
-      this.skills = data;
-      this.skills.sort(function(a, b){
-        return a.tiposkill.id - b.tiposkill.id;
-      });
-    });
+    this.servGeneral.getGeneral("skills").subscribe((data: any) => (this.skills = data));
+    this.servGeneral.getGeneral("tipo-skills").subscribe((data) => (this.tiposSkill = data));
 
     const currentUser = (sessionStorage.getItem('currentUser')||'...');
     if (currentUser && currentUser.length > 20) {
@@ -34,8 +31,7 @@ export class SkillsComponent implements OnInit {
     this.servGeneral.addGeneral(objeto, "skills").subscribe((data) => {
       this.skills.push(data);
       this.ngOnInit();      
-    });
-  
+    });  
   }
 
   guardar(objeto: any) {
@@ -54,11 +50,18 @@ export class SkillsComponent implements OnInit {
     }    
   }
 
-  drop(event:CdkDragDrop<any>, groupValue: any[]){
+  drop(event:CdkDragDrop<any>, groupValue:any[]){
     const anterior = event.previousIndex;
     const actual = event.currentIndex;
     moveItemInArray(groupValue,anterior,actual);
     this.servGeneral.orderGeneral(groupValue,`skills/order`).subscribe(() => this.cdr.detectChanges());
+  }
+
+  dropTipos(event:CdkDragDrop<any>){
+    const anterior = event.previousIndex;
+    const actual = event.currentIndex;
+    moveItemInArray(this.tiposSkill,anterior,actual);
+    this.servGeneral.orderGeneral(this.tiposSkill,`tipo-skills/order`).subscribe(() => this.ngOnInit());
   }
 
 }

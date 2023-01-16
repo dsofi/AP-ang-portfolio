@@ -67,7 +67,7 @@ export class LoginComponent implements OnInit {
           this.form.markAllAsTouched();
           this.mostrarMensajeError = true;
         }
-      }    );
+      });
     } else {
       this.form.markAllAsTouched();
     }

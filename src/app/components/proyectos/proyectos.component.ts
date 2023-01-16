@@ -29,8 +29,7 @@ export class ProyectosComponent implements OnInit {
     this.servGeneral.addGeneral(objeto,this.tipo).subscribe((data) => {
       this.misProyectos.push(data);
       this.ngOnInit();
-    })
-    
+    })    
   }
 
   agregarProyecto(){
@@ -70,7 +69,6 @@ export class ProyectosComponent implements OnInit {
     return /\.(jpeg|jpg|png)$/.test(image);
   }
 
-
   drop(event: CdkDragDrop<any>){
     const anterior = event.previousIndex;
     const actual = event.currentIndex;
@@ -97,8 +95,6 @@ export class ProyectosComponent implements OnInit {
     if (urlProyecto !== ""){
       objeto.link = urlProyecto;        
     }
-
     this.guardar(objeto);    
   }
-
 }

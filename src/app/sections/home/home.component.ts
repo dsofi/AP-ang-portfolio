@@ -10,9 +10,7 @@ export class HomeComponent implements OnInit {
 
   isLoading =  this.servGeneral.subjectIsLoading;
 
-  constructor(private servGeneral:GeneralService) {   }
+  constructor(private servGeneral:GeneralService) {}
 
-
-  ngOnInit(): void {
-  }
+  ngOnInit(): void {}
 }

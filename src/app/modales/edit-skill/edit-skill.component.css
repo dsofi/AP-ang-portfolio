@@ -20,11 +20,6 @@ button{
     border-radius: 0;
 }
 
-.txt-second{
-    font-size: 13px;
-    color: var(--gray-color);
-}
-
 ::ng-deep .modal-content{
     border-radius: 0;
 }

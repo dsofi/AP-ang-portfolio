@@ -21,6 +21,7 @@
 .square:not(:hover) {
     transition: all 40s
 }
+
 @keyframes cayendo {
     0% {transform: rotate(0deg);
         top: var(--topinicial);
@@ -50,7 +51,6 @@
 @keyframes juntando {
     to{top:75%}
 }
-
 
 .texto{
     display: flex;
@@ -97,8 +97,17 @@ p.mensaje::after{
     top: -10%;
     animation: aparecer 100ms ease-out calc(var(--espera) - 20s) forwards;
 }
-@keyframes escribiendo {to{left: 100%}}
-@keyframes titilando {to{background: white}}
-@keyframes titilando-final {to{background: transparent}}
-@keyframes aparecer {to{top:30%}}
+
+@keyframes escribiendo {
+    to{left: 100%}
+}
+@keyframes titilando {
+    to{background: white}
+}
+@keyframes titilando-final {
+    to{background: transparent}
+}
+@keyframes aparecer {
+    to{top:30%}
+}
 

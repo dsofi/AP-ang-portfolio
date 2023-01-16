@@ -48,13 +48,13 @@ export class BtnAddFormComponent implements OnInit {
       alert('Título, tiempo y descripción son campos obligatorios');
       return;
     }
-      this.titulo = '';
-      this.tiempo = '';
-      this.descripcion = '';
-      this.otrasNotas = '';
-      this.imagen = '';
+    this.titulo = '';
+    this.tiempo = '';
+    this.descripcion = '';
+    this.otrasNotas = '';
+    this.imagen = '';
 
-      this.showAdd=false;
-      this.agregando.emit(objeto);
+    this.showAdd=false;
+    this.agregando.emit(objeto);
   }
 }

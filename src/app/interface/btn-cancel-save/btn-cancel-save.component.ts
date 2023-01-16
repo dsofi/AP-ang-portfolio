@@ -10,11 +10,9 @@ export class BtnCancelSaveComponent implements OnInit {
   @Output() onCancelar:EventEmitter<any> = new EventEmitter;
   @Output() onGuardar:EventEmitter<any> = new EventEmitter;
 
-
   constructor() { }
 
-  ngOnInit(): void {
-  }
+  ngOnInit(): void {}
 
   cancelar(){
     this.onCancelar.emit();
@@ -23,5 +21,4 @@ export class BtnCancelSaveComponent implements OnInit {
   guardar(){
     this.onGuardar.emit();
   }
-
 }
